@@ -1,0 +1,36 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+
+  Project Heads: Felix Zylmann, Ansgar Holtmann
+  Site: vivaconagua.org
+  Location: Hamburg, Germany
+
+  Web Developer: Johannes Pilkahn
+  Site: tramprennen.org
+  E-Mail: pille[AT]tramprennen.org
+  Twitter: @SanktPille
+  Location: Henstedt-Ulzburg, Germany
+
+
+/* THANKS */
+
+  Elliot Jay Stocks (elliotjaystocks.com),
+  Paul Irish (paulirish.com),
+  Andy Taylor (andytlr.com),
+  Thierry Koblentz (thinkvitamin.com),
+  Eric Wiryanata (thunderpanda.com),
+  Friedrich Stiebeling & Timo Rohwedder (art.files, Hamburg, artfiles.de),
+  Felix Moche, Martin Zilz & Niels Baumbach (kreativkonzentrat.de),
+  WPSE / WordPress Answers & its users (wordpress.stackexchange.com)
+
+
+/* SITE */
+
+  Standards: HTML5, CSS3
+  CMS: WordPress
+  Components: jQuery, Modernizr, yepnope, css3-mediaqueries
+  Fonts: Gill Sans MT (Regular, Bold), Gill Sans MT Condensed (Bold)
+  Software: Ubuntu 12.04 LTS, GIMP, Komodo-Edit, Poedit

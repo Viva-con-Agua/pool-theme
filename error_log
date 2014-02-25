@@ -1,0 +1,2 @@
+[10-Nov-2011 07:04:34] PHP Fatal error:  Call to undefined function  get_header() in /home/pilkahno/rude/wp-content/themes/raw/archive.php on line 6
+[08-Mar-2012 10:51:43] PHP Fatal error:  Call to undefined function  get_header() in /home/pilkahno/testing/wp-content/themes/tr_twenty_twelve/index.php on line 6

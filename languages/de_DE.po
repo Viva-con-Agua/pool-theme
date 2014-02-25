@@ -1,0 +1,729 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: VcA Aktivitäts- &amp; Supporterbereich v1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/twentyten\n"
+"POT-Creation-Date: 2011-06-13 13:27:43+00:00\n"
+"PO-Revision-Date: 2012-06-06 11:09:22+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: attachment.php:10
+#, php-format
+#@ twentyten
+msgid "Return to %s"
+msgstr ""
+
+#: attachment.php:22
+#: functions.php:525
+#, php-format
+#@ twentyten
+msgid "View all posts by %s"
+msgstr ""
+
+#: attachment.php:39
+#, php-format
+#@ twentyten
+msgid "Full size is %s pixels"
+msgstr ""
+
+#: attachment.php:42
+#@ twentyten
+msgid "Link to full-size image"
+msgstr ""
+
+#: attachment.php:49
+#: attachment.php:88
+#: loop.php:64
+#: loop.php:79
+#: loop.php:106
+#: single.php:30
+#@ twentyten
+msgid "Edit"
+msgstr ""
+
+#: functions.php:86
+#@ vca-theme
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
+
+#: attachment.php:85
+#: loop.php:91
+#: page-narrow-no-title.php:11
+#: page-narrow.php:19
+#: page-no-title.php:11
+#: page.php:19
+#: single.php:18
+#@ twentyten
+msgid "Pages:"
+msgstr ""
+
+#: category.php:9
+#, php-format
+#@ twentyten
+msgid "Category Archives: %s"
+msgstr ""
+
+#: tag.php:9
+#, php-format
+#@ twentyten
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: comments.php:13
+#@ twentyten
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:30
+#, php-format
+#@ twentyten
+msgid "One Response to %2$s"
+msgid_plural "%1$s Responses to %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:63
+#@ twentyten
+msgid "Comments are closed."
+msgstr ""
+
+#: loop.php:15
+#@ twentyten
+msgid "Not Found"
+msgstr ""
+
+#: loop.php:16
+#@ twentyten
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr ""
+
+#: loop.php:38
+#: loop.php:61
+#@ twentyten
+msgctxt "gallery category slug"
+msgid "gallery"
+msgstr ""
+
+#: loop.php:39
+#: loop.php:54
+#: loop.php:84
+#, php-format
+#@ twentyten
+msgid "Permalink to %s"
+msgstr ""
+
+#: loop.php:61
+#@ twentyten
+msgid "More Galleries"
+msgstr ""
+
+#: loop.php:61
+#@ twentyten
+msgid "View posts in the Gallery category"
+msgstr ""
+
+#: loop.php:63
+#: loop.php:78
+#: loop.php:105
+#@ twentyten
+msgid "Leave a comment"
+msgstr ""
+
+#: loop.php:63
+#: loop.php:78
+#: loop.php:105
+#@ twentyten
+msgid "1 Comment"
+msgstr ""
+
+#: loop.php:63
+#: loop.php:78
+#: loop.php:105
+#@ twentyten
+msgid "% Comments"
+msgstr ""
+
+#: loop.php:68
+#@ twentyten
+msgctxt "asides category slug"
+msgid "asides"
+msgstr ""
+
+#: functions.php:472
+#, php-format
+#@ twentyten
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: functions.php:475
+#@ twentyten
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: functions.php:482
+#, php-format
+#@ twentyten
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:482
+#: functions.php:499
+#@ twentyten
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:499
+#@ twentyten
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:516
+#, php-format
+#@ twentyten
+msgid "<span class=\"%1$s\">Posted on</span> %2$s <span class=\"meta-sep\">by</span> %3$s"
+msgstr ""
+
+#: functions.php:538
+#, php-format
+#@ twentyten
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: functions.php:540
+#, php-format
+#@ twentyten
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: functions.php:542
+#, php-format
+#@ twentyten
+msgid "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: functions.php:437
+#: functions.php:454
+#, php-format
+#@ twentyten
+msgid "Page %s"
+msgstr ""
+
+#: author.php:20
+#, php-format
+#@ twentyten
+msgid "Author Archives: %s"
+msgstr ""
+
+#: author.php:27
+#: single.php:22
+#, php-format
+#@ twentyten
+msgid "About %s"
+msgstr ""
+
+#: search.php:9
+#, php-format
+#@ twentyten
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:15
+#@ twentyten
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:16
+#@ twentyten
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr ""
+
+#: single.php:10
+#: single.php:32
+#@ twentyten
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: single.php:11
+#: single.php:33
+#@ twentyten
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: archive.php:27
+#@ twentyten
+msgid "Blog Archives"
+msgstr ""
+
+#: archive.php:21
+#, php-format
+#@ twentyten
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:23
+#, php-format
+#@ twentyten
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:25
+#, php-format
+#@ twentyten
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#. translators: %s - title of parent post
+#: attachment.php:12
+#, php-format
+#@ twentyten
+msgid "<span>&larr;</span> %s"
+msgstr ""
+
+#: attachment.php:18
+#, php-format
+#@ twentyten
+msgid "By %2$s"
+msgstr ""
+
+#: attachment.php:29
+#, php-format
+#@ twentyten
+msgid "Published %2$s"
+msgstr ""
+
+#: attachment.php:84
+#: loop.php:73
+#: loop.php:90
+#@ twentyten
+msgid "Continue reading &rarr;"
+msgstr ""
+
+#: comments.php:35
+#: comments.php:52
+#@ twentyten
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:36
+#: comments.php:53
+#@ twentyten
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: functions.php:128
+#@ default
+msgid "All Settings"
+msgstr "Alle Einstellungen"
+
+#: header.php:93
+#@ vca-theme
+msgid "Set your data & preferences"
+msgstr "Deine Daten und Einstellungen"
+
+#: header.php:115
+#@ vca-theme
+msgid "Admin Area"
+msgstr "Admin Bereich"
+
+#: header.php:117
+#@ vca-theme
+msgid "Manage"
+msgstr "Management"
+
+#: header.php:111
+#@ vca-theme
+msgid "Manage content of your region"
+msgstr "Deine Region verwalten"
+
+#: functions.php:434
+#, php-format
+#@ twentyten
+msgid "Search results for %s"
+msgstr ""
+
+#: login-form.php:7
+#: profile-form.php:39
+#: register-form.php:9
+#@ theme-my-login
+msgid "Username"
+msgstr "Benutzername"
+
+#: login-form.php:10
+#@ theme-my-login
+msgid "Password"
+msgstr "Passwort"
+
+#: login-form.php:19
+#@ theme-my-login
+msgid "Remember Me"
+msgstr "An mich erinnern"
+
+#: login-form.php:22
+#@ theme-my-login
+msgid "Log In"
+msgstr "Einloggen"
+
+#: loop.php:9
+#: loop.php:116
+#@ twentyten
+msgid "&larr; Older posts"
+msgstr ""
+
+#: loop.php:10
+#: loop.php:117
+#@ twentyten
+msgid "Newer posts &rarr;"
+msgstr ""
+
+#: loop.php:53
+#, php-format
+#@ twentyten
+msgid "This gallery contains <a %1$s>%2$s photos</a>."
+msgstr ""
+
+#: loop.php:95
+#, php-format
+#@ twentyten
+msgid "Posted in %2$s"
+msgstr ""
+
+#: loop.php:102
+#, php-format
+#@ twentyten
+msgid "Tagged %2$s"
+msgstr ""
+
+#: lostpassword-form.php:12
+#@ theme-my-login
+msgid "Username or E-mail:"
+msgstr "Benutzername oder E-Mail"
+
+#: lostpassword-form.php:20
+#@ theme-my-login
+msgid "Get New Password"
+msgstr "Neues Passwort anfordern"
+
+#: profile-form.php:31
+#@ vca-theme
+msgid "Supporter Profile"
+msgstr "Supporter Profil"
+
+#: profile-form.php:36
+#: single-festival.php:111
+#@ theme-my-login
+#@ vca-theme
+msgid "Name"
+msgstr "Name"
+
+#: profile-form.php:39
+#@ vca-theme
+msgid "Your username cannot be changed."
+msgstr "Dein Benutzername kann nicht geändert werden."
+
+#: profile-form.php:42
+#@ theme-my-login
+msgid "First name"
+msgstr "Vorname"
+
+#: profile-form.php:45
+#@ theme-my-login
+msgid "Last name"
+msgstr "Nachname"
+
+#: profile-form.php:79
+#@ theme-my-login
+msgid "Contact Info"
+msgstr "Kontakt-Info"
+
+#: profile-form.php:82
+#: register-form.php:12
+#@ theme-my-login
+msgid "E-mail"
+msgstr "E-Mail"
+
+#: profile-form.php:94
+#: profile-form.php:97
+#@ theme-my-login
+msgid "New Password"
+msgstr "Neues Passwort"
+
+#: profile-form.php:96
+#@ vca-theme
+msgid "If you would like to change the password type a new one. Otherwise leave this blank."
+msgstr "Wenn du dein Passwort ändern möchtest, tippe ein neues ein. Sonst lass' das Feld einfach frei."
+
+#: profile-form.php:97
+#@ vca-theme
+msgid "Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols."
+msgstr "Tipp: Das Passswort sollte mindestens 7 Zeichen lang sein. Um es stärker zu machen, benutze Groß- und Kleinschreibung, sowie Zahlen und/oder Sonderzeichen."
+
+#: profile-form.php:100
+#@ vca-theme
+msgid "Repeat Password"
+msgstr "Passwort Wiederholung"
+
+#: profile-form.php:103
+#: resetpass-form.php:12
+#@ theme-my-login
+msgid "Strength indicator"
+msgstr "Stärke-Indikator"
+
+#: profile-form.php:137
+#@ theme-my-login
+msgid "Update Profile"
+msgstr "Profil Speichern"
+
+#: register-form.php:28
+#@ theme-my-login
+msgid "Register"
+msgstr "Registrieren"
+
+#: resetpass-form.php:6
+#@ theme-my-login
+msgid "New password"
+msgstr "Neues Passwort"
+
+#: resetpass-form.php:9
+#@ theme-my-login
+msgid "Confirm new password"
+msgstr "Neues Passwort bestätigen"
+
+#: resetpass-form.php:14
+#@ default
+msgid "Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! \" ? $ % ^ &amp; )."
+msgstr "Tipp: Das Passwort sollte mindestens 7 Zeichen lang sein. Um es stärker zu machen, verwende Groß- und Kleinschreibung, sowie Zahlen und/oder Sonderzeichen."
+
+#: resetpass-form.php:21
+#@ theme-my-login
+msgid "Reset Password"
+msgstr "Passwort Zurücksetzen"
+
+#: single.php:25
+#, php-format
+#@ twentyten
+msgid "View all posts by %s &rarr;"
+msgstr ""
+
+#: user-panel.php:3
+#@ vca-theme
+msgid "Moin"
+msgstr "Moin"
+
+#: header.php:97
+#: user-panel.php:4
+#@ vca-theme
+msgid "Your Profile"
+msgstr "Dein Profil"
+
+#: functions.php:182
+#: functions.php:185
+#@ default
+msgid "Dashboard"
+msgstr "Admin Bereich"
+
+#: header.php:71
+#@ vca-theme
+msgid "Apply for festivals, check your current applications and your accepted festivals"
+msgstr "Für Festivals bewerben, laufende Bewerbungen checken, Festivals einsehen"
+
+#: header.php:75
+#@ vca-theme
+msgid "Festivals"
+msgstr "Festivals"
+
+#: header.php:77
+#@ vca-theme
+msgid "Summer 2012"
+msgstr "Sommer 2012"
+
+#: header.php:99
+#@ vca-theme
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: header.php:53
+#@ vca-theme
+msgid "Back to the Start"
+msgstr "Zurück zum Anfang"
+
+#: header.php:82
+#@ vca-theme
+msgid "Read up on how this works"
+msgstr "Lies dir durch, wie's funktioniert..."
+
+#: header.php:86
+#@ vca-theme
+msgid "Help"
+msgstr "Hilfe"
+
+#: header.php:88
+#@ vca-theme
+msgid "FAQ"
+msgstr "FAQ"
+
+#: profile-form.php:122
+#@ vca-theme
+msgid "Please select a region. Thank you."
+msgstr "Bitte wähle eine Region. Danke."
+
+#: profile-form.php:125
+#@ vca-theme
+msgid "Are you really a hundred years old???."
+msgstr "Bist du wirklich 100 Jahre alt???"
+
+#: profile-form.php:131
+#@ vca-theme
+msgid "Have you really been born on January 1st, 1970?."
+msgstr "Wurdest Du wirklich am ersten Januar 1970 geboren?"
+
+#: register-form.php:21
+#@ vca-theme
+msgid "I agree to and have read the terms &amp; conditions."
+msgstr "Ich akzeptiere die <a title=\"Zum Text\" href=\"http://pool.vivaconagua.org/nutzungsbedingungen/\">Nutzungsbedingungen</a> und <a title=\"Zum Text\" href=\"http://pool.vivaconagua.org/datenschutzerklaerung/\">Datenschutzerklärung</a>."
+
+#: register-form.php:25
+#@ vca-theme
+msgid "Please confirm that you agree to the terms &amp; conditions."
+msgstr "Bitte bestätige, dass du die Nutzungsbedingungen und Datenschutzerklärung akzeptierst."
+
+#: profile-form.php:109
+#@ vca-theme
+msgid "Delete my account permanently"
+msgstr "Mein Benutzerkonto löschen"
+
+#: profile-form.php:116
+#@ vca-theme
+msgid "Do you really want to delete your account? This will be permanent and cannot be undone!"
+msgstr "Willst du dein Benutzerkonto wirklich löschen? Dies ist permanent und kann nicht rückgängig gemacht werden!"
+
+#: single-festival.php:31
+#@ vca-theme
+msgid "Timeframe"
+msgstr "Zeitraum"
+
+#: single-festival.php:33
+#@ vca-theme
+msgid "until"
+msgstr "bis"
+
+#: single-festival.php:36
+#@ vca-theme
+msgid "Location"
+msgstr "Ort"
+
+#: single-festival.php:39
+#@ vca-theme
+msgid "Application Deadline"
+msgstr "Bewerbung möglich bis"
+
+#: single-festival.php:43
+#@ vca-theme
+msgid "Further Info"
+msgstr "Weitere Infos"
+
+#: single-festival.php:45
+#@ vca-theme
+msgid "Website"
+msgstr "Webseite"
+
+#: single-festival.php:61
+#, php-format
+#@ vca-theme
+msgid "Visit &quot;%s&quot;"
+msgstr "&quot;%s&quot; besuchen"
+
+#: single-festival.php:65
+#@ vca-theme
+msgid "VcA Activities"
+msgstr "VcA Aktivitäten"
+
+#: single-festival.php:71
+#@ vca-theme
+msgctxt "VcA Tools"
+msgid "Cups"
+msgstr "Pfandbecher Sammeln"
+
+#: single-festival.php:74
+#@ vca-theme
+msgctxt "VcA Tools"
+msgid "Guest List"
+msgstr "Gästelisten-Euros"
+
+#: single-festival.php:77
+#@ vca-theme
+msgctxt "VcA Tools"
+msgid "Info Counter"
+msgstr "Infostand"
+
+#: single-festival.php:80
+#@ vca-theme
+msgctxt "VcA Tools"
+msgid "Water Bottles"
+msgstr "Quellwasser"
+
+#: single-festival.php:86
+#@ vca-theme
+msgctxt "VcA Tools"
+msgid "Special"
+msgstr "Special"
+
+#: single-festival.php:91
+#@ vca-theme
+msgid "none"
+msgstr "keine"
+
+#: single-festival.php:94
+#@ vca-theme
+msgid "Directions"
+msgstr "Anfahrt"
+
+#: single-festival.php:98
+#@ vca-theme
+msgid "Contact Person(s)"
+msgstr "Ansprechpartner_innen"
+
+#: single-festival.php:106
+#@ vca-theme
+msgid "Not set yet..."
+msgstr "Steht noch nicht fest..."
+
+#: single-festival.php:113
+#@ vca-theme
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: single-festival.php:116
+#@ vca-theme
+msgid "Mobile Number"
+msgstr "Handy Nummer"
+
+#: register-form.php:3
+#@ vca-theme
+msgid "Register to the Pool"
+msgstr "Registriere dich im Pool"
+
+#: 404.php:8
+#@ vca-theme
+msgid "Not Found..."
+msgstr "Nicht gefunden..."
+
+#: 404.php:9
+#@ vca-theme
+msgid "Apologies, but the page you requested could not be found."
+msgstr "Sorry Digger, diese Adresse scheint es nicht (mehr) zu geben."
+
