@@ -159,7 +159,14 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 			$show_contacts = false;
 		}
 
-		if ( isset( $the_activity ) && $the_activity->has_applied( $current_user->ID ) ) {
+		if ( isset( $_POST['todo'] ) && 'revoke_app' === $_POST['todo'] ) {$output .= '<h5>' . __( 'Application revoked', 'vca-theme' ) . '</h5>';
+
+			$output .= '<p class="metadata metadata-message highlight">' .
+				__( 'You have successfully revoked your application to this activity.', 'vca-theme' ) .
+			'</p>';
+
+
+		} elseif ( isset( $the_activity ) && $the_activity->has_applied( $current_user->ID ) ) {
 
 			$output .= '<h5>' . __( 'Participate', 'vca-theme' ) . '</h5>';
 
@@ -171,14 +178,14 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 					'<input type="hidden" name="todo" id="todo" value="revoke_app" />' .
 					'<input type="hidden" name="activity" id="activity" value="' . get_the_ID() . '" />' .
 					'<div class="form-row">' .
-						'<input type="submit" id="submit_form" name="submit_form" value="' . __( 'Revoke Application', 'vca-asm' ) . '" />' .
+						'<input type="submit" id="submit_form" name="submit_form" value="' . __( 'Revoke Application', 'vca-theme' ) . '" />' .
 				'</div></form>';
 
 		} elseif ( isset( $the_activity ) && $the_activity->is_participant( $current_user->ID ) && $the_activity->upcoming ) {
 
 			$output .= '<h5>' . __( 'Participate', 'vca-theme' ) . '</h5>';
 
-			$output .= '<p>' .
+			$output .= '<p class="metadata metadata-message">' .
 				__( 'You are currently registered as participant of this activity.', 'vca-theme' ) . '<br />' .
 				__( 'Feel free to contact the SPOCs, should you have questions. Please do so in due time, should you not be able to participate.', 'vca-theme' ) .
 			'</p>';
@@ -187,7 +194,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 		} elseif ( time() < $start_app ) {
 
 			$output .= '<h5>' . __( 'Participate', 'vca-theme' ) . '</h5>' .
-				'<p>' .
+				'<p class="metadata metadata-message">' .
 					sprintf(
 						__( 'The application phase for this activity has not yet begun. It starts on %s.', 'vca-theme' ),
 						$start_app_string
@@ -202,7 +209,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 
 				$url = p1_current_country() === 'ch' ? 'http://pool.vivaconagua.ch' : 'http://pool.vivaconagua.org';
 
-				$output .= '<p>' .
+				$output .= '<p class="metadata metadata-message">' .
 					sprintf(
 						__( 'You must be <a title="Log In" href="%s">logged in</a> to be able to apply for an activity...', 'vca-theme' ),
 						$url
@@ -216,26 +223,17 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 						'<input type="hidden" name="todo" id="todo" value="apply" />' .
 						'<input type="hidden" name="activity" id="activity" value="' . get_the_ID() . '" />' .
 						'<div class="form-row">' .
-							'<div class="no-js-toggle">' .
-								'<textarea name="notes" id="notes" rows="4"></textarea>' .
-								'<br /><span class="description">' .
-									_x( 'If you wish to send a message with your application, do so here.', 'Frontend: Application Process', 'vca-asm' ) .
-								'</span>' .
-							'</div>' .
-							'<div class="js-toggle">' .
-								'<textarea name="notes" id="notes" class="textarea-hint" rows="5">' .
-									_x( 'If you wish to send a message with your application, do so here.', 'Frontend: Application Process', 'vca-asm' ) .
-									"\n\n" .
-									_x( "For instance if you're applying with a friend, cannot reach on time, or the like.", 'Frontend: Application Process', 'vca-asm' ) .
-								'</textarea>' .
-							'</div>' .
+							'<textarea name="notes" id="notes" rows="5"></textarea>' .
+							'<br class="no-js-toggle" /><span class="description no-js-toggle">' .
+								_x( 'If you wish to send a message with your application, do so here.', 'Frontend: Application Process', 'vca-theme' ) .
+							'</span>' .
 						'</div><div class="form-row">' .
-							'<input type="submit" id="submit_form" name="submit_form" value="' . __( 'Apply', 'vca-asm' ) . '" />' .
+							'<input type="submit" id="submit_form" name="submit_form" value="' . __( 'Apply', 'vca-theme' ) . '" />' .
 						'</div></form>';
 
 			} else {
 
-				$output .= '<p>' .
+				$output .= '<p class="metadata metadata-message">' .
 					__( 'You are not eligible for this activity. Either because a quota for your country and/or city does not exist or because this is limited by another factor. Sorry.', 'vca-theme' ) .
 				'</p>';
 
@@ -244,7 +242,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 		} elseif ( isset( $the_activity ) && $the_activity->upcoming ) {
 
 			$output .= '<h5>' . __( 'Participate', 'vca-theme' ) . '</h5>' .
-				'<p>' .
+				'<p class="metadata metadata-message">' .
 					__( 'The application phase for this activity has already ended. Sorry.', 'vca-theme' ) .
 				'</p>';
 
@@ -289,7 +287,14 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 				foreach( $contacts as $contact_name ) {
 					if( empty( $contact_name ) ) {
 						if( $i === 0 ) {
-							$output .= '<p>' . __( 'Not set yet...', 'vca-theme' ) . '</p>';
+							$output .= '<table class="meta-table">'.
+									'<tr><td><p class="label">' .
+											__( 'Contact Person(s)', 'vca-theme' ) .
+										'</p><p class="metadata">' .
+											__( 'Not set yet...', 'vca-theme' ) .
+										'</p>' .
+									'</td></tr>' .
+								'</table>';
 						} else {
 							$output .= '</table>';
 						}
@@ -315,7 +320,14 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 					$i++;
 				}
 			} else {
-				$output .= '<p>' . __( 'Not set yet...', 'vca-theme' ) . '</p>';
+				$output .= '<table class="meta-table">'.
+						'<tr><td><p class="label">' .
+								__( 'Contact Person(s)', 'vca-theme' ) .
+							'</p><p class="metadata">' .
+								__( 'Not set yet...', 'vca-theme' ) .
+							'</p>' .
+						'</td></tr>' .
+					'</table>';
 			}
 		}
 

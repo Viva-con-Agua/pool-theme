@@ -1,9 +1,10 @@
+</div><!-- .content-wrap-wrap -->
+</div><!-- .content-wrap -->
 </div><!-- .content-container -->
 <div class="push"></div>
 </div><!-- .wrapper -->
 
 <footer>
-	<div class="edge"></div>
 	<div class="grid-container">
 		<div class="grid-row">
 			<div class="col6">
@@ -17,7 +18,7 @@
 					?>"><?php _e( 'Imprint', 'vca-theme' ); ?></a>
 				</p>
 			</div><div class="col6 last">
-				<p class="screen-talign-right">Pool v1.3.2, Viva con Agua de Sankt Pauli e.V., 2012-2013</p>
+				<p class="screen-talign-right">Pool v1.4, Viva con Agua de Sankt Pauli e.V., 2012-2013</p>
 			</div>
 		</div>
 	</div>

@@ -73,6 +73,9 @@ input[type="hidden"] {
 	display: none;
 	border: none;
 }
+select {
+	margin: 0;
+}
 :focus {
 	outline: 0 !important;
 	-webkit-box-shadow: none !important;

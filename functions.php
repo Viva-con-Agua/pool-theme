@@ -17,45 +17,58 @@ add_action('after_setup_theme', 'p1_theme_setup');
 /* loads scripts & libraries */
 function p1_theme_load_scripts() {
 	if ( ! is_admin() ) {
-		wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', false, '2.6.2' );
-		wp_enqueue_script( 'modernizr' );
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js', false, '2.0.0' );
-		wp_enqueue_script( 'jquery' );
-		wp_register_script( 'mediaqueries', get_template_directory_uri() . '/js/css3-mediaqueries.js', false, '1.3.2', true );
-		wp_enqueue_script( 'mediaqueries' );
-		wp_register_script( 'jquery-scrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.js', false, '1.3.2', true );
-		wp_enqueue_script( 'jquery-scrollTo' );
-		wp_register_script( 'pille-plugins', get_template_directory_uri() . '/js/plugins.js', false, '1.3.2', true );
-		wp_enqueue_script( 'pille-plugins' );
-		wp_register_script( 'pille-accordion', get_template_directory_uri() . '/js/pille-accordion.js', false, '1.3.2', true );
-		wp_enqueue_script( 'pille-accordion' );
-		wp_register_script( 'pille-baseline-grid', get_template_directory_uri() . '/js/pille-baseline-grid.js', false, '1.3.2', true );
-		wp_enqueue_script( 'pille-baseline-grid' );
-		wp_register_script( 'pille-form-styling', get_template_directory_uri() . '/js/pille-form-styling.js', false, '1.3.2', true );
-		wp_enqueue_script( 'pille-form-styling' );
-		wp_register_script( 'pille-tooltip', get_template_directory_uri() . '/js/pille-tooltip.js', false, '1.3.2', true );
-		wp_enqueue_script( 'pille-tooltip' );
-		wp_register_script( 'pille-toggle', get_template_directory_uri() . '/js/pille-toggle-element.js', false, '1.3.2', true );
-		wp_enqueue_script( 'pille-toggle' );
-	}
-}
-add_action ( 'init', 'p1_theme_load_scripts' );
 
-/* Add native menu support */
-/* --- currently not in use ---
-if ( function_exists( 'register_nav_menus' ) ) {
-	function p1_theme_register_menus() {
-		register_nav_menus(
+		wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', false, '2013.11.11.1' );
+		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', false, '2013.11.11.1' );
+		wp_register_script( 'mediaqueries', get_template_directory_uri() . '/js/css3-mediaqueries.js', false, '2013.11.11.1', true );
+		wp_register_script( 'jquery-scrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.js', false, '2013.11.11.1', true );
+
+		wp_register_script( 'p1-plugins', get_template_directory_uri() . '/js/plugins.js', false, '2013.11.11.1', true );
+		wp_register_script( 'p1-accordion', get_template_directory_uri() . '/js/p1-accordion.js', array( 'jquery' ), '2013.11.11.1', true );
+		wp_register_script( 'p1-baseline-grid', get_template_directory_uri() . '/js/p1-baseline-grid.js', array( 'jquery' ), '2013.11.11.1', true );
+		wp_register_script( 'p1-breaker', get_template_directory_uri() . '/js/p1-breaker.js', array( 'jquery' ), '2013.11.11.1', true );
+		wp_register_script( 'p1-form-styling', get_template_directory_uri() . '/js/p1-form-styling.js', array( 'jquery' ), '2013.11.11.1', true );
+		wp_register_script( 'p1-tooltip', get_template_directory_uri() . '/js/p1-tooltip.js', false, '2013.11.11.1', true );
+		wp_register_script( 'p1-toggle', get_template_directory_uri() . '/js/p1-toggle-element.js', array( 'jquery' ), '2013.11.15.2', true );
+
+		wp_enqueue_script( 'modernizr' );
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'mediaqueries' );
+		wp_enqueue_script( 'jquery-scrollTo' );
+
+		wp_enqueue_script( 'p1-plugins' );
+		wp_enqueue_script( 'p1-accordion' );
+		wp_enqueue_script( 'p1-baseline-grid' );
+		wp_enqueue_script( 'p1-breaker' );
+		wp_enqueue_script( 'p1-form-styling' );
+		wp_enqueue_script( 'p1-tooltip' );
+		wp_enqueue_script( 'p1-toggle' );
+
+		wp_localize_script(
+			'p1-form-styling',
+			'formParams',
 			array(
-			'menu-main' => __( 'Main Navigation' ),
-			'menu-xtra' => __( 'Extra Menu' )
+				'note' => _x( 'If you wish to send a message with your application, do so here.', 'Frontend: Application Process', 'vca-theme' ) .
+					"\n\n" .
+					_x( "For instance if you're applying with a friend, cannot reach on time, or the like.", 'Frontend: Application Process', 'vca-theme' )
 			)
 		);
 	}
-	add_action( 'init', 'p1_theme_register_menus' );
 }
-*/
+add_action ( 'wp_enqueue_scripts', 'p1_theme_load_scripts' );
+
+/* Add native menu support */
+function p1_theme_register_menus() {
+	register_nav_menus(
+		array(
+			'main-nav-supporter' => __( 'Main Navigation for Supporters' ),
+			'main-nav-admins' => __( 'Main Navigation for administrative Users' )
+		)
+	);
+}
+add_action( 'init', 'p1_theme_register_menus' );
+
 
 /* Register widgetized areas */
 function p1_theme_widgets_init() {
@@ -108,25 +121,29 @@ function p1_get_admin_link(){
 		$admin_link .= ' class="current-menu-item"';
 	}
 	$admin_link .= '>' .
-			_x( 'Administration', 'Navigation', 'vca-theme' ) .
+			_x( 'Office', 'Leave in English, if understandable', 'vca-theme' ) .
 		'</a>';
 
 	return $admin_link;
 }
 
-function p1_pool_menu( $medium ){
+function p1_pool_menu( $medium ) {
 	global $current_user;
 	get_currentuserinfo();
 
+	if ( class_exists( 'VCA_ASM_Supporter' ) ) {
+		$supporter = new VCA_ASM_Supporter( $current_user->ID );
+	}
+
 	$output = '';
 
-	if( $medium === 'mobile' ) {
+	if( 'mobile' === $medium ) {
 		$output .= '<ul id="nav" tabindex="0">' .
 				'<li><a class="no-borders" title="';
 				if( is_user_logged_in() )  {
-					$output .= _x( 'Supporter Activities', 'Navigation', 'vca-theme' ) .
+					$output .= _x( 'Overview', 'Navigation', 'vca-theme' ) .
 						'" href="' . get_bloginfo( 'url' ) . '">' .
-							_x( 'Home', 'Navigation', 'vca-theme' );
+							_x( 'Home', 'Leave in English, if understandable', 'vca-theme' );
 					if( is_home() ) {
 						$output .= ' class="current-menu-item"';
 					}
@@ -177,7 +194,7 @@ function p1_pool_menu( $medium ){
 						$output .= '>' .
 								_x( 'Profile &amp; Settings', 'Navigation', 'vca-theme' ) . ': ' . $current_user->display_name .
 						'</a></li>' .
-						'<li><a title="' .
+						'<li><a class="logout-link" title="' .
 							_x( 'Log yourself out', 'Navigation', 'vca-theme' ) .
 							'" href="' .  wp_logout_url( get_bloginfo('url') ) . '">' .
 								_x( 'Logout', 'Navigation', 'vca-theme' ) .
@@ -186,36 +203,42 @@ function p1_pool_menu( $medium ){
 		$output .= '<li id="back"><a href="#swim-in-the-pool">close the menu</a></li></ul>';
 	} else {
 		if( is_user_logged_in() )  {
-			$output .= '<div class="main-menu user-menu">' .
-					_x( 'Moin', 'Navigation', 'vca-theme' ) . ', ' .
-					'<a title="' . _x( 'Profile &amp; Settings', 'Navigation', 'vca-theme' ) .
-						'" href="' . get_bloginfo( 'url' ) . '/profil/"';
-						if( is_page( 'login' ) ) {
-							$output .= ' class="current-menu-item"';
-						}
-						$output .= '>' .
-							$current_user->display_name .
-					'</a>' .
-					'<span class="nav-break"></span>' .
-					'<div class="logout-button"><a title="' . _x( 'Logout!', 'Navigation', 'vca-theme' ) .
-						'" href="' .  wp_logout_url( get_bloginfo('url') ) . '">' .
-							'<img src="' . get_bloginfo('template_url') . '/images/logout.png" />' .
-					'</a></div>' .
-				'</div>';
-		}
-		$output .= '<div class="main-menu nav-menu">' .
-				'<a title="';
-					if( is_user_logged_in() )  {
-						$output .= _x( 'Supporter Activities', 'Navigation', 'vca-theme' ) .
-							'" href="' . get_bloginfo( 'url' ) . '"';
+			$output .= '<div class="user-menu">' .
+					'<a title="' . _x( 'Current Actions', 'Navigation', 'vca-theme' ) .
+						'" href="' . get_bloginfo( 'url' ) . '"';
 						if( is_front_page() ) {
 							$output .= ' class="current-menu-item"';
 						}
-						$output .= '>' .
-								_x( 'Home', 'Navigation', 'vca-theme' );
-					} else {
-						$output .= _x( 'Login / Register', 'Navigation', 'vca-theme' ) .
-							'" href="';
+					$output .= '>' .
+						_x( 'Home', 'Leave in English, if understandable', 'vca-theme' ) .
+					'</a>' .
+					'<span class="nav-break"></span>';
+					$admin_link = p1_get_admin_link();
+					if ( $admin_link ) {
+						$output .= $admin_link .
+							'<span class="nav-break"></span>';
+					}
+					$output .= '<a title="' . _x( 'Profile &amp; Settings', 'Navigation', 'vca-theme' ) .
+						'" href="' . get_bloginfo( 'url' ) . '/profil/"';
+						if( is_page( 'profil' ) ) {
+							$output .= ' class="current-menu-item"';
+						}
+						$output .= '>';
+							if ( isset( $supporter ) ) {
+								$output .= $supporter->avatar_small;
+							}
+							$output .= $current_user->display_name .
+					'</a>' .
+				'<span class="nav-break"></span>' .
+				'<div class="logout-button"><a title="' . _x( 'Logout!', 'Navigation', 'vca-theme' ) .
+					'" href="' .  wp_logout_url( get_bloginfo('url') ) . '">' .
+						'<img src="' . get_bloginfo('template_url') . '/images/logout-sprited.png" />' .
+				'</a></div>' .
+			'</div>';
+		} else {
+			$output .= '<div class="user-menu">' .
+					'<a title="' ._x( 'Login / Register', 'Navigation', 'vca-theme' ) .
+						'" href="';
 						if( is_front_page() || is_page( 'login' ) ) {
 							$output .= '#reinloggen" onclick="' .
 							"if( jQuery('#user_login').length ) {" .
@@ -231,23 +254,18 @@ function p1_pool_menu( $medium ){
 							$output .= ' class="current-menu-item"';
 						}
 						$output .= '>' .
-								_x( 'Login', 'Navigation', 'vca-theme' );
-					}
-					$output .= '</a><span class="nav-break"></span>';
-
-					if( is_user_logged_in() && p1_get_admin_link() )  {
-						$output .= p1_get_admin_link() . '<span class="nav-break"></span>';
-					}
-
-					$output .= '<a title="' .
-							_x( 'Read up on how this works', 'Navigation', 'vca-theme' ) .
-						'" href="' . get_bloginfo( 'url' ) . '/faq/"';
-						if( is_page( 'faq' ) ) {
-							$output .= ' class="current-menu-item"';
-						}
-						$output .= '>' .
-							_x( 'FAQ', 'Navigation', 'vca-theme' ) .
-						'</a></div>';
+							_x( 'Login', 'Navigation', 'vca-theme' );
+						$output .= '</a><span class="nav-break"></span>' .
+							'<a title="' .
+								_x( 'Read up on how this works', 'Navigation', 'vca-theme' ) .
+							'" href="' . get_bloginfo( 'url' ) . '/faq/"';
+							if( is_page( 'faq' ) ) {
+								$output .= ' class="current-menu-item"';
+							}
+							$output .= '>' .
+								_x( 'FAQ', 'Navigation', 'vca-theme' ) .
+							'</a></div>';
+		}
 	}
 
 	echo $output;
@@ -273,7 +291,7 @@ function p1_theme_disable_visual_editor_on_pages( $setting ) {
 }
 add_filter( 'user_can_richedit', 'p1_theme_disable_visual_editor_on_pages');
 
-/* Sets the post excerpt length to 40 characters */
+/* Sets the post excerpt length to 40 words */
 function p1_theme_excerpt_length( $length ) {
 	return 40;
 }
@@ -331,10 +349,9 @@ add_action('admin_menu', 'p1_theme_all_settings_link');
 function p1_disable_admin_bar() {
 	remove_action( 'admin_footer', 'wp_admin_bar_render', 1000 );
 	function remove_admin_bar_style_backend() {
-	  echo '<style>html.wp-toolbar, body.admin-bar #wpcontent, body.admin-bar #adminmenu { padding-top: 0px !important; }</style>';
+	  echo '<style>html.wp-toolbar, body.admin-bar #wpcontent, body.admin-bar #adminmenu { padding-top: 0px !important; }#wpadminbar { display: none; }</style>';
 	}
-	add_filter('admin_head','remove_admin_bar_style_backend');
-
+	add_filter( 'admin_head', 'remove_admin_bar_style_backend' );
 
 	function remove_admin_bar_style_frontend() { // css override for the frontend
 		echo '<style type="text/css" media="screen">
@@ -342,19 +359,19 @@ function p1_disable_admin_bar() {
 			* html body { margin-top: 0px !important; }
 			</style>';
 	}
-	add_filter( 'wp_head', 'remove_admin_bar_style_frontend', 99);
+	add_filter( 'wp_head', 'remove_admin_bar_style_frontend', 99 );
 }
 add_action( 'init', 'p1_disable_admin_bar' );
-remove_action( 'init', '_wp_admin_bar_init');
+remove_action( 'init', '_wp_admin_bar_init' );
 
 /* Modify default wordpress footer */
 function p1_theme_admin_footer() {
 	echo '<span id="footer-thankyou">Developed by <a href="mailto:pille@nekkidgrandma.com">Pille</a>';
 }
 function p1_theme_footer_version() {
-	return 'Version 1.3.2';
+	return 'Version 1.4';
 }
-add_filter('admin_footer_text', 'p1_theme_admin_footer');
+add_filter( 'admin_footer_text', 'p1_theme_admin_footer' );
 add_filter( 'update_footer', 'p1_theme_footer_version', 11 );
 
 /* Kick users with the role "supporter" from the backend when accessed with a direct link */
@@ -366,7 +383,7 @@ function redirect_supporters_from_dash() {
 		header( 'Location: http://pool.vivaconagua.org' );
 	}
 }
-add_action( 'admin_init', 'redirect_supporters_from_dash');
+add_action( 'admin_init', 'redirect_supporters_from_dash' );
 
 /* Remove the "Dashboard" from the admin menu for non-admin users */
 function p1_remove_dashboard() {
@@ -430,13 +447,13 @@ function p1_theme_sc_full_row( $atts, $content='' ) {
 	), $atts ) );
 	$content = do_shortcode( $content );
 	if ( ! empty( $class ) && ! empty( $rowclass ) )
-		return '<div class="grid-row ' . $rowclass . '"><div class="col12 ' . $class . '">' . $content . '</div></div>';
+		return '<div class="grid-row ' . $rowclass . '"><div class="grid-block col12 ' . $class . '">' . $content . '</div></div>';
 	elseif (! empty( $rowclass ) )
-		return '<div class="grid-row ' . $rowclass . '"><div class="col12">' . $content . '</div></div>';
+		return '<div class="grid-row ' . $rowclass . '"><div class="grid-block col12">' . $content . '</div></div>';
 	elseif( ! empty( $class ) )
-		return '<div class="grid-row"><div class="col12 ' . $class . '">' . $content . '</div></div>';
+		return '<div class="grid-row"><div class="grid-block col12 ' . $class . '">' . $content . '</div></div>';
 	else
-		return '<div class="grid-row"><div class="col12">' . $content . '</div></div>';
+		return '<div class="grid-row"><div class="grid-block col12">' . $content . '</div></div>';
 }
 add_shortcode( 'fullrow', 'p1_theme_sc_full_row' );
 
@@ -449,13 +466,13 @@ function p1_theme_sc_first_block( $atts, $content='' ) {
 	), $atts ) );
 	$content = do_shortcode( $content );
 	if( ! empty( $class ) && ! empty( $rowclass ) )
-		return '<div class="grid-row ' . $rowclass . '"><div class="grid-block col' . $cols . ' ' . $class . '">' . $content . '</div>';
+		return '<div class="grid-row ' . $rowclass . '"><div class="grid-block colx col' . $cols . ' ' . $class . '">' . $content . '</div>';
 	elseif( ! empty( $rowclass ) )
-		return '<div class="grid-row ' . $rowclass . '"><div class="col' . $cols . '">' . $content . '</div>';
+		return '<div class="grid-row ' . $rowclass . '"><div class="grid-block col' . $cols . '">' . $content . '</div>';
 	elseif( ! empty( $class ) )
-		return '<div class="grid-row"><div class="col' . $cols . ' ' . $class . '">' . $content . '</div>';
+		return '<div class="grid-row"><div class="grid-block col' . $cols . ' ' . $class . '">' . $content . '</div>';
 	else
-		return '<div class="grid-row"><div class="col' . $cols . '">' . $content . '</div>';
+		return '<div class="grid-row"><div class="grid-block col' . $cols . '">' . $content . '</div>';
 }
 add_shortcode( 'fblock', 'p1_theme_sc_first_block' );
 
@@ -467,9 +484,9 @@ function p1_theme_sc_middle_block( $atts, $content='' ) {
 	), $atts ) );
 	$content = do_shortcode( $content );
 	if(!empty( $class ))
-		return '<div class="col' . $cols . ' ' . $class. '">' . $content . '</div>';
+		return '<div class="grid-block col' . $cols . ' ' . $class. '">' . $content . '</div>';
 	else
-		return '<div class="col' . $cols . '">' . $content . '</div>';
+		return '<div class="grid-block col' . $cols . '">' . $content . '</div>';
 }
 add_shortcode( 'mblock', 'p1_theme_sc_middle_block' );
 
@@ -481,9 +498,9 @@ function p1_theme_sc_last_block( $atts, $content='' ) {
 	), $atts ) );
 	$content = do_shortcode( $content );
 	if( ! empty( $class ) )
-		return '<div class="col' . $cols . ' ' . $class . ' last">' . $content . '</div></div>';
+		return '<div class="grid-block col' . $cols . ' ' . $class . ' last">' . $content . '</div></div>';
 	else
-		return '<div class="col' . $cols . ' last">' . $content . '</div></div>';
+		return '<div class="grid-block col' . $cols . ' last">' . $content . '</div></div>';
 }
 add_shortcode( 'lblock', 'p1_theme_sc_last_block' );
 
@@ -495,13 +512,13 @@ function p1_theme_sc_narrow( $atts, $content='' ) {
 	), $atts ) );
 	$content = do_shortcode( $content );
 	if ( ! empty( $class ) && ! empty( $rowclass ) )
-		return '<div class="narrow ' . $rowclass . '"><div class="col12 ' . $class . '">' . $content . '</div></div>';
+		return '<div class="narrow ' . $rowclass . '"><div class="grid-block col12 ' . $class . '">' . $content . '</div></div>';
 	elseif (! empty( $rowclass ) )
-		return '<div class="narrow ' . $rowclass . '"><div class="col12">' . $content . '</div></div>';
+		return '<div class="narrow ' . $rowclass . '"><div class="grid-block col12">' . $content . '</div></div>';
 	elseif( ! empty( $class ) )
-		return '<div class="narrow"><div class="col12 ' . $class . '">' . $content . '</div></div>';
+		return '<div class="narrow"><div class="grid-block col12 ' . $class . '">' . $content . '</div></div>';
 	else
-		return '<div class="narrow"><div class="col12">' . $content . '</div></div>';
+		return '<div class="narrow"><div class="grid-block col12">' . $content . '</div></div>';
 }
 add_shortcode( 'narrow', 'p1_theme_sc_narrow' );
 
@@ -621,6 +638,34 @@ function p1_theme_sc_youtube( $atts ) {
 		return ' ';
 }
 add_shortcode( 'youtube', 'p1_theme_sc_youtube' );
+
+/* add shortcode [break-heading]...[/break-heading] for a centered heading with a horizontal rule */
+function p1_theme_sc_break_heading( $atts, $content='' ) {
+	$output = '<div class="grid-row break-heading"><div class="grid-block col12">' .
+			'<h2>' . $content . '</h2>' .
+		'</div></div>';
+
+	return $output;
+}
+add_shortcode( 'break-heading', 'p1_theme_sc_break_heading' );
+
+/* add shortcode [breaker] for a horizontal separation rule */
+function p1_theme_sc_breaker( $atts ) {
+	$output = '<div class="grid-row break-row"><div class="grid-block col12 break-top"></div></div>' .
+		'<div class="grid-row break-row bottom-row"><div class="grid-block col12"></div></div>';
+
+	return $output;
+}
+add_shortcode( 'breaker', 'p1_theme_sc_breaker' );
+
+/* add shortcode [inline-breaker] for a horizontal separation rule inside a column */
+function p1_theme_sc_inlinebreaker( $atts ) {
+	$output = '<div class="inline-breaker inline-breaker-top"></div>' .
+		'<div class="inline-breaker inline-breaker-bottom"></div>';
+
+	return $output;
+}
+add_shortcode( 'inline-breaker', 'p1_theme_sc_inlinebreaker' );
 
 
 
