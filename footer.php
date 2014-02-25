@@ -18,7 +18,7 @@
 					?>"><?php _e( 'Imprint', 'vca-theme' ); ?></a>
 				</p>
 			</div><div class="col6 last">
-				<p class="screen-talign-right">Pool v1.4, Viva con Agua de Sankt Pauli e.V., 2012-2013</p>
+				<p class="screen-talign-right">Pool v1.5, Viva con Agua de Sankt Pauli e.V., 2012-2014</p>
 			</div>
 		</div>
 	</div>

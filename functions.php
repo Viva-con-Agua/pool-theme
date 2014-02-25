@@ -366,10 +366,10 @@ remove_action( 'init', '_wp_admin_bar_init' );
 
 /* Modify default wordpress footer */
 function p1_theme_admin_footer() {
-	echo '<span id="footer-thankyou">Developed by <a href="mailto:pille@nekkidgrandma.com">Pille</a>';
+	echo '<span id="footer-thankyou">Developed by <a href="mailto:j.pilkahn@vivaconagua.org">Pille</a>';
 }
 function p1_theme_footer_version() {
-	return 'Version 1.4';
+	return 'Version 1.5';
 }
 add_filter( 'admin_footer_text', 'p1_theme_admin_footer' );
 add_filter( 'update_footer', 'p1_theme_footer_version', 11 );

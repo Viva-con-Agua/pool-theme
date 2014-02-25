@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: VcA Pool v1.3.1\n"
+"Project-Id-Version: VcA Pool v1.4\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/twentyten\n"
 "POT-Creation-Date: 2011-06-13 13:27:43+00:00\n"
-"PO-Revision-Date: 2013-11-15 10:49:29+0000\n"
+"PO-Revision-Date: 2014-02-27 13:26:47+0100\n"
 "Last-Translator: Johannes Pilkahn <johannes@pilkahn.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -794,8 +794,10 @@ msgstr "Diese Inhalte sind nur für Benutzer mit Verwaltungszugriff gedacht. Du 
 msgid "All Posts"
 msgstr "Alle Posts"
 
-#: page-email-view.php:102
-#: page-email-view.php:112
+#: page-email-view.php:68
+#: page-email-view.php:71
+#: page-email-view.php:139
+#: page-email-view.php:149
 #@ vca-theme
 msgid "Supporter"
 msgstr "Supporter"
@@ -1217,4 +1219,14 @@ msgstr "Ansprechpartner_innen"
 msgctxt "Leave in English, if understandable"
 msgid "Community for clean water"
 msgstr "Community for clean water"
+
+#: page-email-view.php:51
+#@ vca-theme
+msgid "Activity"
+msgstr "Aktivität"
+
+#: page-email-view.php:55
+#@ vca-theme
+msgid "Your city"
+msgstr "Deine Stadt"
 
