@@ -1,4 +1,6 @@
-jQuery(window).resize(function() {
+(function($){ // closure
+
+$(window).resize(function() {
 	baselineAdjust();
 });
 
@@ -8,43 +10,39 @@ function onloadFuncs() {
 }
 
 function baselineAdjust() {
-	var viewportWidth = window.outerWidth;
-	var verticalRhythm = 21;//( jQuery('.content-container p').first().css('line-height').substring(-2, 2) * 1 );
-	jQuery(".content-container img").each(function() {
-		var imgHeight = jQuery(this).height();
-		if( jQuery(this).parent().is('p') ) {
+	var viewportWidth = window.outerWidth,
+		verticalRhythm = 21; // $('.content-container p').first().css('line-height').substring(-2, 2) * 1;
+	$(".content-container img").each(function() {
+		var imgHeight = $(this).height();
+		if( $(this).parent().is('p') ) {
 			var pImgBaselineOffset = ( imgHeight - ( verticalRhythm - ( verticalRhythm / 3 ) ) ) % verticalRhythm;
 			if ( pImgBaselineOffset !== 0 ) {
-				var imgWidth = jQuery(this).width();
+				var imgWidth = $(this).width();
 				var resizeRatio = ( imgHeight - pImgBaselineOffset ) / imgHeight;
-				jQuery(this).css( 'height', ( imgHeight - pImgBaselineOffset ) );
-				jQuery(this).css( 'width', Math.round( imgWidth * resizeRatio ) );
+				$(this).css( 'height', ( imgHeight - pImgBaselineOffset ) );
+				$(this).css( 'width', Math.round( imgWidth * resizeRatio ) );
 			}
-		} else if ( viewportWidth > 767 && ! jQuery(this).parents().is('.flexslider') ) {
+		} else if ( viewportWidth > 767 && $(this).hasClass('baseline-adjustable') ) {
 			var imgBaselineOffset = imgHeight % verticalRhythm;
-			jQuery(this).css( 'margin-bottom', ( 2 * verticalRhythm - imgBaselineOffset ) + 'px' );
+			$(this).css( 'margin-bottom', ( 2 * verticalRhythm - imgBaselineOffset ) + 'px' );
 		}
 	});
-	jQuery('.content-container iframe').each(function() {
-		var ifrWidth = jQuery(this).width();
+	$('.content-container iframe').each(function() {
+		var ifrWidth = $(this).width();
 		var ifrHeight = Math.round( ifrWidth / 1.78 );
-		jQuery(this).css( 'height', ifrHeight+'px' );
+		$(this).css( 'height', ifrHeight+'px' );
 		if ( viewportWidth > 767 ) {
 			var ifrBaselineOffset = ( ifrHeight + 6 ) % verticalRhythm; //6 accounts for borders
-			jQuery(this).css( 'margin-bottom', ( 2 * verticalRhythm - ifrBaselineOffset ) + 'px' );
+			$(this).css( 'margin-bottom', ( 2 * verticalRhythm - ifrBaselineOffset ) + 'px' );
 		}
 	});
-	jQuery('.content-container .flexslider').each(function() {
-		var sliHeight = jQuery(this).height();
+	$('.content-container .flexslider').each(function() {
+		var sliHeight = $(this).height();
 		if ( viewportWidth > 767 ) {
 			var sliBaselineOffset = sliHeight % verticalRhythm;
-			jQuery(this).css( 'margin-bottom', ( 2 * verticalRhythm - sliBaselineOffset ) + 'px' );
+			$(this).css( 'margin-bottom', ( 2 * verticalRhythm - sliBaselineOffset ) + 'px' );
 		}
 	});
 }
 
-//jQuery(document).ready( function() {
-//	var height = jQuery('footer').offset().top;
-//	alert( height );
-//	jQuery('.bg-side').height( height );
-//});
+})(jQuery); // closure

@@ -8,10 +8,16 @@
 		<div class="grid-row">
 			<div class="col6">
 				<p class="screen-talign-left">
-					<a title="Nutzungsbedingungen lesen" href="<?php bloginfo('url') ?>/nutzungsbedingungen/">Nutzungsbedingungen</a><br /><span class="nav-break"></span><a title="Datenschutzerklärung lesen" href="<?php bloginfo('url') ?>/datenschutzerklaerung/">Datenschutzerklärung</a><br /><span class="nav-break"></span><a title="Zum Impressum" href="http://vivaconagua.org/index.htm?impressum">Impressum</a>
+					<a title="<?php _e( 'Read the Terms of Use', 'vca-theme' ); ?>" href="<?php bloginfo('url') ?>/nutzungsbedingungen/"><?php _e( 'Terms of Use', 'vca-theme' ); ?></a><br /><span class="nav-break"></span><a title="<?php _e( 'Read the Privacy Policy', 'vca-theme' ); ?>" href="<?php bloginfo('url') ?>/datenschutzerklaerung/"><?php _e( 'Privacy Policy', 'vca-theme' ); ?></a><br /><span class="nav-break"></span><a title="<?php _e( 'To the Imprint', 'vca-theme' ); ?>" href="<?php
+						if ( 'ch' === p1_current_country() ) {
+							echo 'http://vivaconagua.ch/index.htm?impressum';
+						} else {
+							echo 'http://vivaconagua.org/index.htm?impressum';
+						}
+					?>"><?php _e( 'Imprint', 'vca-theme' ); ?></a>
 				</p>
 			</div><div class="col6 last">
-				<p class="screen-talign-right">Pool v1.2, Viva con Agua de Sankt Pauli e.V., 2012-2013</p>
+				<p class="screen-talign-right">Pool v1.3.2, Viva con Agua de Sankt Pauli e.V., 2012-2013</p>
 			</div>
 		</div>
 	</div>

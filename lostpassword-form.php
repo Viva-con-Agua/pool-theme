@@ -1,22 +1,26 @@
 <div class="grid-row"><div class="col6">
 <div class="login island" id="theme-my-login<?php $template->the_instance(); ?>">
+	<?php $template->the_action_template_message( 'lostpassword' ); ?>
+	<?php $template->the_errors(); ?>
 	<form name="lostpasswordform" id="lostpasswordform<?php $template->the_instance(); ?>" class="stand-alone-form" action="<?php $template->the_action_url( 'lostpassword' ); ?>" method="post">
-		<?php $template->the_action_template_message( 'lostpassword' ); ?>
-		<?php $template->the_errors(); ?>
 		<div class="form-row">
-			<label for="user_login<?php $template->the_instance(); ?>"><?php _e( 'Username or E-mail:', 'theme-my-login' ) ?></label>
+			<label for="user_login<?php $template->the_instance(); ?>"><?php _e( 'Username or E-mail:', 'vca-theme' ) ?></label>
 			<input type="text" name="user_login" id="user_login<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value( 'user_login' ); ?>" size="20" />
 		</div>
-<?php
-do_action( 'lostpassword_form' ); // Wordpress hook
-do_action_ref_array( 'tml_lostpassword_form', array( &$template ) ); // TML hook
-?>
+
+		<?php do_action( 'lostpassword_form' ); ?>
+
 		<div class="form-row">
-			<input type="submit" name="wp-submit" id="wp-submit<?php $template->the_instance(); ?>" value="<?php _e( 'Get New Password', 'theme-my-login' ); ?>" />
+			<input type="submit" name="wp-submit" id="wp-submit<?php $template->the_instance(); ?>" value="<?php esc_attr_e( 'Get New Password' ); ?>" />
 			<input type="hidden" name="redirect_to" value="<?php $template->the_redirect_url( 'lostpassword' ); ?>" />
 			<input type="hidden" name="instance" value="<?php $template->the_instance(); ?>" />
+			<input type="hidden" name="action" value="lostpassword" />
 		</div>
-		<?php $template->the_action_links( array( 'lostpassword' => false ) ); ?>
+		<?php //$template->the_action_links( array( 'lostpassword' => false ) ); ?>
+	<ul class="tml-action-links">
+		<li><a rel="nofollow" href="<?php bloginfo( 'url' ) ?>/login"><?php _e( 'Login', 'vca-theme' ) ?></a></li>
+		<li><a rel="nofollow" href="<?php bloginfo( 'url' ) ?>/register"><?php _e( 'Register', 'vca-theme' ) ?></a></li>
+	</ul>
 	</form>
 </div>
 </div><div class="col6 last">

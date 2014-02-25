@@ -1,17 +1,18 @@
 ﻿/*
 Theme Name: VcA Aktivitäts- & Supporterbereich
-Theme URI: http://tramprennen.org
+Theme URI: http://nekkidgrandma.com
 Description:
-Version: 1.1
+Version: 1.3
 Author: Johannes Pilkahn
-Author URI: http://tramprennen.org
-Author Email: johannes@pilkahn.org
+Author URI: http://nekkidgrandma.com
+Author Email: pille@nekkidgrandma.com
 Tags: 1140px Grid, 21px Baseline Grid, Fluid down to mobile
 */
 
 
 /* COLOR PALETTE
 -----------------------------------------
+
 blue100: #008fc1
 blue75: #00a8cf
 blue50: #7ec5e0
@@ -46,6 +47,17 @@ beige100: #e3cf9a
 beige75: #ebdbb3
 beige50: #f1e6cc
 beige25: #f9f3e6
+
+grey100: #646567
+grey75: #8f9092
+grey50: #b6b7b9
+grey25: #dcdcdd
+
+lightgrey100: #c5c6c8
+lightgrey100: #d5d6d7
+lightgrey100: #e3e4e5
+lightgrey100: #f1f2f2
+
 */
 
 
@@ -135,13 +147,13 @@ body {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 0 -9.9em;
+	margin: 0 0 -12em;
 	position: relative;
 }
 footer, .push {
 	height: 7.8em;
 	position: relative;
-	margin: 2.1em 0 0;
+	margin: 4.2em 0 0;
 }
 .bg-side {
 	display: none;
@@ -392,6 +404,23 @@ th {
 .padded-cell {
 	padding: 0 1em 0 0;
 }
+table.meta-table,
+table.options-table {
+	font-size: 1em;
+	margin: 0;
+}
+p.label {
+	color: #333333;
+	font-style: italic;
+	line-height: 1;
+	font-size: 1em;
+	margin: 1.1em 0 0;
+}
+p.metadata {
+	font-size: 1.2em;
+	line-height: 1.75;
+	margin: 0;
+}
 
 
 /* FORMS
@@ -450,9 +479,12 @@ select {
 }
 .form-row input,
 .form-row textarea {
+	padding: 0 .2143em;
 	display: block;
-	width: 96%;
-	padding: 1px 5px;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 select {
 	padding: 1px 5px;
@@ -681,6 +713,22 @@ ol.list ol ol li {
 	-o-transform:rotate(90deg);
 	transform:rotate(90deg);
 }
+/* specific to the activity accordion */
+.activity-accordion .acc-body p {
+	padding: 0;
+}
+.activity-accordion .acc-body .measuring-wrapper>p {
+	padding: 0 0 0 1.15em;
+}
+.activity-accordion .acc-body .measuring-wrapper>p:last-of-type {
+	margin-bottom: 0;
+}
+.activity-accordion li.activity {
+	margin-left: 1.15em;
+}
+div.single-activity p:last-of-type {
+	margin-bottom: 0;
+}
 
 
 /* TOGGLABLE ELEMENTS
@@ -713,14 +761,14 @@ ol.list ol ol li {
 }
 .toggle-arrows-wrap {
 	width: 42px;
-	height: 21px;
+	height: 11px;
 	overflow: hidden;
 	position: relative;
-	margin: 2.1em auto 0;
+	margin: 1em auto 0;
 }
 .toggle-arrows img {
 	position: absolute;
-	height: 42px;
+	height: 22px;
 	max-width: 84px;
 	width: 84px;
 }
@@ -729,7 +777,7 @@ ol.list ol ol li {
 	left: 0;
 }
 .toggle-arrows-less img {
-	top: -21px;
+	top: -11px;
 	left: 0;
 }
 .no-touch .toggle-arrows:hover img,
@@ -793,16 +841,11 @@ input[type="button"] {
 /* VCARD
 ----------------------------------------- */
 
-.vcard table {
-	font-size: 1em;
-	margin: 0;
+.island.vcard {
+	margin: 0 0 2.1em;
 }
 .vcard table td {
 	vertical-align: top;
-}
-.vcard .profile-data {
-	font-size: 1.2em;
-	line-height: 1.75;
 }
 .vcard .avatar-cell {
 	padding-left: 1em;
@@ -814,13 +857,6 @@ input[type="button"] {
 	border-radius: 2px;
 	float: right;
 }
-@media handheld, only screen and (max-width: 420px) {
-	.vcard .category-cell {
-		display: none;
-		visibility: hidden;
-	}
-}
-
 
 
 /* UTILITY (non semantic helper classes)
@@ -975,8 +1011,8 @@ p.message {
 }
 div.system-message,
 div.system-error {
-	padding: 2.1em 2.1em .1em;
-	border-radius: 2.2em;
+	padding: 1.2em 1.3em .9em;
+	border-radius: 1em;
 	background: #c4e3f0;
 	margin:0 0 4.2em;
 }
@@ -987,14 +1023,44 @@ div.system-error h3,
 div.system-error p {
 	color: #00586c;
 }
+div.system-error p:last-child {
+	margin-bottom: 0;
+}
 .island {
-	padding: 2.1em;
-	border-radius: 2.2em;
+	padding: 1.2em 1.3em .9em;
+	border-radius: 1em;
 	background: #c4e3f0;
 	margin:0 0 4.2em;
 }
 .island-cut-off {
 	padding-bottom: .1em;
+}
+.multi-selects select {
+	margin-left: .3em;
+}
+.thin {
+	font-weight: 400 !important;
+}
+
+
+
+/* CONTROL STRUCTURES
+----------------------------------------- */
+
+.options-island {
+	margin:0 0 2.1em;
+}
+.options-table  a {
+	color: #002a3d;
+}
+.no-touch .options-table  a:hover,
+.options-table  a:active,
+.options-table  a:focus {
+	text-shadow: 0 0 2px #008fc1;
+}
+.options-table a.active-option {
+	text-shadow: 0 0 2px #008fc1;
+	font-weight: 700;
 }
 
 
@@ -1022,21 +1088,6 @@ footer br {
 	.screen-talign-left,
 	.screen-talign-right {
 		text-align: center;
-	}
-	/*
-	p,
-	table,
-	.accordion h5,
-	#tooltip,
-	.form-row label,
-	.form-row input,
-	.form-row div {
-		font-size: 1.6em !important;
-	}
-	*/
-	.form-row input,
-	.form-row textarea {
-		width: 94%;
 	}
 
 	/* HEADER & NAV */
@@ -1075,10 +1126,13 @@ footer br {
 		position: relative;
 		float: right;
 	}
+	#menu-button a {
+		display: block;
+	}
 	#menu-button img {
 		position: absolute;
-		width: 36px;
 		height: 58px;
+		width: 36px;
 		top: 0;
 		left: 0;
 	}
@@ -1169,11 +1223,11 @@ footer br {
 		display: none;
 	}
 	.wrapper {
-		margin-bottom: -12.3em;
+		margin-bottom: -14.4em;
 	}
 	footer, .push {
 		height: 10.2em;
-		margin: 2.1em 0 0;
+		margin: 4.2em 0 0;
 	}
 	footer .grid-row {
 		padding: .6em 0 .2em;
@@ -1210,11 +1264,11 @@ footer br {
 		display: none;
 	}
 	.wrapper {
-		margin-bottom: -15.9em;
+		margin-bottom: -18em;
 	}
 	footer, .push {
 		height: 13.8em;
-		margin: 2.1em 0 0;
+		margin: 4.2em 0 0;
 	}
 	header .site-title {
 		padding-top: .944444em;
@@ -1232,11 +1286,11 @@ footer br {
 
 @media handheld, only screen and (max-width: 300px) {
 	.wrapper {
-		margin-bottom: -17.7em;
+		margin-bottom: -19.8em;
 	}
 	footer, .push {
 		height: 15.6em;
-		margin: 2.1em 0 0;
+		margin: 4.2em 0 0;
 	}
 }
 

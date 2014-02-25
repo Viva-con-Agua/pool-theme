@@ -11,7 +11,7 @@
 		</div><div class="form-row">
 			<div id="pass-strength-result" class="hide-if-no-js"><?php _e( 'Strength indicator', 'theme-my-login' ); ?></div>
 		</div><div class="form-row">
-		<p class="description indicator-hint"><?php _e( 'Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! " ? $ % ^ &amp; ).' ); ?></p>
+		<p class="description indicator-hint"><?php _e( 'Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! " ? $ % ^ &amp; ).', 'vca-theme' ); ?></p>
 		</div>
 <?php
 do_action( 'resetpassword_form' ); // Wordpress hook
@@ -23,6 +23,10 @@ do_action_ref_array( 'tml_resetpassword_form', array( $template ) ); // TML hook
 			<input type="hidden" name="login" id="user_login" value="<?php $template->the_posted_value( 'login' ); ?>" />
 			<input type="hidden" name="instance" value="<?php $template->the_instance(); ?>" />
 		</div>
-	<?php $template->the_action_links( array( 'lostpassword' => false ) ); ?>
+	<?php //$template->the_action_links( array( 'lostpassword' => false ) ); ?>
+	<ul class="tml-action-links">
+		<li><a rel="nofollow" href="<?php bloginfo( 'url' ) ?>/login"><?php _e( 'Login', 'vca-theme' ) ?></a></li>
+		<li><a rel="nofollow" href="<?php bloginfo( 'url' ) ?>/register"><?php _e( 'Register', 'vca-theme' ) ?></a></li>
+	</ul>
 	</form>
 </div>

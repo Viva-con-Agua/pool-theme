@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="no-js ie ie6 oldie"> <![endif]-->
 <!--[if IE 7 ]>    <html <?php language_attributes(); ?> class="no-js ie ie7 oldie"> <![endif]-->
 <!--[if IE 8 ]>    <html <?php language_attributes(); ?> class="no-js ie ie8 oldie"> <![endif]-->
@@ -30,9 +31,9 @@
 	<link rel="icon" href="<?php bloginfo('template_url'); ?>/images/icons/favicon.ico" />
 	<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/icons/favicon.ico" />
 
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/reset.css?ver=1.19" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/grid.css?ver=1.19" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>?ver=1.191" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/reset.css?ver=1.3.2" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/grid.css?ver=1.3.2" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>?ver=1.3.2.2" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 	<?php wp_head(); ?>
@@ -45,19 +46,29 @@
 
 	<div class="wrapper">
 
-		<div class="bg-side bg-left"></div>
-		<div class="bg-side bg-right"></div>
+		<!--<div class="bg-side bg-left"></div>
+		<div class="bg-side bg-right"></div>-->
 
 		<header>
 			<div class="grid-container screen">
 				<div class="grid-row">
 					<div class="col2">
-						<a title="<?php _e( 'Visit the main website', 'vca-theme' ); ?>" href="http://<?php _e( 'vivaconagua.org', 'vca-theme' ); ?>">
-							<img id="logo" alt="Logo" src="<?php bloginfo('template_url'); ?>/images/logo.png" />
+						<a title="<?php _e( 'Visit the main website', 'vca-theme' ); ?>" href="http://<?php
+							if ( 'ch' === p1_current_country() ) {
+								echo 'vivaconagua.ch';
+							} else {
+								echo 'vivaconagua.org';
+							}
+						?>">
+							<?php if ( 'ch' === p1_current_country() ) : ?>
+								<img id="logo" alt="Logo" src="<?php bloginfo('template_url'); ?>/images/logo-ch.png" />
+							<?php else : ?>
+								<img id="logo" alt="Logo" src="<?php bloginfo('template_url'); ?>/images/logo.png" />
+							<?php endif; ?>
 						</a>
 					</div><div class="col3">
 					</div><div class="col2">
-						<?php if ( is_home() || is_single() || is_post_type_archive( 'post' ) ) : ?>
+						<?php if ( ( is_home() || is_single() || is_post_type_archive( 'post' ) ) && 'post' == get_post_type() ) : ?>
 							<a title="<?php _e( 'All Posts', 'vca-theme' ); ?>" href="<?php bloginfo('url'); ?>">
 								<img id="blog-logo" class="center-logo" alt="BLOG" src="<?php bloginfo('template_url'); ?>/images/blog-logo.png" />
 							</a>
@@ -67,16 +78,28 @@
 							</a>
 						<?php endif; ?>
 					</div><div class="col5 last">
-						<?php pille_pool_menu( 'screen' ); ?>
+						<?php p1_pool_menu( 'screen' ); ?>
 					</div>
 				</div>
 			</div>
 			<div id="swim-in-the-pool" class="grid-container mobile">
 				<div class="grid-row mobile-header">
 					<div class="col12">
-						<p class="site-title"><strong><a title="<?php __( 'vivaconagua.org', 'vca-theme' ); ?>" href="http://vivaconagua.org">Viva con Agua</a></strong><a title="<?php __( 'Back to the Start', 'vca-theme' ); ?>" href="<?php bloginfo('url'); ?>"> Pool</a></p>
+						<p class="site-title"><strong><a title="<?php
+							if ( 'ch' === p1_current_country() ) {
+								echo 'vivaconagua.ch';
+							} else {
+								echo 'vivaconagua.org';
+							}
+						?>" href="<?php
+							if ( 'ch' === p1_current_country() ) {
+								echo 'http://vivaconagua.ch';
+							} else {
+								echo 'http://vivaconagua.org';
+							}
+						?>">Viva con Agua</a></strong><a title="<?php __( 'Back to the Start', 'vca-theme' ); ?>" href="<?php bloginfo('url'); ?>"> Pool</a></p>
 						<div id="menu-button"><a href="#nav"><img alt="<?php __( 'Navigation Menu', 'vca-theme' ); ?>" src="<?php bloginfo('template_url'); ?>/images/menu@2x.png" /></a></div>
-						<?php pille_pool_menu( 'mobile' ); ?>
+						<?php p1_pool_menu( 'mobile' ); ?>
 					</div>
 				</div>
 			</div>

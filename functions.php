@@ -1,53 +1,51 @@
 <?php
 
+/* INCLUDES
+----------------------------------------- */
+
+require_once('includes/class-p1-utilities.php');
+
 /* THEME ESSENTIALS
 ----------------------------------------- */
 
 /* load theme textdomain */
-function pille_theme_setup(){
+function p1_theme_setup(){
 	load_theme_textdomain('vca-theme', get_template_directory() . '/languages');
 }
-add_action('after_setup_theme', 'pille_theme_setup');
+add_action('after_setup_theme', 'p1_theme_setup');
 
 /* loads scripts & libraries */
-function pille_theme_load_scripts() {
+function p1_theme_load_scripts() {
 	if ( ! is_admin() ) {
 		wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', false, '2.6.2' );
 		wp_enqueue_script( 'modernizr' );
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', false, '1.7.1' );
+		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js', false, '2.0.0' );
 		wp_enqueue_script( 'jquery' );
-		wp_register_script( 'mediaqueries', get_template_directory_uri() . '/js/css3-mediaqueries.js', false, false, true );
+		wp_register_script( 'mediaqueries', get_template_directory_uri() . '/js/css3-mediaqueries.js', false, '1.3.2', true );
 		wp_enqueue_script( 'mediaqueries' );
-		wp_register_script( 'jquery-scrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.js', false, false, true );
+		wp_register_script( 'jquery-scrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.js', false, '1.3.2', true );
 		wp_enqueue_script( 'jquery-scrollTo' );
-		wp_register_script( 'pille-plugins', get_template_directory_uri() . '/js/plugins.js', false, false, true );
+		wp_register_script( 'pille-plugins', get_template_directory_uri() . '/js/plugins.js', false, '1.3.2', true );
 		wp_enqueue_script( 'pille-plugins' );
-		wp_register_script( 'pille-accordion', get_template_directory_uri() . '/js/pille-accordion.js', false, false, true );
+		wp_register_script( 'pille-accordion', get_template_directory_uri() . '/js/pille-accordion.js', false, '1.3.2', true );
 		wp_enqueue_script( 'pille-accordion' );
-		wp_register_script( 'pille-baseline-grid', get_template_directory_uri() . '/js/pille-baseline-grid.js', false, false, true );
+		wp_register_script( 'pille-baseline-grid', get_template_directory_uri() . '/js/pille-baseline-grid.js', false, '1.3.2', true );
 		wp_enqueue_script( 'pille-baseline-grid' );
-		wp_register_script( 'pille-form-styling', get_template_directory_uri() . '/js/pille-form-styling.js', false, false, true );
+		wp_register_script( 'pille-form-styling', get_template_directory_uri() . '/js/pille-form-styling.js', false, '1.3.2', true );
 		wp_enqueue_script( 'pille-form-styling' );
-		wp_register_script( 'pille-tooltip', get_template_directory_uri() . '/js/pille-tooltip.js', false, false, true );
+		wp_register_script( 'pille-tooltip', get_template_directory_uri() . '/js/pille-tooltip.js', false, '1.3.2', true );
 		wp_enqueue_script( 'pille-tooltip' );
-		wp_register_script( 'pille-toggle', get_template_directory_uri() . '/js/pille-toggle-element.js', false, false, true );
+		wp_register_script( 'pille-toggle', get_template_directory_uri() . '/js/pille-toggle-element.js', false, '1.3.2', true );
 		wp_enqueue_script( 'pille-toggle' );
 	}
 }
-add_action ( 'init', 'pille_theme_load_scripts' );
-
-function zs_admin_debug(  $user_login, $user  ) {
-    if ( in_array( 'administrator', $user->roles ) ) {
-        setcookie( 'wp_debug', 'on', time() + 86400 );
-    }
-}
-add_action( 'wp_login', 'zs_admin_debug', 10, 2 );
+add_action ( 'init', 'p1_theme_load_scripts' );
 
 /* Add native menu support */
 /* --- currently not in use ---
 if ( function_exists( 'register_nav_menus' ) ) {
-	function pille_theme_register_menus() {
+	function p1_theme_register_menus() {
 		register_nav_menus(
 			array(
 			'menu-main' => __( 'Main Navigation' ),
@@ -55,23 +53,40 @@ if ( function_exists( 'register_nav_menus' ) ) {
 			)
 		);
 	}
-	add_action( 'init', 'pille_theme_register_menus' );
+	add_action( 'init', 'p1_theme_register_menus' );
 }
 */
 
 /* Register widgetized areas */
-function pille_theme_widgets_init() {
+function p1_theme_widgets_init() {
 
 }
-add_action( 'widgets_init', 'pille_theme_widgets_init' );
+add_action( 'widgets_init', 'p1_theme_widgets_init' );
 
 /* Navigation Menu */
-function pille_get_admin_link(){
+function p1_get_admin_link(){
 	global $current_user;
 	get_currentuserinfo();
 
-	$admins_haystack = array( 'administrator', 'content_admin' );
-	$deps_haystack = array( 'activities', 'education', 'network' );
+	$admins_haystack = array(
+		'administrator',
+		'management_global',
+		'management_national'
+	);
+	$deps_haystack = array(
+		'actions_global',
+		'actions_national',
+		'education_global',
+		'education_national',
+		'financial_global',
+		'financial_national',
+		'network_global',
+		'network_national'
+	);
+	$watch_haystack = array(
+		'watchdog_global',
+		'watchdog_national'
+	);
 
 	$admin_link = '<a title="';
 
@@ -79,8 +94,10 @@ function pille_get_admin_link(){
 		$admin_link .= _x( 'Manage the Pool', 'Navigation', 'vca-theme' );
 	} elseif( count( array_intersect( $deps_haystack, $current_user->roles ) ) > 0 ) {
 		$admin_link .=  _x( 'Manage your department', 'Navigation', 'vca-theme' );
-	} elseif( in_array( 'head_of', $current_user->roles ) ) {
-		$admin_link .= _x( 'Manage your region', 'Navigation', 'vca-theme' );
+	} elseif( count( array_intersect( $watch_haystack, $current_user->roles ) ) > 0 ) {
+		$admin_link .=  _x( 'View what&apos;going on', 'Navigation', 'vca-theme' );
+	} elseif( in_array( 'city', $current_user->roles ) ) {
+		$admin_link .= _x( 'Manage your city', 'Navigation', 'vca-theme' );
 	} else {
 		return false;
 	}
@@ -97,7 +114,7 @@ function pille_get_admin_link(){
 	return $admin_link;
 }
 
-function pille_pool_menu( $medium ){
+function p1_pool_menu( $medium ){
 	global $current_user;
 	get_currentuserinfo();
 
@@ -147,8 +164,8 @@ function pille_pool_menu( $medium ){
 					global $current_user;
 					get_currentuserinfo();
 
-					if( pille_get_admin_link() ) {
-						$output .= '<li>' . pille_get_admin_link() . '</li>';
+					if( p1_get_admin_link() ) {
+						$output .= '<li>' . p1_get_admin_link() . '</li>';
 					}
 
 					$output .= '<li><a title="' .
@@ -214,12 +231,12 @@ function pille_pool_menu( $medium ){
 							$output .= ' class="current-menu-item"';
 						}
 						$output .= '>' .
-								_x( 'Login ', 'Navigation', 'vca-theme' );
+								_x( 'Login', 'Navigation', 'vca-theme' );
 					}
 					$output .= '</a><span class="nav-break"></span>';
 
-					if( is_user_logged_in() && pille_get_admin_link() )  {
-						$output .= pille_get_admin_link() . '<span class="nav-break"></span>';
+					if( is_user_logged_in() && p1_get_admin_link() )  {
+						$output .= p1_get_admin_link() . '<span class="nav-break"></span>';
 					}
 
 					$output .= '<a title="' .
@@ -235,7 +252,7 @@ function pille_pool_menu( $medium ){
 
 	echo $output;
 }
-add_action('after_setup_theme', 'pille_theme_setup');
+add_action('after_setup_theme', 'p1_theme_setup');
 
 
 
@@ -247,71 +264,71 @@ remove_filter ( 'the_content',  'wpautop' );
 remove_filter ( 'the_excerpt',  'wpautop' );
 
 /* selectively disable the visual editor */
-function pille_theme_disable_visual_editor_on_pages( $setting ) {
+function p1_theme_disable_visual_editor_on_pages( $setting ) {
 	global $post_type, $current_user;
 
 	if ( 'page' === $post_type && in_array( 'administrator', $current_user->roles ) )
 		return false;
 	return $setting;
 }
-add_filter( 'user_can_richedit', 'pille_theme_disable_visual_editor_on_pages');
+add_filter( 'user_can_richedit', 'p1_theme_disable_visual_editor_on_pages');
 
 /* Sets the post excerpt length to 40 characters */
-function pille_theme_excerpt_length( $length ) {
+function p1_theme_excerpt_length( $length ) {
 	return 40;
 }
-add_filter( 'excerpt_length', 'pille_theme_excerpt_length' );
+add_filter( 'excerpt_length', 'p1_theme_excerpt_length' );
 
 /* Returns a "Continue Reading" link for excerpts */
-function pille_theme_continue_reading_link() {
+function p1_theme_continue_reading_link() {
 	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'vca-theme' ) . '</a>';
 }
 
 /* Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and twentyten_continue_reading_link() */
-function pille_theme_auto_excerpt_more( $more ) {
-	return ' &hellip;' . pille_theme_continue_reading_link();
+function p1_theme_auto_excerpt_more( $more ) {
+	return ' &hellip;' . p1_theme_continue_reading_link();
 }
-add_filter( 'excerpt_more', 'pille_theme_auto_excerpt_more' );
+add_filter( 'excerpt_more', 'p1_theme_auto_excerpt_more' );
 
 /* Adds a pretty "Continue Reading" link to custom post excerpts */
-function pille_theme_custom_excerpt_more( $output ) {
+function p1_theme_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= pille_theme_continue_reading_link();
+		$output .= p1_theme_continue_reading_link();
 	}
 	return $output;
 }
-add_filter( 'get_the_excerpt', 'pille_theme_custom_excerpt_more' );
+add_filter( 'get_the_excerpt', 'p1_theme_custom_excerpt_more' );
 
 /* Security fix (hides wp version in html head element) */
 remove_action('wp_head', 'wp_generator');
 
 /* remove pings to self */
-function pille_theme_no_self_ping( &$links ) {
+function p1_theme_no_self_ping( &$links ) {
 	$home = get_option( 'home' );
 	foreach ( $links as $l => $link )
 		if ( 0 === strpos( $link, $home ) )
 			unset($links[$l]);
 }
-add_action( 'pre_ping', 'pille_theme_no_self_ping' );
+add_action( 'pre_ping', 'p1_theme_no_self_ping' );
 
 /* Disable outdated browser notice */
-function pille_theme_no_browser_nag() {
+function p1_theme_no_browser_nag() {
 	$key = md5( $_SERVER['HTTP_USER_AGENT'] );
-	add_filter( 'site_transient_browser_' . $key, 'pille_theme_return_null' );
+	add_filter( 'site_transient_browser_' . $key, 'p1_theme_return_null' );
 }
-function pille_theme_return_null() {
+function p1_theme_return_null() {
 	return null;
 }
-add_action( 'admin_init', 'pille_theme_no_browser_nag' );
+add_action( 'admin_init', 'p1_theme_no_browser_nag' );
 
 /* custom options page with truly all wp settings showing*/
-function pille_theme_all_settings_link() {
-	add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
+function p1_theme_all_settings_link() {
+	add_options_page( __( 'All Settings', 'vca-theme' ), __( 'All Settings', 'vca-theme' ), 'administrator', 'options.php');
 }
-add_action('admin_menu', 'pille_theme_all_settings_link');
+add_action('admin_menu', 'p1_theme_all_settings_link');
 
 /* disable the wordpress global admin bar for logged-in users */
-function pille_disable_admin_bar() {
+function p1_disable_admin_bar() {
 	remove_action( 'admin_footer', 'wp_admin_bar_render', 1000 );
 	function remove_admin_bar_style_backend() {
 	  echo '<style>html.wp-toolbar, body.admin-bar #wpcontent, body.admin-bar #adminmenu { padding-top: 0px !important; }</style>';
@@ -327,58 +344,54 @@ function pille_disable_admin_bar() {
 	}
 	add_filter( 'wp_head', 'remove_admin_bar_style_frontend', 99);
 }
-add_action( 'init', 'pille_disable_admin_bar' );
+add_action( 'init', 'p1_disable_admin_bar' );
 remove_action( 'init', '_wp_admin_bar_init');
 
 /* Modify default wordpress footer */
-function pille_theme_admin_footer() {
-    echo '<span id="footer-thankyou">Developed by <a href="mailto:pille@nekkidgrandma.com">Pille</a>';
+function p1_theme_admin_footer() {
+	echo '<span id="footer-thankyou">Developed by <a href="mailto:pille@nekkidgrandma.com">Pille</a>';
 }
-function pille_theme_footer_version() {
-    return 'Version 1.19_beta-3';
+function p1_theme_footer_version() {
+	return 'Version 1.3.2';
 }
-add_filter('admin_footer_text', 'pille_theme_admin_footer');
-add_filter( 'update_footer', 'pille_theme_footer_version', 11 );
+add_filter('admin_footer_text', 'p1_theme_admin_footer');
+add_filter( 'update_footer', 'p1_theme_footer_version', 11 );
 
 /* Kick users with the role "supporter" from the backend when accessed with a direct link */
 function redirect_supporters_from_dash() {
 	global $current_user;
 	get_currentuserinfo();
 
-	if (  in_array( 'supporter', $current_user->roles ) ) {
+	if ( in_array( 'supporter', $current_user->roles ) ) {
 		header( 'Location: http://pool.vivaconagua.org' );
 	}
 }
 add_action( 'admin_init', 'redirect_supporters_from_dash');
 
 /* Remove the "Dashboard" from the admin menu for non-admin users */
-function pille_remove_dashboard () {
-	global $current_user, $menu, $submenu;
-	get_currentuserinfo();
+function p1_remove_dashboard() {
+	global $blog, $current_user, $id, $parent_file, $wphd_user_capability, $wp_db_version;
 
-	if( ! in_array( 'administrator', $current_user->roles ) ) {
-        reset( $menu );
-		$page = key( $menu );
-        while( ( __( 'Dashboard' ) != $menu[$page][0] ) && next( $menu ) ) {
-            $page = key( $menu );
-        }
-        if( __( 'Dashboard' ) == $menu[$page][0] ) {
-			unset( $menu[$page] );
+	if ( ! in_array( 'administrator', $current_user->roles ) ) {
+
+		/* First, let's get rid of the Update nag */
+		echo "\n" . '<style type="text/css" media="screen">#your-profile { display: none; } .update-nag { display: none !important; }</style>';
+
+		/* Now, let's fix the sidebar admin menu - go away, Dashboard link. */
+		remove_menu_page( 'index.php' );		/* Hides Dashboard menu */
+		remove_menu_page( 'separator1' );		/* Hides separator under Dashboard menu*/
+		remove_menu_page( 'theme_my_login' );
+
+		/* Redirect to home */
+		if ( preg_match( '#wp-admin/?(index.php)?$#', $_SERVER['REQUEST_URI'] ) ) {
+			wp_redirect( get_option( 'siteurl' ) . '/wp-admin/admin.php?page=vca-asm-home');
 		}
-        reset($menu);
-		$page = key($menu);
-        while ( ! $current_user->has_cap( $menu[$page][1] ) && next( $menu ) ) {
-                $page = key( $menu );
-        }
-        if ( preg_match( '#wp-admin/?(index.php)?$#', $_SERVER['REQUEST_URI'] ) && ( 'index.php' != $menu[$page][2] ) ) {
-                wp_redirect( get_option( 'siteurl' ) . '/wp-admin/admin.php?page=vca-asm-home');
-        }
 	}
 }
-add_action('admin_menu', 'pille_remove_dashboard');
+add_action( 'admin_head', 'p1_remove_dashboard', 0 );
 
 /* Other admin UI fixes */
-function pille_admin_ui_fixes() {
+function p1_admin_ui_fixes() {
 	global $current_user, $menu, $submenu;
 	get_currentuserinfo();
 
@@ -402,7 +415,7 @@ function pille_admin_ui_fixes() {
 		add_filter('admin_head','remove_admin_menu_sep');
 	}
 }
-add_action('admin_menu', 'pille_admin_ui_fixes');
+add_action('admin_menu', 'p1_admin_ui_fixes');
 
 
 
@@ -410,7 +423,7 @@ add_action('admin_menu', 'pille_admin_ui_fixes');
 ----------------------------------------- */
 
 /* add shortcode [fullrow]...[/fullrow] for adding a 12 column wide one-block row */
-function pille_theme_sc_full_row( $atts, $content='' ) {
+function p1_theme_sc_full_row( $atts, $content='' ) {
 	extract( shortcode_atts( array(
 		'class' => '',
 		'rowclass' => '',
@@ -425,10 +438,10 @@ function pille_theme_sc_full_row( $atts, $content='' ) {
 	else
 		return '<div class="grid-row"><div class="col12">' . $content . '</div></div>';
 }
-add_shortcode( 'fullrow', 'pille_theme_sc_full_row' );
+add_shortcode( 'fullrow', 'p1_theme_sc_full_row' );
 
 /* add shortcode [fblock]...[/fblock] for adding the first block of a row */
-function pille_theme_sc_first_block( $atts, $content='' ) {
+function p1_theme_sc_first_block( $atts, $content='' ) {
 	extract( shortcode_atts( array(
 		'cols' => 3,
 		'class' => '',
@@ -444,10 +457,10 @@ function pille_theme_sc_first_block( $atts, $content='' ) {
 	else
 		return '<div class="grid-row"><div class="col' . $cols . '">' . $content . '</div>';
 }
-add_shortcode( 'fblock', 'pille_theme_sc_first_block' );
+add_shortcode( 'fblock', 'p1_theme_sc_first_block' );
 
 /* add shortcode [mblock]...[/mblock] for adding blocks in the middle of a row */
-function pille_theme_sc_middle_block( $atts, $content='' ) {
+function p1_theme_sc_middle_block( $atts, $content='' ) {
 	extract( shortcode_atts( array(
 		'cols' => 6,
 		'class' => ''
@@ -458,10 +471,10 @@ function pille_theme_sc_middle_block( $atts, $content='' ) {
 	else
 		return '<div class="col' . $cols . '">' . $content . '</div>';
 }
-add_shortcode( 'mblock', 'pille_theme_sc_middle_block' );
+add_shortcode( 'mblock', 'p1_theme_sc_middle_block' );
 
 /* add shortcode [lblock]...[/lblock] for adding the last block of a row */
-function pille_theme_sc_last_block( $atts, $content='' ) {
+function p1_theme_sc_last_block( $atts, $content='' ) {
 	extract( shortcode_atts( array(
 		'cols' => 3,
 		'class' => ''
@@ -472,10 +485,10 @@ function pille_theme_sc_last_block( $atts, $content='' ) {
 	else
 		return '<div class="col' . $cols . ' last">' . $content . '</div></div>';
 }
-add_shortcode( 'lblock', 'pille_theme_sc_last_block' );
+add_shortcode( 'lblock', 'p1_theme_sc_last_block' );
 
 /* add shortcode [narrow]...[/narrow] for adding a (max.) 600px wide one-block row */
-function pille_theme_sc_narrow( $atts, $content='' ) {
+function p1_theme_sc_narrow( $atts, $content='' ) {
 	extract( shortcode_atts( array(
 		'class' => '',
 		'rowclass' => '',
@@ -490,7 +503,7 @@ function pille_theme_sc_narrow( $atts, $content='' ) {
 	else
 		return '<div class="narrow"><div class="col12">' . $content . '</div></div>';
 }
-add_shortcode( 'narrow', 'pille_theme_sc_narrow' );
+add_shortcode( 'narrow', 'p1_theme_sc_narrow' );
 
 
 
@@ -498,14 +511,14 @@ add_shortcode( 'narrow', 'pille_theme_sc_narrow' );
 ----------------------------------------- */
 
 /* add shortcode [accordion]...[/accordion] */
-function pille_theme_create_accordion( $atts, $content='' ) {
+function p1_theme_create_accordion( $atts, $content='' ) {
 	$content = do_shortcode( $content );
 	return '<div class="accordion">' . $content . '</div>';
 }
-add_shortcode( 'accordion', 'pille_theme_create_accordion' );
+add_shortcode( 'accordion', 'p1_theme_create_accordion' );
 
 /* add shortcode [accsection num="x" title="x"]...[/accsection] */
-function pille_theme_create_accordion_section( $atts, $content='' ) {
+function p1_theme_create_accordion_section( $atts, $content='' ) {
 	extract( shortcode_atts( array(
 		'num' => 1,
 		'title' => 'You forgot the title!',
@@ -521,7 +534,7 @@ function pille_theme_create_accordion_section( $atts, $content='' ) {
 		$content .
 		'</div></div></section>';
 }
-add_shortcode( 'accsection', 'pille_theme_create_accordion_section' );
+add_shortcode( 'accsection', 'p1_theme_create_accordion_section' );
 
 
 
@@ -529,7 +542,7 @@ add_shortcode( 'accsection', 'pille_theme_create_accordion_section' );
 ----------------------------------------- */
 
 /* add shortcode [bloginfo] for bloginfo functions within a page or post */
-function pille_theme_sc_bloginfo( $atts ) {
+function p1_theme_sc_bloginfo( $atts ) {
 	extract( shortcode_atts( array(
 		'key' => ''
 	), $atts ) );
@@ -539,10 +552,10 @@ function pille_theme_sc_bloginfo( $atts ) {
 		return get_option( 'siteurl' );
 	}
 }
-add_shortcode('bloginfo', 'pille_theme_sc_bloginfo');
+add_shortcode('bloginfo', 'p1_theme_sc_bloginfo');
 
 /* add shortcode [logged-in]...[/logged-in] to enclose content only visible to logged in users */
-function pille_theme_sc_logged_in( $atts, $content='' ) {
+function p1_theme_sc_logged_in( $atts, $content='' ) {
 	$content = do_shortcode( $content );
 	if( is_user_logged_in() ) {
 		return $content;
@@ -550,10 +563,10 @@ function pille_theme_sc_logged_in( $atts, $content='' ) {
 		return '';
 	}
 }
-add_shortcode('logged-in', 'pille_theme_sc_logged_in');
+add_shortcode('logged-in', 'p1_theme_sc_logged_in');
 
 /* add shortcode [logged-out]...[/logged-out] to enclose content only visible to guests and logged out users */
-function pille_theme_sc_logged_out( $atts, $content='' ) {
+function p1_theme_sc_logged_out( $atts, $content='' ) {
 	$content = do_shortcode( $content );
 	if( is_user_logged_in() ) {
 		return '';
@@ -561,12 +574,26 @@ function pille_theme_sc_logged_out( $atts, $content='' ) {
 		return $content;
 	}
 }
-add_shortcode('logged-out', 'pille_theme_sc_logged_out');
+add_shortcode('logged-out', 'p1_theme_sc_logged_out');
+
+/* add shortcode [country-content]...[/country-content] to enclose country-specific content */
+function p1_theme_sc_ctr_content( $atts, $content='' ) {
+	extract( shortcode_atts( array(
+		'ctr' => 'de'
+	), $atts ) );
+	$content = do_shortcode( $content );
+	if( p1_current_country() === $ctr ) {
+		return $content;
+	} else {
+		return '';
+	}
+}
+add_shortcode('country-content', 'p1_theme_sc_ctr_content');
 
 /* add shortcode [not-supporter]...[/not-supporter] to enclose content only visible to logged in users with higher user levels */
-function pille_theme_sc_not_supporter( $atts, $content='' ) {
+function p1_theme_sc_not_supporter( $atts, $content='' ) {
 	$content = do_shortcode( $content );
-	$message = '<div class="system-error"><p>' . _x( 'This content is visible to administrative users only. You are either not logged into the Pool, or you do not have sufficient rights to see this. Sorry, mate.', 'System Notification', 'vca-asm' ) . '</p></div>';
+	$message = '<div class="system-error"><p>' . _x( 'This content is visible to administrative users only. You are either not logged into the Pool, or you do not have sufficient rights to see this. Sorry, mate.', 'System Notification', 'vca-theme' ) . '</p></div>';
 	if( ! is_user_logged_in() ) {
 		return $message;
 	} else {
@@ -579,10 +606,10 @@ function pille_theme_sc_not_supporter( $atts, $content='' ) {
 		}
 	}
 }
-add_shortcode('not-supporter', 'pille_theme_sc_not_supporter');
+add_shortcode('not-supporter', 'p1_theme_sc_not_supporter');
 
 /* add shortcode [youtube] for inserting a youtube video */
-function pille_theme_sc_youtube( $atts ) {
+function p1_theme_sc_youtube( $atts ) {
 	extract( shortcode_atts( array(
 		'id' => '',
 		'width' => 346,
@@ -593,27 +620,27 @@ function pille_theme_sc_youtube( $atts ) {
 	else
 		return ' ';
 }
-add_shortcode( 'youtube', 'pille_theme_sc_youtube' );
+add_shortcode( 'youtube', 'p1_theme_sc_youtube' );
 
 
 
 /* REDIRECTS (DEPRECATED)
 ----------------------------------------- */
 
-function pille_pool_uri_fixes() {
+function p1_pool_uri_fixes() {
 	$page_uri = $_SERVER["REQUEST_URI"];
 	$page_uri_sub = substr( $page_uri, 0, 24 );
 
 	if( $page_uri_sub == '/?action=login&instance=' && is_home() ) {
 		if( isset( $template ) ) {
-			$GLOBALS['pille_asm_login_errors'] = $template->get_errors;
+			$GLOBALS['p1_asm_login_errors'] = $template->get_errors;
 		}
 		$redirect_url = 'http://pool.vivaconagua.org/login/';
 		wp_redirect( $redirect_url, 302 );
 		exit;
 	}
 }
-add_action( 'wp_head', 'pille_pool_uri_fixes' );
+add_action( 'wp_head', 'p1_pool_uri_fixes' );
 
 
 
@@ -771,12 +798,44 @@ endif;
 
 
 
+/* RETURN CURRENT COUNTRY (2-digit code)
+----------------------------------------- */
+
+function p1_current_country()
+{
+    if ( ! empty( $_SERVER['SERVER_NAME'] ) ) {
+        $domain = $_SERVER['SERVER_NAME'];
+    } elseif ( ! isset( $domain ) && ! empty( $_SERVER['HTTP_HOST'] ) ) {
+		$domain = $_SERVER['HTTP_HOST'];
+	}
+
+	if ( 'pool.vivaconagua.ch' === $domain ) {
+		return 'ch';
+	}
+
+    return 'de';
+}
+
 /* FIX FOR F*CKING "MAGIC" (yeah right, my ass) QUOTES
 ----------------------------------------- */
 
 if ( get_magic_quotes_gpc() ) {
-    $_POST      = array_map( 'stripslashes_deep', $_POST );
-    $_GET       = array_map( 'stripslashes_deep', $_GET );
-    $_COOKIE    = array_map( 'stripslashes_deep', $_COOKIE );
-    $_REQUEST   = array_map( 'stripslashes_deep', $_REQUEST );
+	$_POST = array_map( 'stripslashes_deep', $_POST );
+	$_GET = array_map( 'stripslashes_deep', $_GET );
+	$_COOKIE = array_map( 'stripslashes_deep', $_COOKIE );
+	$_REQUEST = array_map( 'stripslashes_deep', $_REQUEST );
 }
+
+
+
+/* TEMPORARY HACKS (i.e. non-solutions)
+----------------------------------------- */
+
+function p1_gettext_filter( $translation, $text )
+{
+	if ( ! is_admin() && 'Confirm Password' === $text ) {
+		return __( 'Confirm the Password', 'vca-theme' );
+	}
+	return $translation;
+}
+add_filter( 'gettext', 'p1_gettext_filter', 10, 2 );

@@ -11,7 +11,7 @@ foreach ( array( 'posts', 'pages' ) as $post_cap ) {
 global $current_user;
 get_currentuserinfo();
 
-if( ( is_array( $current_user->roles ) && in_array( 'head_of', $current_user->roles ) ) || ( ! is_array( $current_user->roles ) && 'head_of' == $current_user->roles ) ) {
+if ( ( is_array( $current_user->roles ) && in_array( 'city', $current_user->roles ) ) ) {
 	$head_of_switch = true;
 	$disable_field = ' disabled="disabled"';
 } else {
@@ -29,21 +29,30 @@ if( ( is_array( $current_user->roles ) && in_array( 'head_of', $current_user->ro
 		<?php do_action( 'personal_options', $profileuser ); ?>
 		<?php do_action( 'profile_personal_options', $profileuser ); ?>
 
-		<h2><?php _e( 'Supporter Profile', 'vca-theme' ) ?></h2>
+		<h2><?php
+			if ( in_array( 'head_of', $current_user->roles ) || in_array( 'city', $current_user->roles ) ) {
+				_e( 'City Profile', 'vca-theme' );
+			} elseif ( in_array( 'supporter', $current_user->roles ) ) {
+				_e( 'Supporter Profile', 'vca-theme' );
+			} else {
+				_e( 'Pool Profile', 'vca-theme' );
+			}
+		?>
+		</h2>
 
 		<?php $template->the_action_template_message( 'profile' ); ?>
 		<?php $template->the_errors(); ?>
 
-		<h3><?php _e( 'Name', 'theme-my-login' ) ?></h3>
+		<h3><?php _e( 'Name', 'vca-theme' ) ?></h3>
 
 		<div class="form-row">
-			<label for="user_login"><span class="silent-tip" onmouseover="tooltip('<?php _e( 'Your username cannot be changed.', 'vca-theme' ); ?>');" onmouseout="exit();"><?php _e( 'Username', 'theme-my-login' ); ?></span></label>
+			<label for="user_login"><span class="silent-tip" onmouseover="tooltip('<?php _e( 'Your username cannot be changed.', 'vca-theme' ); ?>');" onmouseout="exit();"><?php _e( 'Username', 'vca-theme' ); ?></span></label>
 			<input type="text" name="user_login" id="user_login" value="<?php echo esc_attr( $profileuser->user_login ); ?>" disabled="disabled" class="regular-text" />
 		</div><div class="form-row">
-			<label for="first_name"><?php _e( 'First name', 'theme-my-login' ) ?></label>
+			<label for="first_name"><?php _e( 'First name', 'vca-theme' ) ?></label>
 			<input type="text" name="first_name" id="first_name"<?php echo $disable_field; ?> value="<?php echo esc_attr( $profileuser->first_name ) ?>" class="regular-text" />
 		</div><div class="form-row">
-			<label for="last_name"><?php _e( 'Last name', 'theme-my-login' ) ?></label>
+			<label for="last_name"><?php _e( 'Last name', 'vca-theme' ) ?></label>
 			<input type="text" name="last_name" id="last_name"<?php echo $disable_field; ?> value="<?php echo esc_attr( $profileuser->last_name ) ?>" class="regular-text" />
 		</div>
 
@@ -77,11 +86,11 @@ if( ( is_array( $current_user->roles ) && in_array( 'head_of', $current_user->ro
 				</select>
 		</div>-->
 
-		<h3><?php _e( 'Contact Info', 'theme-my-login' ) ?></h3>
+		<h3><?php _e( 'Contact Info', 'vca-theme' ) ?></h3>
 
 		<div class="form-row">
-			<label for="email"><?php _e( 'E-mail', 'theme-my-login' ); ?></label>
-			<input type="text" name="email" id="email" value="<?php echo esc_attr( $profileuser->user_email ) ?>" class="regular-text" />
+			<label for="email"><?php _e( 'E-mail', 'vca-theme' ); ?></label>
+			<input type="email" name="email" id="email" value="<?php echo esc_attr( $profileuser->user_email ) ?>" class="regular-text" />
 		</div>
 
 		<?php
@@ -95,7 +104,7 @@ if( ( is_array( $current_user->roles ) && in_array( 'head_of', $current_user->ro
 					} else {
 						return false;
 					}
-				} else if( jQuery('#region').val() == 'please_select' ) {
+				} else if( jQuery('#city').val() == 'please_select' ) {
 					alert('<?php _e( 'Please select a region. Thank you.', 'vca-theme' ); ?>');
 					return false;
 				} else if( jQuery('#birthday-year').val() <= <?php echo( (intval(date('Y')) - 100) ); ?> ) {
@@ -111,7 +120,7 @@ if( ( is_array( $current_user->roles ) && in_array( 'head_of', $current_user->ro
 						return false;
 					}
 				}
-			" class="button-primary" value="<?php esc_attr_e( 'Update Profile', 'theme-my-login' ); ?>" name="submit" />
+			" class="button-primary" value="<?php _e( 'Update Profile', 'vca-theme' ); ?>" name="submit" />
 		</div>
 
 		</div></div><div class="col6 last"><div class="island island-cut-off">
@@ -128,7 +137,7 @@ if( ( is_array( $current_user->roles ) && in_array( 'head_of', $current_user->ro
 			<h3><?php _e( 'New Password', 'vca-theme' ); ?></h3>
 			<div class="form-row">
 				<p class="description"><?php _e( 'If you would like to change the password type a new one. Otherwise leave this blank.', 'vca-theme' ); ?></p>
-				<label for="pass1"><?php _e( 'New Password', 'theme-my-login' ); ?></label>
+				<label for="pass1"><?php _e( 'New Password', 'vca-theme' ); ?></label>
 				<input type="password" name="pass1" id="pass1" size="16" value="" autocomplete="off" />
 			</div><div class="form-row">
 				<label for="pass1"><?php _e( 'Repeat Password', 'vca-theme' ); ?></label>
@@ -170,7 +179,7 @@ if( ( is_array( $current_user->roles ) && in_array( 'head_of', $current_user->ro
 						return false;
 					}
 				}
-			" class="button-primary" value="<?php esc_attr_e( 'Update Profile', 'theme-my-login' ); ?>" name="submit" />
+			" class="button-primary" value="<?php _e( 'Update Profile', 'vca-theme' ); ?>" name="submit" />
 		</div>
 	</form>
 </div>
