@@ -182,7 +182,7 @@ em {
 }
 dfn {
 	font-style: italic;
-	font-weight: bold;
+	font-weight: 700;
 }
 del {
 	text-decoration: line-through;

@@ -1,10 +1,5 @@
-<?php
-/*
-If you would like to edit this file, copy it to your current theme's directory and edit it there.
-Theme My Login will always look in your theme's directory first, before using this default template.
-*/
-?>
-<div class="login" id="theme-my-login<?php $template->the_instance(); ?>">
+<div class="grid-row"><div class="col6">
+<div class="login island" id="theme-my-login<?php $template->the_instance(); ?>">
 	<form name="lostpasswordform" id="lostpasswordform<?php $template->the_instance(); ?>" class="stand-alone-form" action="<?php $template->the_action_url( 'lostpassword' ); ?>" method="post">
 		<?php $template->the_action_template_message( 'lostpassword' ); ?>
 		<?php $template->the_errors(); ?>
@@ -24,3 +19,8 @@ do_action_ref_array( 'tml_lostpassword_form', array( &$template ) ); // TML hook
 		<?php $template->the_action_links( array( 'lostpassword' => false ) ); ?>
 	</form>
 </div>
+</div><div class="col6 last">
+<h1>Willkommen</h1>
+<h3>...in unserem Supporter-Pool!</h3>
+<p>Mit dem Pool, unserer Supporterdatenbank, bleibst du über Viva con Agua Neuigkeiten und Aktivitäten in deiner Region auf dem laufenden. Ausserdem erfährst du alles über unsere (Festival-) Aktivitäten und kannst dich z.B. als Becherjäger_in bewerben – Viva con Agua freut sich auf dich und dein Engagement für sauberes Trinkwasser und sanitäre Versorgung weltweit!</p>
+</div></div>

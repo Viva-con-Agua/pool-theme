@@ -9,15 +9,6 @@ as well as the user-panel at the top of the page:
 /* WIDGET & FORM WRAPPER
 ----------------------------------------- */
 
-.login {
-	padding: 2.1em;
-	border-radius: 2.2em;
-	background: #c4e3f0;
-	margin:0 0 4.2em;
-}
-.login h2 {
-	color: #584619;
-}
 div.login-widget {
 	overflow: hidden;
 }
@@ -53,86 +44,14 @@ div.login-widget {
 }
 
 
-/* THE USER PANEL
------------------------------------------ */
-
-.user-panel h2,
-.user-panel h2 a {
-	color: #b09e79;
-	margin: 0;
-	font-weight: 700;
-}
-.user-panel h4 {
-	color: #ffffff;
-}
-.vca-user-links {
-	float: right;
-	display: table-cell;
-	vertical-align: middle;
-}
-.vca-user-links li {
-	display: inline-block;
-}
-.vca-user-links a {
-	float: right;
-	text-align:  right;
-	font-family: GSC;
-	font-size: 2.1em;
-	font-weight: 700;
-	text-transform: uppercase;
-	color: #ffffff;
-	display: inline-block;
-	line-height: 1;
-	padding: .476190476em 0 0 2em;
-}
-.no-touch .vca-user-links a:hover,
-.vca-user-links a:active {
-	color: #c4e3f0;
-	text-shadow: 0 0 1px #ffffff;
-}
-.vca-user-links a span {
-	color: #ffffff; /* fallback */
-	color: rgba(255, 255, 255, 0);
-	margin-left: -10em;
-	font-family: GS;
-	font-size: .571428571em;
-	font-weight: 400;
-	text-transform: uppercase;
-}
-.no-touch .vca-user-links a:hover > span,
-.vca-user-links a:hover > span {
-	color: #ffffff; /* fallback */
-	color: rgba(196, 227, 240, 1);
-	margin-left: 0;
-	font-family: GS;
-}
-.tml-user-links {
-	float: left;
-}
-.tml-user-links li {
-	display: inline;
-}
-.tml-user-links a {
-	font-family: GSC;
-	font-size: 1.6em;
-	font-weight: 400;
-	color: #c4e3f0;
-	display: inline-block;
-	line-height: 1;
-	padding: 5px 0 0 0;
-}
-.no-touch .tml-user-links a:hover,
-.tml-user-links a:active {
-	color: #ffffff;
-	text-shadow: 0 0 1px #e9619c;
-}
-
-
 /* AVATAR SECTION OF FRONTEND PROFILE VIEW
 ----------------------------------------- */
 
 .form-row .avatar {
 	border: 2px solid #008fc1;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 
 
@@ -157,16 +76,19 @@ div.login-widget {
 .pass-mail-row p {
 	padding: .25em 0;
 }
+.strength-row {
+}
 #pass-strength-result {
 	font-family: GS, Helvetica, Arial, Verdana, sans-serif;
-	float: right !important;
-	width: 48%;
+	float: left;
+	width: 98%;
     border: 2px solid #008fc1;
 	border-radius: 4px;
 	font-size: 1.2em;
     margin: 0;
     padding: .416666667em 0 .5em;
     text-align: center;
+	color: #002a3d;
 }
 #pass-strength-result.strong,
 #pass-strength-result.short {
@@ -190,7 +112,6 @@ div.login-widget {
 #pass-strength-result.strong {
     background-color: #7ec5e0;
     border-color: #008fc1 !important;
-	color: #ffffff;
 }
 
 
@@ -211,5 +132,5 @@ div.login-widget {
     transition: opacity 0.1s;
 }
 .vca-user-links a span {
-	-webkit-transition: all 0.3s;	
+	-webkit-transition: all 0.3s;
 }

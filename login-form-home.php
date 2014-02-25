@@ -1,4 +1,4 @@
-<div class="grid-row"><div class="col6"><div class="login island" id="theme-my-login<?php $template->the_instance(); ?>">
+<div class="login island" id="theme-my-login<?php $template->the_instance(); ?>">
 	<form name="loginform" id="loginform<?php $template->the_instance(); ?>" class="stand-alone-form" action="<?php $template->the_action_url( 'login' ); ?>" method="post">
 		<h2><?php _ex( 'Login', 'Login Widget Title', 'vca-theme' ); ?></h2>
 		<?php $template->the_action_template_message( 'login' );
@@ -35,8 +35,3 @@ do_action_ref_array( 'tml_login_form', array( &$template ) ); // TML hook
 	</ul>
 	</form>
 </div>
-</div><div class="col6 last">
-<h1>Willkommen</h1>
-<h3>...in unserem Supporter-Pool!</h3>
-<p>Mit dem Pool, unserer Supporterdatenbank, bleibst du über Viva con Agua Neuigkeiten und Aktivitäten in deiner Region auf dem laufenden. Ausserdem erfährst du alles über unsere (Festival-) Aktivitäten und kannst dich z.B. als Becherjäger_in bewerben – Viva con Agua freut sich auf dich und dein Engagement für sauberes Trinkwasser und sanitäre Versorgung weltweit!</p>
-</div></div>

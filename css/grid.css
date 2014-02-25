@@ -4,7 +4,7 @@
 .grid-row {
 	width: 100%;
 	max-width: 1140px;
-	min-width: 768px;
+	min-width: 760px;
 	margin: 0 auto;
 	overflow: hidden;
 }
@@ -13,7 +13,7 @@
 	max-width: 600px;
 	min-width: 100px;
 	margin: 0 auto;
-	overflow: hidden;	
+	overflow: hidden;
 }
 .col1,
 .col2,
@@ -114,7 +114,7 @@ img {
 
 /* MOBILE
 ----------------------------------------- */
-@media handheld, only screen and (max-width: 767px) {	
+@media handheld, only screen and (max-width: 799px) {
 	body,
 	.grid-container,
 	.grid-row {
@@ -130,9 +130,10 @@ img {
 		float: none;
 		margin-left: 0;
 		margin-right: 0;
-		padding: 0 2.4em;
+		padding: 0 2em;
 		overflow: hidden;
     }
+	/*
 	.content-container .col1,
 	.content-container .col2,
 	.content-container .col3,
@@ -147,4 +148,11 @@ img {
 	.content-container .col12 {
 		margin: 2.4em 0 0;
 	}
-}*/
+	*/
+}
+
+@media handheld, only screen and (max-width: 359px) {
+    .col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12 {
+		padding: 0 1.2em;
+    }
+}

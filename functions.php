@@ -12,13 +12,15 @@ add_action('after_setup_theme', 'pille_theme_setup');
 /* loads scripts & libraries */
 function pille_theme_load_scripts() {
 	if ( ! is_admin() ) {
-		wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2' );
+		wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', false, '2.6.2' );
 		wp_enqueue_script( 'modernizr' );
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', false, '1.7.1' );
 		wp_enqueue_script( 'jquery' );
 		wp_register_script( 'mediaqueries', get_template_directory_uri() . '/js/css3-mediaqueries.js', false, false, true );
 		wp_enqueue_script( 'mediaqueries' );
+		wp_register_script( 'jquery-scrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.js', false, false, true );
+		wp_enqueue_script( 'jquery-scrollTo' );
 		wp_register_script( 'pille-plugins', get_template_directory_uri() . '/js/plugins.js', false, false, true );
 		wp_enqueue_script( 'pille-plugins' );
 		wp_register_script( 'pille-accordion', get_template_directory_uri() . '/js/pille-accordion.js', false, false, true );
@@ -34,6 +36,13 @@ function pille_theme_load_scripts() {
 	}
 }
 add_action ( 'init', 'pille_theme_load_scripts' );
+
+function zs_admin_debug(  $user_login, $user  ) {
+    if ( in_array( 'administrator', $user->roles ) ) {
+        setcookie( 'wp_debug', 'on', time() + 86400 );
+    }
+}
+add_action( 'wp_login', 'zs_admin_debug', 10, 2 );
 
 /* Add native menu support */
 /* --- currently not in use ---
@@ -55,6 +64,178 @@ function pille_theme_widgets_init() {
 
 }
 add_action( 'widgets_init', 'pille_theme_widgets_init' );
+
+/* Navigation Menu */
+function pille_get_admin_link(){
+	global $current_user;
+	get_currentuserinfo();
+
+	$admins_haystack = array( 'administrator', 'content_admin' );
+	$deps_haystack = array( 'activities', 'education', 'network' );
+
+	$admin_link = '<a title="';
+
+	if( count( array_intersect( $admins_haystack, $current_user->roles ) ) > 0 ) {
+		$admin_link .= _x( 'Manage the Pool', 'Navigation', 'vca-theme' );
+	} elseif( count( array_intersect( $deps_haystack, $current_user->roles ) ) > 0 ) {
+		$admin_link .=  _x( 'Manage your department', 'Navigation', 'vca-theme' );
+	} elseif( in_array( 'head_of', $current_user->roles ) ) {
+		$admin_link .= _x( 'Manage your region', 'Navigation', 'vca-theme' );
+	} else {
+		return false;
+	}
+
+	$admin_link .= '" href="' .
+		get_bloginfo( 'url' ) . '/wp-admin/"';
+	if( is_admin() ) {
+		$admin_link .= ' class="current-menu-item"';
+	}
+	$admin_link .= '>' .
+			_x( 'Administration', 'Navigation', 'vca-theme' ) .
+		'</a>';
+
+	return $admin_link;
+}
+
+function pille_pool_menu( $medium ){
+	global $current_user;
+	get_currentuserinfo();
+
+	$output = '';
+
+	if( $medium === 'mobile' ) {
+		$output .= '<ul id="nav" tabindex="0">' .
+				'<li><a class="no-borders" title="';
+				if( is_user_logged_in() )  {
+					$output .= _x( 'Supporter Activities', 'Navigation', 'vca-theme' ) .
+						'" href="' . get_bloginfo( 'url' ) . '">' .
+							_x( 'Home', 'Navigation', 'vca-theme' );
+					if( is_home() ) {
+						$output .= ' class="current-menu-item"';
+					}
+				} else {
+					$output .= _x( 'Login / Register', 'Navigation', 'vca-theme' ) .
+						'" href="';
+					if( is_front_page() || is_page( 'login' ) ) {
+						$output .= '#reinloggen" onclick="' .
+							"if( jQuery('#user_login').length ) {" .
+								"jQuery('#user_login').focus();" .
+							"} else if( jQuery('#user_login1').length ) {" .
+								"jQuery('#user_login1').focus();" .
+							"}";
+					} else {
+						$output .= get_bloginfo( 'url' ) . '/login/';
+					}
+					$output .= '"';
+					if( is_page( 'login' ) ) {
+						$output .= ' class="current-menu-item"';
+					}
+					$output .= '>' .
+						_x( 'Login', 'Navigation', 'vca-theme' );
+				}
+				$output .= '</a></li>' .
+					'<li><a title="' . _x( 'Read up on how this works', 'Navigation', 'vca-theme' ) .
+						'" href="' . get_bloginfo( 'url' ) . '/faq/"';
+						if( is_page( 'faq' ) ) {
+							$output .= ' class="current-menu-item"';
+						}
+						$output .= '>' .
+							_x( 'FAQ', 'Navigation', 'vca-theme' ) .
+					'</a></li>';
+
+				if( is_user_logged_in() )  {
+					global $current_user;
+					get_currentuserinfo();
+
+					if( pille_get_admin_link() ) {
+						$output .= '<li>' . pille_get_admin_link() . '</li>';
+					}
+
+					$output .= '<li><a title="' .
+							_x( 'Your Data &amp; Settings', 'Navigation', 'vca-theme' ) .
+							'" href="' . get_bloginfo( 'url' ) . '/profil/"';
+						if( is_page( 'login' ) ) {
+							$output .= ' class="current-menu-item"';
+						}
+						$output .= '>' .
+								_x( 'Profile &amp; Settings', 'Navigation', 'vca-theme' ) . ': ' . $current_user->display_name .
+						'</a></li>' .
+						'<li><a title="' .
+							_x( 'Log yourself out', 'Navigation', 'vca-theme' ) .
+							'" href="' .  wp_logout_url( get_bloginfo('url') ) . '">' .
+								_x( 'Logout', 'Navigation', 'vca-theme' ) .
+						'</a></li>';
+				}
+		$output .= '<li id="back"><a href="#swim-in-the-pool">close the menu</a></li></ul>';
+	} else {
+		if( is_user_logged_in() )  {
+			$output .= '<div class="main-menu user-menu">' .
+					_x( 'Moin', 'Navigation', 'vca-theme' ) . ', ' .
+					'<a title="' . _x( 'Profile &amp; Settings', 'Navigation', 'vca-theme' ) .
+						'" href="' . get_bloginfo( 'url' ) . '/profil/"';
+						if( is_page( 'login' ) ) {
+							$output .= ' class="current-menu-item"';
+						}
+						$output .= '>' .
+							$current_user->display_name .
+					'</a>' .
+					'<span class="nav-break"></span>' .
+					'<div class="logout-button"><a title="' . _x( 'Logout!', 'Navigation', 'vca-theme' ) .
+						'" href="' .  wp_logout_url( get_bloginfo('url') ) . '">' .
+							'<img src="' . get_bloginfo('template_url') . '/images/logout.png" />' .
+					'</a></div>' .
+				'</div>';
+		}
+		$output .= '<div class="main-menu nav-menu">' .
+				'<a title="';
+					if( is_user_logged_in() )  {
+						$output .= _x( 'Supporter Activities', 'Navigation', 'vca-theme' ) .
+							'" href="' . get_bloginfo( 'url' ) . '"';
+						if( is_front_page() ) {
+							$output .= ' class="current-menu-item"';
+						}
+						$output .= '>' .
+								_x( 'Home', 'Navigation', 'vca-theme' );
+					} else {
+						$output .= _x( 'Login / Register', 'Navigation', 'vca-theme' ) .
+							'" href="';
+						if( is_front_page() || is_page( 'login' ) ) {
+							$output .= '#reinloggen" onclick="' .
+							"if( jQuery('#user_login').length ) {" .
+								"jQuery('#user_login').focus();" .
+							"} else if( jQuery('#user_login1').length ) {" .
+								"jQuery('#user_login1').focus();" .
+							"}";
+						} else {
+							$output .= get_bloginfo( 'url' ) . '/login/';
+						}
+						$output .= '"';
+						if( is_page( 'login' ) ) {
+							$output .= ' class="current-menu-item"';
+						}
+						$output .= '>' .
+								_x( 'Login ', 'Navigation', 'vca-theme' );
+					}
+					$output .= '</a><span class="nav-break"></span>';
+
+					if( is_user_logged_in() && pille_get_admin_link() )  {
+						$output .= pille_get_admin_link() . '<span class="nav-break"></span>';
+					}
+
+					$output .= '<a title="' .
+							_x( 'Read up on how this works', 'Navigation', 'vca-theme' ) .
+						'" href="' . get_bloginfo( 'url' ) . '/faq/"';
+						if( is_page( 'faq' ) ) {
+							$output .= ' class="current-menu-item"';
+						}
+						$output .= '>' .
+							_x( 'FAQ', 'Navigation', 'vca-theme' ) .
+						'</a></div>';
+	}
+
+	echo $output;
+}
+add_action('after_setup_theme', 'pille_theme_setup');
 
 
 
@@ -151,10 +332,10 @@ remove_action( 'init', '_wp_admin_bar_init');
 
 /* Modify default wordpress footer */
 function pille_theme_admin_footer() {
-    echo '<span id="footer-thankyou">Developed by <a href="mailto:johannes@pilkahn.org">Pille</a>';
+    echo '<span id="footer-thankyou">Developed by <a href="mailto:pille@nekkidgrandma.com">Pille</a>';
 }
 function pille_theme_footer_version() {
-    return '<strong>Version 1.19_beta-2</strong>';
+    return 'Version 1.19_beta-3';
 }
 add_filter('admin_footer_text', 'pille_theme_admin_footer');
 add_filter( 'update_footer', 'pille_theme_footer_version', 11 );
@@ -349,10 +530,14 @@ add_shortcode( 'accsection', 'pille_theme_create_accordion_section' );
 
 /* add shortcode [bloginfo] for bloginfo functions within a page or post */
 function pille_theme_sc_bloginfo( $atts ) {
-   extract( shortcode_atts( array(
-	   'key' => ''
-   ), $atts ) );
-   return get_bloginfo( $key );
+	extract( shortcode_atts( array(
+		'key' => ''
+	), $atts ) );
+	if( $key != 'url' ) {
+		return get_bloginfo( $key );
+	} else {
+		return get_option( 'siteurl' );
+	}
 }
 add_shortcode('bloginfo', 'pille_theme_sc_bloginfo');
 
@@ -377,6 +562,24 @@ function pille_theme_sc_logged_out( $atts, $content='' ) {
 	}
 }
 add_shortcode('logged-out', 'pille_theme_sc_logged_out');
+
+/* add shortcode [not-supporter]...[/not-supporter] to enclose content only visible to logged in users with higher user levels */
+function pille_theme_sc_not_supporter( $atts, $content='' ) {
+	$content = do_shortcode( $content );
+	$message = '<div class="system-error"><p>' . _x( 'This content is visible to administrative users only. You are either not logged into the Pool, or you do not have sufficient rights to see this. Sorry, mate.', 'System Notification', 'vca-asm' ) . '</p></div>';
+	if( ! is_user_logged_in() ) {
+		return $message;
+	} else {
+		global $current_user;
+		get_currentuserinfo();
+		if( in_array( 'supporter', $current_user->roles ) ) {
+			return $message;
+		} else {
+			return $content;
+		}
+	}
+}
+add_shortcode('not-supporter', 'pille_theme_sc_not_supporter');
 
 /* add shortcode [youtube] for inserting a youtube video */
 function pille_theme_sc_youtube( $atts ) {

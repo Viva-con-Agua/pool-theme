@@ -1,4 +1,4 @@
-<div class="login" id="theme-my-login<?php $template->the_instance(); ?>">
+<div class="login island island-cut-off" id="theme-my-login<?php $template->the_instance(); ?>">
 	<?php $template->the_action_template_message( 'resetpass' ); ?>
 	<?php $template->the_errors(); ?>
 	<form name="resetpasswordform" id="resetpasswordform<?php $template->the_instance(); ?>" class="stand-alone-form" action="<?php $template->the_action_url( 'resetpass' ); ?>" method="post">

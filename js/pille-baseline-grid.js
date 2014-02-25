@@ -9,7 +9,7 @@ function onloadFuncs() {
 
 function baselineAdjust() {
 	var viewportWidth = window.outerWidth;
-	var verticalRhythm = ( jQuery('.content-container p').first().css('line-height').substring(-2, 2) * 1 );
+	var verticalRhythm = 21;//( jQuery('.content-container p').first().css('line-height').substring(-2, 2) * 1 );
 	jQuery(".content-container img").each(function() {
 		var imgHeight = jQuery(this).height();
 		if( jQuery(this).parent().is('p') ) {
@@ -42,3 +42,9 @@ function baselineAdjust() {
 		}
 	});
 }
+
+//jQuery(document).ready( function() {
+//	var height = jQuery('footer').offset().top;
+//	alert( height );
+//	jQuery('.bg-side').height( height );
+//});

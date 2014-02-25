@@ -3,13 +3,15 @@
 </div><!-- .wrapper -->
 
 <footer>
+	<div class="edge"></div>
 	<div class="grid-container">
 		<div class="grid-row">
-			<div class="col12">
-				<span class="align-left">Viva con Agua de Sankt Pauli e.V., 2012</span>
-				<span class="align-right">
-					<a title="Nutzungsbedingungen lesen" href="<?php bloginfo('url') ?>/nutzungsbedingungen/">Nutzungsbedingungen</a> | <a title="Datenschutzerklärung lesen" href="<?php bloginfo('url') ?>/datenschutzerklaerung/">Datenschutzerklärung</a> | <a title="Zum Impressum" href="http://vivaconagua.org/index.htm?impressum">Impressum</a>
-				</span>
+			<div class="col6">
+				<p class="screen-talign-left">
+					<a title="Nutzungsbedingungen lesen" href="<?php bloginfo('url') ?>/nutzungsbedingungen/">Nutzungsbedingungen</a><br /><span class="nav-break"></span><a title="Datenschutzerklärung lesen" href="<?php bloginfo('url') ?>/datenschutzerklaerung/">Datenschutzerklärung</a><br /><span class="nav-break"></span><a title="Zum Impressum" href="http://vivaconagua.org/index.htm?impressum">Impressum</a>
+				</p>
+			</div><div class="col6 last">
+				<p class="screen-talign-right">Pool v1.2, Viva con Agua de Sankt Pauli e.V., 2012-2013</p>
 			</div>
 		</div>
 	</div>

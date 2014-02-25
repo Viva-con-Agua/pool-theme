@@ -1,10 +1,11 @@
-<div class="login" id="theme-my-login<?php $template->the_instance(); ?>">
+<div class="grid-row"><div class="col6">
+<div class="login island" id="theme-my-login<?php $template->the_instance(); ?>">
 
 	<p class="message"><?php _e( 'Register to the Pool', 'vca-theme' )  ?></p>
 	<?php $template->the_errors(); ?>
-	
+
     <form name="registerform" id="registerform<?php $template->the_instance(); ?>" class="stand-alone-form" action="<?php $template->the_action_url( 'register' ); ?>" method="post">
-	
+
 		<div class="form-row">
             <label for="user_login<?php $template->the_instance(); ?>"><?php _e( 'Username', 'theme-my-login' ) ?></label>
             <input type="text" name="user_login" id="user_login<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value( 'user_login' ); ?>" size="20" />
@@ -32,3 +33,8 @@ do_action_ref_array( 'tml_register_form', array( &$template ) ); //TML hook
 	<?php $template->the_action_links( array( 'register' => false ) ); ?>
     </form>
 </div>
+</div><div class="col6 last">
+<h1>Willkommen</h1>
+<h3>...in unserem Supporter-Pool!</h3>
+<p>Mit dem Pool, unserer Supporterdatenbank, bleibst du über Viva con Agua Neuigkeiten und Aktivitäten in deiner Region auf dem laufenden. Ausserdem erfährst du alles über unsere (Festival-) Aktivitäten und kannst dich z.B. als Becherjäger_in bewerben – Viva con Agua freut sich auf dich und dein Engagement für sauberes Trinkwasser und sanitäre Versorgung weltweit!</p>
+</div></div>
