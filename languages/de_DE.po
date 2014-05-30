@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: VcA Pool v1.4\n"
+"Project-Id-Version: VcA Pool v1.5\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/twentyten\n"
 "POT-Creation-Date: 2011-06-13 13:27:43+00:00\n"
-"PO-Revision-Date: 2014-02-27 13:26:47+0100\n"
+"PO-Revision-Date: 2014-05-08 02:28:24+0200\n"
 "Last-Translator: Johannes Pilkahn <johannes@pilkahn.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -547,6 +547,7 @@ msgstr "Willst du dein Benutzerkonto wirklich löschen? Dies ist permanent und k
 
 #: single-concert.php:39
 #: single-festival.php:39
+#: single-goldeimerfestival.php:39
 #: single-miscactions.php:39
 #: single-nwgathering.php:39
 #@ vca-theme
@@ -557,6 +558,8 @@ msgstr "Zeitraum"
 #: single-concert.php:65
 #: single-festival.php:61
 #: single-festival.php:65
+#: single-goldeimerfestival.php:61
+#: single-goldeimerfestival.php:65
 #: single-miscactions.php:61
 #: single-miscactions.php:65
 #: single-nwgathering.php:61
@@ -567,6 +570,7 @@ msgstr "bis"
 
 #: single-concert.php:71
 #: single-festival.php:71
+#: single-goldeimerfestival.php:71
 #: single-miscactions.php:71
 #: single-nwgathering.php:71
 #@ vca-theme
@@ -575,6 +579,7 @@ msgstr "Ort"
 
 #: single-concert.php:75
 #: single-festival.php:75
+#: single-goldeimerfestival.php:75
 #: single-miscactions.php:75
 #: single-nwgathering.php:75
 #@ vca-theme
@@ -583,6 +588,7 @@ msgstr "Bewerbung möglich bis"
 
 #: single-concert.php:145
 #: single-festival.php:145
+#: single-goldeimerfestival.php:145
 #: single-miscactions.php:145
 #: single-nwgathering.php:145
 #@ vca-theme
@@ -591,6 +597,7 @@ msgstr "Weitere Infos"
 
 #: single-concert.php:121
 #: single-festival.php:121
+#: single-goldeimerfestival.php:121
 #: single-miscactions.php:121
 #: single-nwgathering.php:121
 #@ vca-theme
@@ -599,6 +606,7 @@ msgstr "Webseite"
 
 #: single-concert.php:112
 #: single-festival.php:112
+#: single-goldeimerfestival.php:112
 #: single-miscactions.php:112
 #: single-nwgathering.php:112
 #@ vca-theme
@@ -607,6 +615,7 @@ msgstr "VcA Aktivitäten"
 
 #: single-concert.php:91
 #: single-festival.php:91
+#: single-goldeimerfestival.php:91
 #: single-miscactions.php:91
 #: single-nwgathering.php:91
 #@ vca-theme
@@ -616,6 +625,7 @@ msgstr "Pfandbecher Sammeln"
 
 #: single-concert.php:94
 #: single-festival.php:94
+#: single-goldeimerfestival.php:94
 #: single-miscactions.php:94
 #: single-nwgathering.php:94
 #@ vca-theme
@@ -625,6 +635,7 @@ msgstr "Gästelisten-Euros"
 
 #: single-concert.php:97
 #: single-festival.php:97
+#: single-goldeimerfestival.php:97
 #: single-miscactions.php:97
 #: single-nwgathering.php:97
 #@ vca-theme
@@ -634,6 +645,7 @@ msgstr "Infostand"
 
 #: single-concert.php:100
 #: single-festival.php:100
+#: single-goldeimerfestival.php:100
 #: single-miscactions.php:100
 #: single-nwgathering.php:100
 #@ vca-theme
@@ -643,6 +655,7 @@ msgstr "Quellwasser"
 
 #: single-concert.php:106
 #: single-festival.php:106
+#: single-goldeimerfestival.php:106
 #: single-miscactions.php:106
 #: single-nwgathering.php:106
 #@ vca-theme
@@ -652,6 +665,7 @@ msgstr "Special"
 
 #: single-concert.php:130
 #: single-festival.php:130
+#: single-goldeimerfestival.php:130
 #: single-miscactions.php:130
 #: single-nwgathering.php:130
 #@ vca-theme
@@ -662,6 +676,8 @@ msgstr "Anfahrt"
 #: single-concert.php:327
 #: single-festival.php:294
 #: single-festival.php:327
+#: single-goldeimerfestival.php:294
+#: single-goldeimerfestival.php:327
 #: single-miscactions.php:294
 #: single-miscactions.php:327
 #: single-nwgathering.php:294
@@ -926,12 +942,14 @@ msgid "Festival"
 msgstr "Festival"
 
 #: single-festival.php:35
+#: single-goldeimerfestival.php:35
 #@ vca-theme
 msgid "The Festival"
 msgstr "Das Festival"
 
 #: single-concert.php:79
 #: single-festival.php:79
+#: single-goldeimerfestival.php:79
 #: single-miscactions.php:79
 #: single-nwgathering.php:79
 #@ vca-theme
@@ -941,6 +959,7 @@ msgstr "verfügbares Plätzekontingent"
 
 #: single-concert.php:139
 #: single-festival.php:139
+#: single-goldeimerfestival.php:139
 #: single-miscactions.php:139
 #: single-nwgathering.php:139
 #@ vca-theme
@@ -957,6 +976,11 @@ msgstr "zusätzliche Bemerkungen"
 #: single-festival.php:196
 #: single-festival.php:206
 #: single-festival.php:244
+#: single-goldeimerfestival.php:171
+#: single-goldeimerfestival.php:186
+#: single-goldeimerfestival.php:196
+#: single-goldeimerfestival.php:206
+#: single-goldeimerfestival.php:244
 #: single-miscactions.php:171
 #: single-miscactions.php:186
 #: single-miscactions.php:196
@@ -973,6 +997,7 @@ msgstr "Teilnehmen"
 
 #: single-concert.php:214
 #: single-festival.php:214
+#: single-goldeimerfestival.php:214
 #: single-miscactions.php:214
 #: single-nwgathering.php:214
 #, php-format
@@ -982,6 +1007,7 @@ msgstr "Du musst <a title=\"Log In\" href=\"%s\">logged in</a> to be able to app
 
 #: single-concert.php:189
 #: single-festival.php:189
+#: single-goldeimerfestival.php:189
 #: single-miscactions.php:189
 #: single-nwgathering.php:189
 #@ vca-theme
@@ -990,6 +1016,7 @@ msgstr "Du bist als Teilnehmer dieser Aktivität registriert."
 
 #: single-concert.php:174
 #: single-festival.php:174
+#: single-goldeimerfestival.php:174
 #: single-miscactions.php:174
 #: single-nwgathering.php:174
 #@ vca-theme
@@ -998,6 +1025,7 @@ msgstr "Du hast dich auf Teilnahme an dieser Aktivität beworben und wirst demn�
 
 #: single-concert.php:237
 #: single-festival.php:237
+#: single-goldeimerfestival.php:237
 #: single-miscactions.php:237
 #: single-nwgathering.php:237
 #@ vca-theme
@@ -1006,6 +1034,7 @@ msgstr "Du bist für diese Aktivität nicht teilnahmeberechtigt. Entweder, weil 
 
 #: single-concert.php:251
 #: single-festival.php:251
+#: single-goldeimerfestival.php:251
 #: single-miscactions.php:251
 #: single-nwgathering.php:251
 #@ vca-theme
@@ -1014,6 +1043,7 @@ msgstr "Teilnehmer"
 
 #: single-concert.php:254
 #: single-festival.php:254
+#: single-goldeimerfestival.php:254
 #: single-miscactions.php:254
 #: single-nwgathering.php:254
 #, php-format
@@ -1023,6 +1053,7 @@ msgstr "%d Leute haben an dieser Aktivität teilgenommen."
 
 #: single-concert.php:199
 #: single-festival.php:199
+#: single-goldeimerfestival.php:199
 #: single-miscactions.php:199
 #: single-nwgathering.php:199
 #, php-format
@@ -1032,6 +1063,7 @@ msgstr "Die Bewerbungsphase für diese Aktivität hat noch nicht begonnen. Sie f
 
 #: single-concert.php:306
 #: single-festival.php:306
+#: single-goldeimerfestival.php:306
 #: single-miscactions.php:306
 #: single-nwgathering.php:306
 #, php-format
@@ -1046,6 +1078,7 @@ msgstr "Das Konzert"
 
 #: single-concert.php:310
 #: single-festival.php:310
+#: single-goldeimerfestival.php:310
 #: single-miscactions.php:310
 #: single-nwgathering.php:310
 #@ vca-theme
@@ -1069,6 +1102,7 @@ msgstr "Konzert"
 
 #: single-concert.php:181
 #: single-festival.php:181
+#: single-goldeimerfestival.php:181
 #: single-miscactions.php:181
 #: single-nwgathering.php:181
 #@ vca-theme
@@ -1077,6 +1111,7 @@ msgstr "Bewerbung zurückziehen"
 
 #: single-concert.php:190
 #: single-festival.php:190
+#: single-goldeimerfestival.php:190
 #: single-miscactions.php:190
 #: single-nwgathering.php:190
 #@ vca-theme
@@ -1086,6 +1121,7 @@ msgstr "Solltest du Fragen und/oder Anregungen haben, kontaktiere gerne die unte
 #: functions.php:52
 #: single-concert.php:228
 #: single-festival.php:228
+#: single-goldeimerfestival.php:228
 #: single-miscactions.php:228
 #: single-nwgathering.php:228
 #@ vca-theme
@@ -1101,6 +1137,7 @@ msgstr "Zum Beispiel, solltest du dich gemeinsam mit einem/r Freund_in bewerben,
 
 #: single-concert.php:231
 #: single-festival.php:231
+#: single-goldeimerfestival.php:231
 #: single-miscactions.php:231
 #: single-nwgathering.php:231
 #@ vca-theme
@@ -1109,6 +1146,7 @@ msgstr "Bewerben"
 
 #: single-concert.php:246
 #: single-festival.php:246
+#: single-goldeimerfestival.php:246
 #: single-miscactions.php:246
 #: single-nwgathering.php:246
 #@ vca-theme
@@ -1117,6 +1155,7 @@ msgstr "Die Bewerbungsphase für diese Aktivität ist bereits beendet. Sorry."
 
 #: single-concert.php:259
 #: single-festival.php:259
+#: single-goldeimerfestival.php:259
 #: single-miscactions.php:259
 #: single-nwgathering.php:259
 #@ vca-theme
@@ -1125,6 +1164,7 @@ msgstr "Du warst eine_r davon."
 
 #: single-concert.php:278
 #: single-festival.php:278
+#: single-goldeimerfestival.php:278
 #: single-miscactions.php:278
 #: single-nwgathering.php:278
 #@ vca-theme
@@ -1188,6 +1228,7 @@ msgstr "Aktuelle Actions"
 
 #: single-concert.php:162
 #: single-festival.php:162
+#: single-goldeimerfestival.php:162
 #: single-miscactions.php:162
 #: single-nwgathering.php:162
 #@ vca-theme
@@ -1196,6 +1237,7 @@ msgstr "Bewerbung zurückgezogen"
 
 #: single-concert.php:165
 #: single-festival.php:165
+#: single-goldeimerfestival.php:165
 #: single-miscactions.php:165
 #: single-nwgathering.php:165
 #@ vca-theme
@@ -1206,6 +1248,8 @@ msgstr "Du hast deine Bewerbung für diese Aktivität erfolgreich zurückgezogen
 #: single-concert.php:325
 #: single-festival.php:292
 #: single-festival.php:325
+#: single-goldeimerfestival.php:292
+#: single-goldeimerfestival.php:325
 #: single-miscactions.php:292
 #: single-miscactions.php:325
 #: single-nwgathering.php:292
@@ -1229,4 +1273,9 @@ msgstr "Aktivität"
 #@ vca-theme
 msgid "Your city"
 msgstr "Deine Stadt"
+
+#: single-goldeimerfestival.php:31
+#@ vca-theme
+msgid "Goldeimer Festival"
+msgstr ""
 
