@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VcA Pool v1.5\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/twentyten\n"
 "POT-Creation-Date: 2011-06-13 13:27:43+00:00\n"
-"PO-Revision-Date: 2014-05-08 02:28:24+0200\n"
+"PO-Revision-Date: 2014-09-01 18:06:18+0200\n"
 "Last-Translator: Johannes Pilkahn <johannes@pilkahn.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -446,7 +446,7 @@ msgstr "Wenn du dein Passwort ändern möchtest, tippe ein neues ein. Sonst lass
 msgid "Repeat Password"
 msgstr "Passwort Wiederholung"
 
-#: resetpass-form.php:12
+#: resetpass-form.php:13
 #@ vca-theme
 msgid "Strength indicator"
 msgstr "Stärke-Indikator"
@@ -455,27 +455,27 @@ msgstr "Stärke-Indikator"
 #: login-form.php:33
 #: lostpassword-form.php:22
 #: register-form.php:29
-#: resetpass-form.php:29
+#: resetpass-form.php:30
 #@ vca-theme
 msgid "Register"
 msgstr "Registrieren"
 
-#: resetpass-form.php:6
+#: resetpass-form.php:7
 #@ vca-theme
 msgid "New password"
 msgstr "Neues Passwort"
 
-#: resetpass-form.php:9
+#: resetpass-form.php:10
 #@ vca-theme
 msgid "Confirm new password"
 msgstr "Neues Passwort bestätigen"
 
-#: resetpass-form.php:14
+#: resetpass-form.php:15
 #@ vca-theme
 msgid "Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! \" ? $ % ^ &amp; )."
 msgstr "Tipp: Das Passwort sollte mindestens 7 Zeichen lang sein. Um es stärker zu machen, verwende Groß- und Kleinschreibung, sowie Zahlen und/oder Sonderzeichen."
 
-#: resetpass-form.php:21
+#: resetpass-form.php:22
 #@ vca-theme
 msgid "Reset Password"
 msgstr "Passwort Zurücksetzen"
@@ -810,19 +810,6 @@ msgstr "Diese Inhalte sind nur für Benutzer mit Verwaltungszugriff gedacht. Du 
 msgid "All Posts"
 msgstr "Alle Posts"
 
-#: page-email-view.php:68
-#: page-email-view.php:71
-#: page-email-view.php:139
-#: page-email-view.php:149
-#@ vca-theme
-msgid "Supporter"
-msgstr "Supporter"
-
-#: page-email-view.php:15
-#@ vca-theme
-msgid "Preview"
-msgstr "Vorschau"
-
 #: functions.php:111
 #@ vca-theme
 msgctxt "Navigation"
@@ -844,7 +831,7 @@ msgstr "Passwort vergessen"
 
 #: lostpassword-form.php:21
 #: register-form.php:35
-#: resetpass-form.php:28
+#: resetpass-form.php:29
 #@ vca-theme
 msgid "Login"
 msgstr "Reinloggen"
@@ -1264,18 +1251,8 @@ msgctxt "Leave in English, if understandable"
 msgid "Community for clean water"
 msgstr "Community for clean water"
 
-#: page-email-view.php:51
-#@ vca-theme
-msgid "Activity"
-msgstr "Aktivität"
-
-#: page-email-view.php:55
-#@ vca-theme
-msgid "Your city"
-msgstr "Deine Stadt"
-
 #: single-goldeimerfestival.php:31
 #@ vca-theme
 msgid "Goldeimer Festival"
-msgstr ""
+msgstr "Goldeimer Festival"
 

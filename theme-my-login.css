@@ -58,14 +58,13 @@ div.login-widget {
 /* PASSWORD SECTION OF
  * REGISTRATION & LOST PASS FORM
 ----------------------------------------- */
-
+.form-row.pass-row {
+	margin-bottom: 0;
+}
 .pass-row p {
 	font-size: 1em;
 	overflow: hidden;
-	padding-top: .4em;
-}
-.pass-row p:first-child {
-	padding-top: 0;
+	margin-bottom: 1.7em;
 }
 .pass-row p input {
 	padding-top: 0;

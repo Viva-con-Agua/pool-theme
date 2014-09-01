@@ -62,8 +62,8 @@ add_action ( 'wp_enqueue_scripts', 'p1_theme_load_scripts' );
 function p1_theme_register_menus() {
 	register_nav_menus(
 		array(
-			'main-nav-supporter' => __( 'Main Navigation for Supporters' ),
-			'main-nav-admins' => __( 'Main Navigation for administrative Users' )
+			'main-nav-supporter' => __( 'Main Navigation for Supporters', 'pool-theme' ),
+			'main-nav-admins' => __( 'Main Navigation for administrative Users', 'pool-theme'  )
 		)
 	);
 }
