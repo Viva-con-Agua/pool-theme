@@ -936,7 +936,7 @@ div.single-activity p:last-of-type {
 	border: 2px solid #e9619c;
 	border-radius: 4px;
 	text-align: left;
-	font-family: GS;
+	font-family: GS, Verdana, Geneva, Helvetica, Arial, sans-serif;
 	font-size: 1.4em;
 	margin-right: 1.5em;
 }
