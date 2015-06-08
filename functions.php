@@ -369,7 +369,7 @@ function p1_theme_admin_footer() {
 	echo '<span id="footer-thankyou">Developed by <a href="mailto:j.pilkahn@vivaconagua.org">Pille</a>';
 }
 function p1_theme_footer_version() {
-	return 'Version 1.5';
+	return 'Version 1.6';
 }
 add_filter( 'admin_footer_text', 'p1_theme_admin_footer' );
 add_filter( 'update_footer', 'p1_theme_footer_version', 11 );

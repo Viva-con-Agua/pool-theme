@@ -1214,6 +1214,7 @@ div.system-error h3,
 div.system-error p {
 	color: #00586c;
 }
+div.system-message p:last-child,
 div.system-error p:last-child {
 	margin-bottom: 0;
 }
