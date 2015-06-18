@@ -20,7 +20,7 @@ $subject_placeholder = 'Newsletter';
 if( isset( $_POST['mail_submit'] ) && __( 'Preview', 'vca-theme' ) === $_POST['mail_submit'] ) {
 
 	$subject = empty( $_POST['subject'] ) ? $subject_placeholder : $_POST['subject'];
-	$message = empty( $_POST['message'] ) ? $message_placeholder : $_POST['message'];
+	$message = nl2br( empty( $_POST['message'] ) ? $message_placeholder : $_POST['message'], true);
 
 	$time = time();
 	if ( ! in_array( 'city', $current_user->roles ) ) {
@@ -33,7 +33,6 @@ if( isset( $_POST['mail_submit'] ) && __( 'Preview', 'vca-theme' ) === $_POST['m
 		$mail_nation = $vca_asm_geography->get_alpha_code( get_user_meta( $current_user->ID, 'nation', true ) );
 	}
 
-	$_POST['receipient'];
 	$membership = isset( $_POST['membership'] ) ? $_POST['membership'] : 0;
 	$receipient_group = $_POST['receipient-group'];
 	$receipient_id = $vca_asm_mailer->receipient_id_from_group( $receipient_group, false );
