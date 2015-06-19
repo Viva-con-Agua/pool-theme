@@ -870,17 +870,3 @@ if ( get_magic_quotes_gpc() ) {
 	$_COOKIE = array_map( 'stripslashes_deep', $_COOKIE );
 	$_REQUEST = array_map( 'stripslashes_deep', $_REQUEST );
 }
-
-
-
-/* TEMPORARY HACKS (i.e. non-solutions)
------------------------------------------ */
-
-function p1_gettext_filter( $translation, $text )
-{
-	if ( ! is_admin() && 'Confirm Password' === $text ) {
-		return __( 'Confirm the Password', 'vca-theme' );
-	}
-	return $translation;
-}
-add_filter( 'gettext', 'p1_gettext_filter', 10, 2 );
