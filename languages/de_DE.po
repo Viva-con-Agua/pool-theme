@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VcA Pool v1.5\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/twentyten\n"
-"POT-Creation-Date: 2015-06-10 13:30+0100\n"
-"PO-Revision-Date: 2015-06-10 13:30+0100\n"
-"Last-Translator: Johannes Pilkahn <johannes@pilkahn.org>\n"
+"POT-Creation-Date: 2015-06-19 13:52+0100\n"
+"PO-Revision-Date: 2015-06-19 13:52+0100\n"
+"Last-Translator: Johannes Pilkahn <j.pilkahn@vivaconagua.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: German\n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,8 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"esc_attr__;esc_attr_e\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -26,7 +27,7 @@ msgid "Author Archives: %s"
 msgstr "Autor Archiv: %s"
 
 # @ twentyten
-#: ../author.php:27
+#: ../author.php:27 ../single.php:22
 #, php-format
 msgid "About %s"
 msgstr "Über %s"
@@ -395,47 +396,55 @@ msgid "Navigation Menu"
 msgstr "Navigationsmenü"
 
 # @ vca-theme
-#: ../login-form.php:3 ../login-form-home.php:3
+#: ../login-form.php:5
 msgctxt "Login Widget Title"
 msgid "Login"
 msgstr "Einloggen"
 
 # @ vca-theme
-#: ../login-form.php:12 ../register-form.php:10 ../login-form-home.php:12
-#: ../profile-form.php:49
+#: ../login-form.php:13 ../register-form.php:13 ../profile-form.php:42
 msgid "Username"
 msgstr "Benutzername"
 
 # @ vca-theme
-#: ../login-form.php:15 ../login-form-home.php:15
+#: ../login-form.php:18
 msgid "Password"
 msgstr "Passwort"
 
-# @ vca-theme
-#: ../login-form.php:24 ../login-form-home.php:24
+#: ../login-form.php:27
 msgid "Remember Me"
-msgstr "An mich erinnern"
+msgstr "Erinnere mich"
 
-# @ vca-theme
-#: ../login-form.php:27 ../login-form-home.php:27
+#: ../login-form.php:32
 msgid "Log In"
-msgstr "Einloggen"
+msgstr "Anmelden"
+
+#: ../login-form.php:45 ../register-form.php:53 ../lostpassword-form.php:31
+msgid "Welcome"
+msgstr "Willkommen"
 
 # @ vca-theme
-#: ../login-form.php:33 ../register-form.php:29 ../resetpass-form.php:30
-#: ../lostpassword-form.php:22 ../login-form-home.php:33
-msgid "Register"
-msgstr "Registrieren"
+#: ../login-form.php:46 ../register-form.php:54 ../lostpassword-form.php:32
+msgid "...to our Supporter Pool!"
+msgstr "...in unserem Supporter-Pool!"
 
-# @ vca-theme
-#: ../login-form.php:34 ../register-form.php:36 ../login-form-home.php:34
-msgid "Lost Password"
-msgstr "Passwort vergessen"
+#: ../login-form.php:47 ../register-form.php:55 ../lostpassword-form.php:33
+msgid ""
+"Via the Pool - our supporter database - you can stay up-to-date about all "
+"Viva con Agua news & activities in your region. Also you&apos;ll get know "
+"everything about our festivals and can sign up to be a cup hunter/huntress. "
+"Viva con Agua is delighted about your support for clean water access "
+"worldwide!"
+msgstr ""
+"Mit dem Pool, unserer Supporterdatenbank, bleibst du über Viva con Agua "
+"Neuigkeiten und Aktivitäten in deiner Region auf dem laufenden. Ausserdem "
+"erfährst du alles über unsere (Festival-) Aktivitäten und kannst dich z.B. "
+"als Becherjäger_in bewerben – Viva con Agua freut sich auf dich und dein "
+"Engagement für sauberes Trinkwasser und sanitäre Versorgung weltweit!"
 
 # @ twentyten
-#: ../page.php:19 ../page-fuck-around.php:28 ../page-no-title.php:11
-#: ../attachment.php:85 ../loop.php:91 ../page-narrow.php:19 ../single.php:18
-#: ../page-narrow-no-title.php:11
+#: ../page.php:19 ../page-no-title.php:11 ../attachment.php:85 ../loop.php:91
+#: ../page-narrow.php:19 ../single.php:18 ../page-narrow-no-title.php:11
 msgid "Pages:"
 msgstr "Seiten:"
 
@@ -458,17 +467,21 @@ msgid ""
 msgstr "Sorry, aber da ist nix. Versuch's mit anderen Kriterien nochmal."
 
 # @ vca-theme
-#: ../register-form.php:4
+#: ../register-form.php:5
 msgid "Register to the Pool"
 msgstr "Registriere dich im Pool"
 
 # @ vca-theme
-#: ../register-form.php:13 ../profile-form.php:92
+#: ../register-form.php:18 ../profile-form.php:57
 msgid "E-mail"
 msgstr "E-Mail"
 
+#: ../register-form.php:25
+msgid "A password will be e-mailed to you."
+msgstr "Ein Passwort wird dir per E-Mail geschickt."
+
 # @ vca-theme
-#: ../register-form.php:22
+#: ../register-form.php:30
 msgid "I agree to and have read the terms &amp; conditions."
 msgstr ""
 "Ich akzeptiere die <a title=\"Zum Text\" href=\"http://pool.vivaconagua.org/"
@@ -477,17 +490,16 @@ msgstr ""
 "\">Datenschutzerklärung</a>."
 
 # @ vca-theme
-#: ../register-form.php:26
+#: ../register-form.php:36
 msgid "Please confirm that you agree to the terms &amp; conditions."
 msgstr ""
 "Bitte bestätige, dass du die Nutzungsbedingungen und Datenschutzerklärung "
 "akzeptierst."
 
 # @ vca-theme
-#: ../register-form.php:35 ../resetpass-form.php:29
-#: ../lostpassword-form.php:21
-msgid "Login"
-msgstr "Reinloggen"
+#: ../register-form.php:39
+msgid "Register"
+msgstr "Registrieren"
 
 # @ vca-theme
 #: ../single-miscactions.php:31
@@ -532,6 +544,12 @@ msgstr "<span>&larr;</span> %s"
 #, php-format
 msgid "By %2$s"
 msgstr "Von %2$s"
+
+# @ twentyten
+#: ../attachment.php:22 ../functions.php:814
+#, php-format
+msgid "View all posts by %s"
+msgstr "Alle Posts von %s ansehen"
 
 # @ twentyten
 #: ../attachment.php:29
@@ -602,10 +620,20 @@ msgid "gallery"
 msgstr "gallerie"
 
 # @ twentyten
+#: ../loop.php:39 ../loop.php:54 ../loop.php:84
+#, php-format
+msgid "Permalink to %s"
+msgstr "Link zu %s"
+
+# @ twentyten
 #: ../loop.php:53
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photos</a>."
 msgstr "Diese Galerie beinhaltet <a %1$s>%2$s Fotos</a>."
+
+#: ../loop.php:61
+msgid "View posts in the Gallery category"
+msgstr "Posts in der Galerie-Kategorie ansehen"
 
 # @ twentyten
 #: ../loop.php:61
@@ -907,16 +935,6 @@ msgstr "Jährliches Archiv: %s"
 msgid "Blog Archives"
 msgstr "Blog Archiv"
 
-# @ vca-theme
-#: ../user-panel.php:3
-msgid "Moin"
-msgstr "Moin"
-
-# @ vca-theme
-#: ../user-panel.php:4
-msgid "Your Profile"
-msgstr "Dein Profil"
-
 # @ twentyten
 #: ../single.php:10 ../single.php:32
 msgctxt "Previous post link"
@@ -936,22 +954,22 @@ msgid "View all posts by %s &rarr;"
 msgstr "Alle Posts von %s ansehen &rarr;"
 
 # @ vca-theme
-#: ../resetpass-form.php:7
+#: ../resetpass-form.php:11
 msgid "New password"
 msgstr "Neues Passwort"
 
 # @ vca-theme
-#: ../resetpass-form.php:10
+#: ../resetpass-form.php:16
 msgid "Confirm new password"
 msgstr "Neues Passwort bestätigen"
 
 # @ vca-theme
-#: ../resetpass-form.php:13
+#: ../resetpass-form.php:20
 msgid "Strength indicator"
 msgstr "Stärke-Indikator"
 
 # @ vca-theme
-#: ../resetpass-form.php:15
+#: ../resetpass-form.php:23
 msgid ""
 "Hint: The password should be at least seven characters long. To make it "
 "stronger, use upper and lower case letters, numbers and symbols like ! \" ? "
@@ -962,9 +980,19 @@ msgstr ""
 "Sonderzeichen."
 
 # @ vca-theme
-#: ../lostpassword-form.php:7
+#: ../resetpass-form.php:29
+msgid "Reset Password"
+msgstr "Passwort Zur&uuml;cksetzen"
+
+# @ vca-theme
+#: ../lostpassword-form.php:11
 msgid "Username or E-mail:"
 msgstr "Benutzername oder E-Mail"
+
+# @ vca-theme
+#: ../lostpassword-form.php:18
+msgid "Get New Password"
+msgstr "Neues Passwort Anfordern"
 
 # @ vca-theme
 #: ../footer.php:12
@@ -997,23 +1025,23 @@ msgid "Imprint"
 msgstr "Impressum"
 
 # @ vca-theme
-#: ../page-email-view.php:17
+#: ../page-email-view.php:20
 msgid "Preview"
 msgstr "Vorschau"
 
 # @ vca-theme
-#: ../page-email-view.php:54
+#: ../page-email-view.php:56
 msgid "Activity"
 msgstr "Aktivität"
 
 # @ vca-theme
-#: ../page-email-view.php:58
+#: ../page-email-view.php:60
 msgid "Your city"
 msgstr "Deine Stadt"
 
 # @ vca-theme
-#: ../page-email-view.php:71 ../page-email-view.php:74
-#: ../page-email-view.php:142 ../page-email-view.php:152
+#: ../page-email-view.php:73 ../page-email-view.php:76
+#: ../page-email-view.php:144 ../page-email-view.php:154
 msgid "Supporter"
 msgstr "Supporter"
 
@@ -1023,47 +1051,47 @@ msgid "Festival"
 msgstr "Festival"
 
 # @ vca-theme
-#: ../profile-form.php:34
+#: ../profile-form.php:24
 msgid "City Profile"
 msgstr "Stadt Profil"
 
 # @ vca-theme
-#: ../profile-form.php:36
+#: ../profile-form.php:26
 msgid "Supporter Profile"
 msgstr "Supporter Profil"
 
 # @ vca-theme
-#: ../profile-form.php:38
+#: ../profile-form.php:28
 msgid "Pool Profile"
 msgstr "Pool Profil"
 
 # @ vca-theme
-#: ../profile-form.php:46
+#: ../profile-form.php:39
 msgid "Name"
 msgstr "Name"
 
 # @ vca-theme
-#: ../profile-form.php:49
+#: ../profile-form.php:42
 msgid "Your username cannot be changed."
 msgstr "Dein Benutzername kann nicht geändert werden."
 
 # @ vca-theme
-#: ../profile-form.php:52
+#: ../profile-form.php:45
 msgid "First name"
 msgstr "Vorname"
 
 # @ vca-theme
-#: ../profile-form.php:55
+#: ../profile-form.php:48
 msgid "Last name"
 msgstr "Nachname"
 
 # @ vca-theme
-#: ../profile-form.php:89
+#: ../profile-form.php:54
 msgid "Contact Info"
 msgstr "Kontakt-Info"
 
 # @ vca-theme
-#: ../profile-form.php:102 ../profile-form.php:161
+#: ../profile-form.php:68 ../profile-form.php:132
 msgid ""
 "Do you really want to delete your account? This will be permanent and cannot "
 "be undone!"
@@ -1072,37 +1100,37 @@ msgstr ""
 "nicht rückgängig gemacht werden!"
 
 # @ vca-theme
-#: ../profile-form.php:108 ../profile-form.php:167
+#: ../profile-form.php:74 ../profile-form.php:138
 msgid "Please select a region. Thank you."
 msgstr "Bitte wähle eine Region. Danke."
 
 # @ vca-theme
-#: ../profile-form.php:111 ../profile-form.php:170
+#: ../profile-form.php:77 ../profile-form.php:141
 msgid "Are you really a hundred years old???."
 msgstr "Bist du wirklich 100 Jahre alt???"
 
 # @ vca-theme
-#: ../profile-form.php:117 ../profile-form.php:176
+#: ../profile-form.php:83 ../profile-form.php:147
 msgid "Have you really been born on January 1st, 1970?."
 msgstr "Wurdest Du wirklich am ersten Januar 1970 geboren?"
 
 # @ vca-theme
-#: ../profile-form.php:123 ../profile-form.php:182
+#: ../profile-form.php:89 ../profile-form.php:153
 msgid "Update Profile"
 msgstr "Profil aktualisieren"
 
 # @ vca-theme
-#: ../profile-form.php:127
+#: ../profile-form.php:94
 msgid "Settings"
 msgstr "Einstellungen"
 
 # @ vca-theme
-#: ../profile-form.php:137 ../profile-form.php:140
+#: ../profile-form.php:104 ../profile-form.php:107
 msgid "New Password"
 msgstr "Neues Passwort"
 
 # @ vca-theme
-#: ../profile-form.php:139
+#: ../profile-form.php:106
 msgid ""
 "If you would like to change the password type a new one. Otherwise leave "
 "this blank."
@@ -1111,27 +1139,27 @@ msgstr ""
 "Feld einfach frei."
 
 # @ vca-theme
-#: ../profile-form.php:143
+#: ../profile-form.php:110
 msgid "Repeat Password"
 msgstr "Passwort Wiederholung"
 
 # @ vca-theme
-#: ../profile-form.php:146
+#: ../profile-form.php:113
 msgid "Password Strength"
 msgstr "Passwort Stärke"
 
 # @ vca-theme
-#: ../profile-form.php:147
+#: ../profile-form.php:114
 msgid "Strength Indicator"
 msgstr "Stärke-Indikator"
 
 # @ vca-theme
-#: ../profile-form.php:151
+#: ../profile-form.php:118
 msgid "Leave for good"
 msgstr "Den Pool verlassen"
 
 # @ vca-theme
-#: ../profile-form.php:154
+#: ../profile-form.php:121
 msgid "Delete my account permanently"
 msgstr "Mein Benutzerkonto löschen"
 
