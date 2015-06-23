@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VcA Pool v1.5\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/twentyten\n"
-"POT-Creation-Date: 2015-06-19 13:52+0100\n"
-"PO-Revision-Date: 2015-06-19 13:52+0100\n"
-"Last-Translator: Johannes Pilkahn <j.pilkahn@vivaconagua.org>\n"
+"POT-Creation-Date: 2015-06-23 14:21+0100\n"
+"PO-Revision-Date: 2015-06-23 14:21+0100\n"
+"Last-Translator: Johannes Pilkahn <johannes@pilkahn.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: German\n"
 "MIME-Version: 1.0\n"
@@ -898,11 +898,6 @@ msgstr ""
 "\">Artikel</a> setzen."
 
 # @ vca-theme
-#: ../functions.php:882
-msgid "Confirm the Password"
-msgstr "Passwort bestätigen"
-
-# @ vca-theme
 #: ../single-concert.php:31
 msgid "Concert"
 msgstr "Konzert"
@@ -1030,18 +1025,27 @@ msgid "Preview"
 msgstr "Vorschau"
 
 # @ vca-theme
-#: ../page-email-view.php:56
+#: ../page-email-view.php:66
+msgid "Goldeimer"
+msgstr "Goldeimer"
+
+#: ../page-email-view.php:71 ../page-email-view.php:77
+msgid "Viva con Agua"
+msgstr "Viva con Agua"
+
+# @ vca-theme
+#: ../page-email-view.php:94
 msgid "Activity"
 msgstr "Aktivität"
 
 # @ vca-theme
-#: ../page-email-view.php:60
+#: ../page-email-view.php:98
 msgid "Your city"
 msgstr "Deine Stadt"
 
 # @ vca-theme
-#: ../page-email-view.php:73 ../page-email-view.php:76
-#: ../page-email-view.php:144 ../page-email-view.php:154
+#: ../page-email-view.php:111 ../page-email-view.php:114
+#: ../page-email-view.php:187 ../page-email-view.php:197
 msgid "Supporter"
 msgstr "Supporter"
 
@@ -1091,7 +1095,7 @@ msgid "Contact Info"
 msgstr "Kontakt-Info"
 
 # @ vca-theme
-#: ../profile-form.php:68 ../profile-form.php:132
+#: ../profile-form.php:68 ../profile-form.php:133
 msgid ""
 "Do you really want to delete your account? This will be permanent and cannot "
 "be undone!"
@@ -1100,22 +1104,22 @@ msgstr ""
 "nicht rückgängig gemacht werden!"
 
 # @ vca-theme
-#: ../profile-form.php:74 ../profile-form.php:138
+#: ../profile-form.php:74 ../profile-form.php:139
 msgid "Please select a region. Thank you."
 msgstr "Bitte wähle eine Region. Danke."
 
 # @ vca-theme
-#: ../profile-form.php:77 ../profile-form.php:141
+#: ../profile-form.php:77 ../profile-form.php:142
 msgid "Are you really a hundred years old???."
 msgstr "Bist du wirklich 100 Jahre alt???"
 
 # @ vca-theme
-#: ../profile-form.php:83 ../profile-form.php:147
+#: ../profile-form.php:83 ../profile-form.php:148
 msgid "Have you really been born on January 1st, 1970?."
 msgstr "Wurdest Du wirklich am ersten Januar 1970 geboren?"
 
 # @ vca-theme
-#: ../profile-form.php:89 ../profile-form.php:153
+#: ../profile-form.php:89 ../profile-form.php:154
 msgid "Update Profile"
 msgstr "Profil aktualisieren"
 

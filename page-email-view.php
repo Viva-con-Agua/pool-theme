@@ -21,16 +21,31 @@ if( isset( $_POST['mail_submit'] ) && __( 'Preview', 'vca-theme' ) === $_POST['m
 
 	$subject = empty( $_POST['subject'] ) ? $subject_placeholder : $_POST['subject'];
 	$message = nl2br( empty( $_POST['message'] ) ? $message_placeholder : $_POST['message'], true);
+	$mail_type = empty( $_POST['mail_type'] ) ? 'newsletter' : $_POST['mail_type'];
 
 	$time = time();
+
+	if ( 'activity' === $mail_type && ! empty( $_POST['activity'] ) ) {
+		$activity_type = get_post_type( $_POST['activity'] );
+		if ( 'goldeimerfestival' === $activity_type ) {
+			$mail_nation = 'goldeimer';
+		} else {
+			$mail_nation = $vca_asm_geography->get_alpha_code( get_post_meta( $_POST['activity'], 'nation', true ) );
+		}
+	} else {
+		if ( ! in_array( 'city', $current_user->roles ) ) {
+			$mail_nation = $vca_asm_geography->get_alpha_code( get_user_meta( $current_user->ID, 'nation', true ) );
+		} else {
+			$mail_nation = $vca_asm_geography->get_alpha_code( get_user_meta( $current_user->ID, 'nation', true ) );
+		}
+	}
+
 	if ( ! in_array( 'city', $current_user->roles ) ) {
 		$from = trim( $current_user->first_name . ' ' . $current_user->last_name );
-		$mail_nation = $vca_asm_geography->get_alpha_code( get_user_meta( $current_user->ID, 'nation', true ) );
 	} else {
 		$city_id = get_user_meta( $current_user->ID, 'city', true );
 		$city_name = $vca_asm_geography->get_name( $city_id );
 		$from = $vca_asm_geography->get_status( $city_id ) . ' ' . $city_name;
-		$mail_nation = $vca_asm_geography->get_alpha_code( get_user_meta( $current_user->ID, 'nation', true ) );
 	}
 
 	$membership = isset( $_POST['membership'] ) ? $_POST['membership'] : 0;
@@ -42,9 +57,32 @@ if( isset( $_POST['mail_submit'] ) && __( 'Preview', 'vca-theme' ) === $_POST['m
 } elseif ( isset( $_GET['id'] ) ) {
 
 	if ( isset( $_GET['auto_action'] ) && in_array( $_GET['auto_action'], array( 'applied', 'accepted', 'denied', 'reg_revoked', 'mem_accepted', 'mem_denied', 'mem_cancelled' ) ) ) {
+
+		if ( in_array( $_GET['auto_action'], array( 'applied', 'accepted', 'denied', 'reg_revoked' ) ) ) {
+			$activity_type = get_post_type( $_GET['id'] );
+			if ( 'goldeimerfestival' === $activity_type ) {
+				$mail_nation = 'goldeimer';
+				$scope = 'ge';
+				$from = __( 'Goldeimer', 'vca-theme' );
+			} else {
+				$nation_id = get_post_meta( $_GET['id'], 'nation', true );
+				$mail_nation = $vca_asm_geography->get_alpha_code( $nation_id );
+				$scope = $nation_id;
+				$from = __( 'Viva con Agua', 'vca-theme' );
+			}
+		} else {
+			$nation_id = $vca_asm_geography->has_nation( $_GET['id'] );
+			$mail_nation = $vca_asm_geography->get_alpha_code( $nation_id );
+			$scope = $nation_id;
+			$from = __( 'Viva con Agua', 'vca-theme' );
+		}
+		if ( ! in_array( $scope, array( 40, 42, 68, 'ge' ) ) ) {
+			$scope = 40;
+		}
+
 		$email_query = $wpdb->get_results(
 			"SELECT * FROM " . $wpdb->prefix . "vca_asm_auto_responses " .
-			"WHERE action = '" . $_GET['auto_action'] . "' LIMIT 1", ARRAY_A
+			"WHERE action = '" . $_GET['auto_action'] . "' AND scope = '" . $scope . "'  LIMIT 1", ARRAY_A
 		);
 		$email = ! empty( $email_query ) ? $email_query[0] : array();
 		if ( empty( $email ) ) {
@@ -86,22 +124,27 @@ if( isset( $_POST['mail_submit'] ) && __( 'Preview', 'vca-theme' ) === $_POST['m
 			'</p>';
 	} else {
 		$email_query = $wpdb->get_results(
-			"SELECT id, subject, message, time, sent_by, receipient_group, receipient_id, type FROM " . $wpdb->prefix."vca_asm_emails" .
+			"SELECT * FROM " . $wpdb->prefix."vca_asm_emails" .
 			" WHERE id = " . $_GET['id'] . " LIMIT 1", ARRAY_A
 		);
 		$email = ! empty( $email_query ) ? $email_query[0] : array();
+
+		if ( ! empty( $email['type'] ) && 'activity' === $email['type'] ) {
+			$activity_type = get_post_type( $email['receipient_id'] );
+			if ( 'goldeimerfestival' === $activity_type ) {
+				$mail_nation = 'goldeimer';
+			} else {
+				$mail_nation = $vca_asm_geography->get_alpha_code( get_post_meta( $email['receipient_id'], 'nation', true ) );
+			}
+		} else {
+			$mail_nation = $vca_asm_geography->get_alpha_code( get_user_meta( $email['sent_by'], 'nation', true ) );
+		}
+		$mail_nation = ! empty( $mail_nation ) ? $mail_nation : 'de';
 	}
 	$email['sent_by'] = isset( $email['sent_by'] ) ? $email['sent_by'] : 0;
 	$email['membership'] = isset( $email['membership'] ) ? $email['membership'] : 0;
 	$email['receipient_id'] = isset( $email['receipient_id'] ) ? $email['receipient_id'] : 0;
 	$email['receipient_group'] = isset( $email['receipient_group'] ) ? $email['receipient_group'] : 0;
-
-	$sender_nation = $vca_asm_geography->has_nation( get_user_meta( $email['sent_by'], 'region', true ) );
-	if ( $sender_nation ) {
-		$mail_nation = $vca_asm_geography->get_alpha_code( $sender_nation );
-	} else {
-		$mail_nation = 'de';
-	}
 
 	if(
 			$current_user->has_cap( 'vca_asm_view_emails_global' ) ||
@@ -123,7 +166,7 @@ if( isset( $_POST['mail_submit'] ) && __( 'Preview', 'vca-theme' ) === $_POST['m
 		$message = empty( $email['message'] ) ? $message_placeholder : $email['message'];
 		$subject = empty( $email['subject'] ) ? $subject_placeholder : $email['subject'];
 		$time = empty( $email['time'] ) ? time() : $email['time'];
-		$from = empty( $email['sent_by'] ) ? 'Viva con Agua' : $email['sent_by'];
+		$from = empty( $from ) ? ( empty( $email['from_name'] ) ? ( empty( $email['sent_by'] ) ? 'Viva con Agua' : $email['sent_by'] ) : $email['from_name'] ) : $from;
 		if( is_numeric( $from ) ) {
 			$user = new WP_User( $email['sent_by'] );
 			if( ! in_array( 'city', $user->roles ) ) {
