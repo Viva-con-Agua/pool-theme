@@ -6,7 +6,6 @@
 get_header();
 
 	global $current_user;
-	get_currentuserinfo();
 
 	$utils = new P1_Utilities();
 

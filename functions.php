@@ -79,7 +79,6 @@ add_action( 'widgets_init', 'p1_theme_widgets_init' );
 /* Navigation Menu */
 function p1_get_admin_link(){
 	global $current_user;
-	get_currentuserinfo();
 
 	$admins_haystack = array(
 		'administrator',
@@ -129,7 +128,6 @@ function p1_get_admin_link(){
 
 function p1_pool_menu( $medium ) {
 	global $current_user;
-	get_currentuserinfo();
 
 	if ( class_exists( 'VCA_ASM_Supporter' ) ) {
 		$supporter = new VCA_ASM_Supporter( $current_user->ID );
@@ -179,7 +177,6 @@ function p1_pool_menu( $medium ) {
 
 				if( is_user_logged_in() )  {
 					global $current_user;
-					get_currentuserinfo();
 
 					if( p1_get_admin_link() ) {
 						$output .= '<li>' . p1_get_admin_link() . '</li>';
@@ -349,7 +346,7 @@ add_action('admin_menu', 'p1_theme_all_settings_link');
 function p1_disable_admin_bar() {
 	remove_action( 'admin_footer', 'wp_admin_bar_render', 1000 );
 	function remove_admin_bar_style_backend() {
-	  echo '<style>html.wp-toolbar, body.admin-bar #wpcontent, body.admin-bar #adminmenu { padding-top: 0px !important; }#wpadminbar { display: none; }</style>';
+	  echo '<style>@media all and (min-width:780px) {#wpadminbar {display:none;} html.wp-toolbar {padding-top:0px;}}</style>';
 	}
 	add_filter( 'admin_head', 'remove_admin_bar_style_backend' );
 
@@ -362,7 +359,7 @@ function p1_disable_admin_bar() {
 	add_filter( 'wp_head', 'remove_admin_bar_style_frontend', 99 );
 }
 add_action( 'init', 'p1_disable_admin_bar' );
-remove_action( 'init', '_wp_admin_bar_init' );
+//remove_action( 'init', '_wp_admin_bar_init' );
 
 /* Modify default wordpress footer */
 function p1_theme_admin_footer() {
@@ -377,7 +374,6 @@ add_filter( 'update_footer', 'p1_theme_footer_version', 11 );
 /* Kick users with the role "supporter" from the backend when accessed with a direct link */
 function redirect_supporters_from_dash() {
 	global $current_user;
-	get_currentuserinfo();
 
 	if ( in_array( 'supporter', $current_user->roles ) ) {
 		header( 'Location: http://pool.vivaconagua.org' );
@@ -386,53 +382,52 @@ function redirect_supporters_from_dash() {
 add_action( 'admin_init', 'redirect_supporters_from_dash' );
 
 /* Remove the "Dashboard" from the admin menu for non-admin users */
-function p1_remove_dashboard() {
-	global $blog, $current_user, $id, $parent_file, $wphd_user_capability, $wp_db_version;
-
-	if ( ! in_array( 'administrator', $current_user->roles ) ) {
-
-		/* First, let's get rid of the Update nag */
-		echo "\n" . '<style type="text/css" media="screen">#your-profile { display: none; } .update-nag { display: none !important; }</style>';
-
-		/* Now, let's fix the sidebar admin menu - go away, Dashboard link. */
-		remove_menu_page( 'index.php' );		/* Hides Dashboard menu */
-		remove_menu_page( 'separator1' );		/* Hides separator under Dashboard menu*/
-		remove_menu_page( 'theme_my_login' );
-
-		/* Redirect to home */
-		if ( preg_match( '#wp-admin/?(index.php)?$#', $_SERVER['REQUEST_URI'] ) ) {
-			wp_redirect( get_option( 'siteurl' ) . '/wp-admin/admin.php?page=vca-asm-home');
-		}
-	}
-}
-add_action( 'admin_head', 'p1_remove_dashboard', 0 );
-
-/* Other admin UI fixes */
-function p1_admin_ui_fixes() {
-	global $current_user, $menu, $submenu;
-	get_currentuserinfo();
-
-	if( ! in_array( 'administrator', $current_user->roles ) ) {
-		remove_meta_box('dashboard_plugins', 'dashboard', 'normal');   // plugins
-		remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // recent comments
-		remove_meta_box('dashboard_quick_press', 'dashboard', 'normal');  // quick press
-		remove_meta_box('dashboard_primary', 'dashboard', 'normal');   // wordpress blog
-		remove_meta_box('dashboard_secondary', 'dashboard', 'normal');   // other wordpress news
-		remove_menu_page('edit.php');
-		remove_menu_page('profile.php');
-		remove_menu_page('edit-comments.php');
-		remove_menu_page('link-manager.php');
-		remove_menu_page('sfa-admins');
-		remove_menu_page('tools.php');
-		remove_menu_page('upload.php');
-
-		function remove_admin_menu_sep() {
-			echo '<style>.wp-menu-separator { display:none !important; }</style>';
-		}
-		add_filter('admin_head','remove_admin_menu_sep');
-	}
-}
-add_action('admin_menu', 'p1_admin_ui_fixes');
+//function p1_remove_dashboard() {
+//	global $blog, $current_user, $id, $parent_file, $wphd_user_capability, $wp_db_version;
+//
+//	if ( ! in_array( 'administrator', $current_user->roles ) ) {
+//
+//		/* First, let's get rid of the Update nag */
+//		echo "\n" . '<style type="text/css" media="screen">#your-profile { display: none; } .update-nag { display: none !important; }</style>';
+//
+//		/* Now, let's fix the sidebar admin menu - go away, Dashboard link. */
+//		remove_menu_page( 'index.php' );		/* Hides Dashboard menu */
+//		remove_menu_page( 'separator1' );		/* Hides separator under Dashboard menu*/
+//		remove_menu_page( 'theme_my_login' );
+//
+//		/* Redirect to home */
+//		if ( preg_match( '#wp-admin/?(index.php)?$#', $_SERVER['REQUEST_URI'] ) ) {
+//			wp_redirect( get_option( 'siteurl' ) . '/wp-admin/admin.php?page=vca-asm-home');
+//		}
+//	}
+//}
+//add_action( 'admin_head', 'p1_remove_dashboard', 0 );
+//
+///* Other admin UI fixes */
+//function p1_admin_ui_fixes() {
+//	global $current_user, $menu, $submenu;
+//
+//	if( ! in_array( 'administrator', $current_user->roles ) ) {
+//		remove_meta_box('dashboard_plugins', 'dashboard', 'normal');   // plugins
+//		remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // recent comments
+//		remove_meta_box('dashboard_quick_press', 'dashboard', 'normal');  // quick press
+//		remove_meta_box('dashboard_primary', 'dashboard', 'normal');   // wordpress blog
+//		remove_meta_box('dashboard_secondary', 'dashboard', 'normal');   // other wordpress news
+//		remove_menu_page('edit.php');
+//		remove_menu_page('profile.php');
+//		remove_menu_page('edit-comments.php');
+//		remove_menu_page('link-manager.php');
+//		remove_menu_page('sfa-admins');
+//		remove_menu_page('tools.php');
+//		remove_menu_page('upload.php');
+//
+//		function remove_admin_menu_sep() {
+//			echo '<style>.wp-menu-separator { display:none !important; }</style>';
+//		}
+//		add_filter('admin_head','remove_admin_menu_sep');
+//	}
+//}
+//add_action('admin_menu', 'p1_admin_ui_fixes');
 
 
 
@@ -615,7 +610,7 @@ function p1_theme_sc_not_supporter( $atts, $content='' ) {
 		return $message;
 	} else {
 		global $current_user;
-		get_currentuserinfo();
+		
 		if( in_array( 'supporter', $current_user->roles ) ) {
 			return $message;
 		} else {
