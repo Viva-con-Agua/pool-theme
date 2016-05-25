@@ -10,6 +10,11 @@
 		$disable_field = '';
 	}
 ?>
+<style>
+	form#your-profile table.form-table {
+		display: none;
+	}
+</style>
 <div class="login profile grid-row" id="theme-my-login<?php $template->the_instance(); ?>">
 	<form id="your-profile" action="<?php $template->the_action_url( 'profile' ); ?>" method="post">
 		<div class="col6">
@@ -99,7 +104,7 @@
 
 				<?php
 				$show_password_fields = apply_filters( 'show_password_fields', true, $profileuser );
-				if ( $show_password_fields ) :
+				if (false)://( $show_password_fields ) :
 				?>
 					<h3><?php _e( 'New Password', 'vca-theme' ); ?></h3>
 					<div class="form-row">
@@ -126,6 +131,7 @@
 					<?php //do_action( 'show_user_profile', $profileuser ); ?>
 
 					<input type="hidden" name="action" value="profile" />
+					<input type="hidden" name="nickname" id="nickname" value="<?php echo esc_attr( $profileuser->user_login ); ?>" class="regular-text" />
 					<input type="hidden" name="instance" value="<?php $template->the_instance(); ?>" />
 					<input type="hidden" name="user_id" id="user_id" value="<?php echo esc_attr( $current_user->ID ); ?>" />
 					<input type="submit" onclick="
