@@ -54,8 +54,6 @@
 					<input type="text" name="last_name" id="last_name"<?php echo $disable_field; ?> value="<?php echo esc_attr( $profileuser->last_name ) ?>" class="regular-text" />
 				</div>
 
-
-
 				<h3><?php _e( 'Contact Info', 'vca-theme' ) ?></h3>
 
 				<div class="form-row">
@@ -120,6 +118,12 @@
 					</div>
 				<?php endif; ?>
 				<?php if( ! isset( $city_switch ) || $city_switch === false ) { ?>
+
+                <h3><?php _e( 'Volunteer certificate', 'vca-theme' ); ?></h3>
+                <div class="form-row">
+                    <input type="submit" class="button-primary" value="<?php _e( 'Download Certificate', 'vca-theme' ); ?>" name="download-certificate" id="download-certificate"/>
+                </div>
+
 				<h3><?php _e( 'Leave for good', 'vca-theme' ); ?></h3>
 				<div class="form-row check-row column-row">
 					<span class="box-test"></span><input name="deleteme" type="checkbox" id="deleteme" value="forever" />
