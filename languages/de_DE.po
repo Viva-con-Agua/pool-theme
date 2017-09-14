@@ -484,9 +484,9 @@ msgstr "Ein Passwort wird dir per E-Mail geschickt."
 #: ../register-form.php:30
 msgid "I agree to and have read the terms &amp; conditions."
 msgstr ""
-"Ich akzeptiere die <a title=\"Zum Text\" href=\"http://pool.vivaconagua.org/"
+"Ich akzeptiere die <a title=\"Zum Text\" href=\"https://pool.vivaconagua.org/"
 "nutzungsbedingungen/\">Nutzungsbedingungen</a> und <a title=\"Zum Text\" "
-"href=\"http://pool.vivaconagua.org/datenschutzerklaerung/"
+"href=\"https://pool.vivaconagua.org/datenschutzerklaerung/"
 "\">Datenschutzerklärung</a>."
 
 # @ vca-theme
