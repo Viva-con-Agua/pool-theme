@@ -16,8 +16,8 @@
 	<!-- open graph | facebook & other social media -->
 	<meta property="og:title" content="Viva con Agua Pool" />
 	<meta property="og:description" content="Mit dem 'Pool', der VcA Supporterdatenbank, bleibtst du über Viva con Agua Neuigkeiten und Aktivitäten in deiner Region auf dem laufenden. Ausserdem erfährst du alles über unsere Festival-Aktivitäten und kannst dich z.B. als Becherjäger_in bewerben – Viva con Agua freut sich auf dich und dein Engagement für sauberes Trinkwasser und sanitäre Versorgung weltweit!" />
-	<meta property="og:image" content="<?php echo get_option( 'siteurl' ); ?>/social-media-icon.png" />
-	<meta property="og:url" content="<?php echo get_option( 'siteurl' ); ?>" />
+	<meta property="og:image" content="<?php echo site_url('', 'https' ); ?>/social-media-icon.png" />
+	<meta property="og:url" content="<?php echo site_url('', 'https' ); ?>" />
 	<!-- end social media -->
 	<?php if( is_search() ) { ?>
 		<meta name="robots" content="noindex, nofollow" />

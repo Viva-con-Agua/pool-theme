@@ -561,7 +561,7 @@ function p1_theme_sc_bloginfo( $atts ) {
 	if( $key != 'url' ) {
 		return get_bloginfo( $key );
 	} else {
-		return get_option( 'siteurl' );
+		return site_url('', 'https' );
 	}
 }
 add_shortcode('bloginfo', 'p1_theme_sc_bloginfo');
