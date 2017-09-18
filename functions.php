@@ -376,7 +376,7 @@ function redirect_supporters_from_dash() {
 	global $current_user;
 
 	if ( in_array( 'supporter', $current_user->roles ) ) {
-		header( 'Location: http://pool.vivaconagua.org' );
+		header( 'Location: https://pool.vivaconagua.org' );
 	}
 }
 add_action( 'admin_init', 'redirect_supporters_from_dash' );
@@ -561,7 +561,7 @@ function p1_theme_sc_bloginfo( $atts ) {
 	if( $key != 'url' ) {
 		return get_bloginfo( $key );
 	} else {
-		return get_option( 'siteurl' );
+		return site_url('', 'https' );
 	}
 }
 add_shortcode('bloginfo', 'p1_theme_sc_bloginfo');
@@ -628,7 +628,7 @@ function p1_theme_sc_youtube( $atts ) {
 		'height' => 313
 	), $atts ) );
 	if( ! empty( $id ) )
-		return '<div class="shrink-wrap"><iframe class="shrink" width="' . $width . '" height="' . $height . '" src="http://www.youtube.com/embed/' . $id . '" frameborder="0" allowfullscreen></iframe></div>';
+		return '<div class="shrink-wrap"><iframe class="shrink" width="' . $width . '" height="' . $height . '" src="https://www.youtube.com/embed/' . $id . '" frameborder="0" allowfullscreen></iframe></div>';
 	else
 		return ' ';
 }
@@ -675,7 +675,7 @@ function p1_pool_uri_fixes() {
 		if( isset( $template ) ) {
 			$GLOBALS['p1_asm_login_errors'] = $template->get_errors;
 		}
-		$redirect_url = 'http://pool.vivaconagua.org/login/';
+		$redirect_url = 'https://pool.vivaconagua.org/login/';
 		wp_redirect( $redirect_url, 302 );
 		exit;
 	}

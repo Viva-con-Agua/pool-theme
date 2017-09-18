@@ -206,7 +206,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 
 			if ( ! is_user_logged_in() ) {
 
-				$url = p1_current_country() === 'ch' ? 'http://pool.vivaconagua.ch' : 'http://pool.vivaconagua.org';
+				$url = p1_current_country() === 'ch' ? 'https://pool.vivaconagua.ch' : 'https://pool.vivaconagua.org';
 
 				$output .= '<p class="metadata metadata-message">' .
 					sprintf(
