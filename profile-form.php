@@ -1,6 +1,7 @@
 <?php
 	global $current_user;
 	$profileuser = get_user_to_edit( $current_user->ID );
+	$membership = get_user_meta( $current_user->ID, 'membership', true );
 
 	if ( ( is_array( $current_user->roles ) && in_array( 'city', $current_user->roles ) ) ) {
 		$city_switch = true;
@@ -119,10 +120,14 @@
 				<?php endif; ?>
 				<?php if( ! isset( $city_switch ) || $city_switch === false ) { ?>
 
-                <h3><?php _e( 'Volunteer certificate', 'vca-theme' ); ?></h3>
-                <div class="form-row">
-                    <input type="submit" class="button-primary" value="<?php _e( 'Download Certificate', 'vca-theme' ); ?>" name="download-certificate" id="download-certificate"/>
-                </div>
+                <?php if ($membership == 2) { ?>
+
+                    <h3><?php _e( 'Volunteer certificate', 'vca-theme' ); ?></h3>
+                    <div class="form-row">
+                        <input type="submit" class="button-primary" value="<?php _e( 'Download Certificate', 'vca-theme' ); ?>" name="download-certificate" id="download-certificate"/>
+                    </div>
+
+                <?php } ?>
 
 				<h3><?php _e( 'Leave for good', 'vca-theme' ); ?></h3>
 				<div class="form-row check-row column-row">
