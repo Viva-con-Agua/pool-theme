@@ -9,6 +9,17 @@
 		$city_switch = false;
 		$disable_field = '';
 	}
+
+    $userMetaMembership = get_user_meta($current_user->ID, 'membership', true);
+    $userMetaAgreement = get_user_meta($current_user->ID, 'agreement', true);
+
+    // If its a member and theres no agreement, we have to redirect to the profile
+    if (!empty($userMetaMembership) && $userMetaMembership == '2' &&
+        (empty($userMetaAgreement) && $userMetaAgreement != '0')) {
+
+        require_once ('membership-agreement.php');
+        die();
+    }
 ?>
 <style>
 	form#your-profile table.form-table {
