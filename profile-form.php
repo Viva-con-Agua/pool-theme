@@ -1,6 +1,7 @@
 <?php
 	global $current_user;
 	$profileuser = get_user_to_edit( $current_user->ID );
+	$membership = get_user_meta( $current_user->ID, 'membership', true );
 
 	if ( ( is_array( $current_user->roles ) && in_array( 'city', $current_user->roles ) ) ) {
 		$city_switch = true;
@@ -53,8 +54,6 @@
 					<label for="last_name"><?php _e( 'Last name', 'vca-theme' ) ?></label>
 					<input type="text" name="last_name" id="last_name"<?php echo $disable_field; ?> value="<?php echo esc_attr( $profileuser->last_name ) ?>" class="regular-text" />
 				</div>
-
-
 
 				<h3><?php _e( 'Contact Info', 'vca-theme' ) ?></h3>
 
@@ -120,6 +119,16 @@
 					</div>
 				<?php endif; ?>
 				<?php if( ! isset( $city_switch ) || $city_switch === false ) { ?>
+
+                <?php if ($membership == 2) { ?>
+
+                    <h3><?php _e( 'Volunteer certificate', 'vca-theme' ); ?></h3>
+                    <div class="form-row">
+                        <input type="submit" class="button-primary" value="<?php _e( 'Download Certificate', 'vca-theme' ); ?>" name="download-certificate" id="download-certificate"/>
+                    </div>
+
+                <?php } ?>
+
 				<h3><?php _e( 'Leave for good', 'vca-theme' ); ?></h3>
 				<div class="form-row check-row column-row">
 					<span class="box-test"></span><input name="deleteme" type="checkbox" id="deleteme" value="forever" />
