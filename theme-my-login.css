@@ -115,6 +115,9 @@ div.login-widget {
     background-color: #7ec5e0;
     border-color: #008fc1 !important;
 }
+#pass1-text {
+	display: none;
+}
 
 
 /* ANIMATIONS
