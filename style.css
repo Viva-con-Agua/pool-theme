@@ -188,6 +188,7 @@ div.wrapper {
 	position: relative;
 }
 div.content-wrap-wrap {
+	min-height: 196px;
 	padding: 0 2em;
 }
 div.content-wrap {
@@ -207,9 +208,6 @@ div.content-container {
 }
 div.content-container.margin-container {
 	margin-left: 15em;
-}
-div.push {
-	display: none;
 }
 footer, div.push {
 	height: 3.6em;
