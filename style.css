@@ -208,9 +208,11 @@ div.content-container {
 div.content-container.margin-container {
 	margin-left: 15em;
 }
+div.push {
+	display: none;
+}
 footer, div.push {
 	height: 3.6em;
-	display: none;
 	position: relative;
 	margin: 4.2em 0 0;
 }
