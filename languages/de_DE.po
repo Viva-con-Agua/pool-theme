@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VcA Pool v1.5\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/twentyten\n"
 "POT-Creation-Date: 2015-06-23 14:21+0100\n"
-"PO-Revision-Date: 2017-10-26 15:19:09+0200\n"
+"PO-Revision-Date: 2018-02-23 17:53:35+0100\n"
 "Last-Translator: Johannes Pilkahn <johannes@pilkahn.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,24 +20,25 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 "X-Textdomain-Support: yes"
 
-#: ../author.php:20
+#: author.php:25
 #, php-format
 #@ twentyten
 msgid "Author Archives: %s"
 msgstr "Autor Archiv: %s"
 
-#: ../author.php:27 ../single.php:22
+#: author.php:32
+#: single.php:22
 #, php-format
 #@ twentyten
 msgid "About %s"
 msgstr "Über %s"
 
-#: ../comments.php:13
+#: comments.php:13
 #@ twentyten
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr "Dieser Post ist durch ein Passwort geschützt. Gib das Passwort ein, um Kommentare lesen zu können."
 
-#: ../comments.php:30
+#: comments.php:30
 #, php-format
 #@ twentyten
 msgid "One Response to %2$s"
@@ -45,1079 +46,1244 @@ msgid_plural "%1$s Responses to %2$s"
 msgstr[0] "Eine Antwort auf %2$s"
 msgstr[1] "%1$s Antworten auf %2$s"
 
-#: ../comments.php:35 ../comments.php:52
+#: comments.php:35
+#: comments.php:52
 #@ twentyten
 msgid "&larr; Older Comments"
 msgstr "&larr; Ältere Kommentare"
 
-#: ../comments.php:36 ../comments.php:53
+#: comments.php:36
+#: comments.php:53
 #@ twentyten
 msgid "Newer Comments &rarr;"
 msgstr "Nuere Kommentare &rarr;"
 
-#: ../comments.php:63
+#: comments.php:63
 #@ twentyten
 msgid "Comments are closed."
 msgstr "Kommentare sind geschlossen."
 
-#: ../single-nwgathering.php:31
+#: single-nwgathering.php:30
 #@ vca-theme
 msgid "Network Gathering"
 msgstr "Netzwerktreffen"
 
-#: ../single-nwgathering.php:35
+#: single-nwgathering.php:34
 #@ vca-theme
 msgid "The Network Gathering"
 msgstr "Das Netzwerktreffen"
 
-#: ../single-nwgathering.php:39 ../single-miscactions.php:39
-#: ../single-goldeimerfestival.php:39 ../single-concert.php:39
-#: ../single-festival.php:39
+#: single-concert.php:38
+#: single-festival.php:38
+#: single-goldeimerfestival.php:38
+#: single-miscactions.php:38
+#: single-nwgathering.php:38
 #@ vca-theme
 msgid "Timeframe"
 msgstr "Zeitraum"
 
-#: ../single-nwgathering.php:61 ../single-nwgathering.php:65
-#: ../single-miscactions.php:61 ../single-miscactions.php:65
-#: ../single-goldeimerfestival.php:61 ../single-goldeimerfestival.php:65
-#: ../single-concert.php:61 ../single-concert.php:65 ../single-festival.php:61
-#: ../single-festival.php:65
+#: single-concert.php:60
+#: single-concert.php:64
+#: single-festival.php:60
+#: single-festival.php:64
+#: single-goldeimerfestival.php:60
+#: single-goldeimerfestival.php:64
+#: single-miscactions.php:60
+#: single-miscactions.php:64
+#: single-nwgathering.php:60
+#: single-nwgathering.php:64
 #@ vca-theme
 msgid "until"
 msgstr "bis"
 
-#: ../single-nwgathering.php:71 ../single-miscactions.php:71
-#: ../single-goldeimerfestival.php:71 ../single-concert.php:71
-#: ../single-festival.php:71
+#: single-concert.php:70
+#: single-festival.php:70
+#: single-goldeimerfestival.php:70
+#: single-miscactions.php:70
+#: single-nwgathering.php:70
 #@ vca-theme
 msgid "Location"
 msgstr "Ort"
 
-#: ../single-nwgathering.php:75 ../single-miscactions.php:75
-#: ../single-goldeimerfestival.php:75 ../single-concert.php:75
-#: ../single-festival.php:75
+#: single-concert.php:74
+#: single-festival.php:74
+#: single-goldeimerfestival.php:74
+#: single-miscactions.php:74
+#: single-nwgathering.php:74
 #@ vca-theme
 msgid "Application Deadline"
 msgstr "Bewerbung möglich bis"
 
-#: ../single-nwgathering.php:79 ../single-miscactions.php:79
-#: ../single-goldeimerfestival.php:79 ../single-concert.php:79
-#: ../single-festival.php:79
+#: single-concert.php:78
+#: single-festival.php:78
+#: single-goldeimerfestival.php:78
+#: single-miscactions.php:78
+#: single-nwgathering.php:78
 #@ vca-theme
 msgctxt "i.e. max. participants"
 msgid "available Slots"
 msgstr "verfügbares Plätzekontingent"
 
-#: ../single-nwgathering.php:91 ../single-miscactions.php:91
-#: ../single-goldeimerfestival.php:91 ../single-concert.php:91
-#: ../single-festival.php:91
+#: single-concert.php:90
+#: single-festival.php:90
+#: single-goldeimerfestival.php:90
+#: single-miscactions.php:90
+#: single-nwgathering.php:90
 #@ vca-theme
 msgctxt "VcA Tools"
 msgid "Cups"
 msgstr "Pfandbecher Sammeln"
 
-#: ../single-nwgathering.php:94 ../single-miscactions.php:94
-#: ../single-goldeimerfestival.php:94 ../single-concert.php:94
-#: ../single-festival.php:94
+#: single-concert.php:93
+#: single-festival.php:93
+#: single-goldeimerfestival.php:93
+#: single-miscactions.php:93
+#: single-nwgathering.php:93
 #@ vca-theme
 msgctxt "VcA Tools"
 msgid "Guest List"
 msgstr "Gästelisten-Euros"
 
-#: ../single-nwgathering.php:97 ../single-miscactions.php:97
-#: ../single-goldeimerfestival.php:97 ../single-concert.php:97
-#: ../single-festival.php:97
+#: single-concert.php:96
+#: single-festival.php:96
+#: single-goldeimerfestival.php:96
+#: single-miscactions.php:96
+#: single-nwgathering.php:96
 #@ vca-theme
 msgctxt "VcA Tools"
 msgid "Info Counter"
 msgstr "Infostand"
 
-#: ../single-nwgathering.php:100 ../single-miscactions.php:100
-#: ../single-goldeimerfestival.php:100 ../single-concert.php:100
-#: ../single-festival.php:100
+#: single-concert.php:99
+#: single-festival.php:99
+#: single-goldeimerfestival.php:99
+#: single-miscactions.php:99
+#: single-nwgathering.php:99
 #@ vca-theme
 msgctxt "VcA Tools"
 msgid "Water Bottles"
 msgstr "Quellwasser"
 
-#: ../single-nwgathering.php:106 ../single-miscactions.php:106
-#: ../single-goldeimerfestival.php:106 ../single-concert.php:106
-#: ../single-festival.php:106
+#: single-concert.php:105
+#: single-festival.php:105
+#: single-goldeimerfestival.php:105
+#: single-miscactions.php:105
+#: single-nwgathering.php:105
 #@ vca-theme
 msgctxt "VcA Tools"
 msgid "Special"
 msgstr "Special"
 
-#: ../single-nwgathering.php:112 ../single-miscactions.php:112
-#: ../single-goldeimerfestival.php:112 ../single-concert.php:112
-#: ../single-festival.php:112
+#: single-concert.php:111
+#: single-festival.php:111
+#: single-goldeimerfestival.php:111
+#: single-miscactions.php:111
+#: single-nwgathering.php:111
 #@ vca-theme
 msgid "VcA Activities"
 msgstr "VcA Aktivitäten"
 
-#: ../single-nwgathering.php:121 ../single-miscactions.php:121
-#: ../single-goldeimerfestival.php:121 ../single-concert.php:121
-#: ../single-festival.php:121
+#: single-concert.php:120
+#: single-festival.php:120
+#: single-goldeimerfestival.php:120
+#: single-miscactions.php:120
+#: single-nwgathering.php:120
 #@ vca-theme
 msgid "Website"
 msgstr "Webseite"
 
-#: ../single-nwgathering.php:130 ../single-miscactions.php:130
-#: ../single-goldeimerfestival.php:130 ../single-concert.php:130
-#: ../single-festival.php:130
+#: single-concert.php:129
+#: single-festival.php:129
+#: single-goldeimerfestival.php:129
+#: single-miscactions.php:129
+#: single-nwgathering.php:129
 #@ vca-theme
 msgid "Directions"
 msgstr "Anfahrt"
 
-#: ../single-nwgathering.php:139 ../single-miscactions.php:139
-#: ../single-goldeimerfestival.php:139 ../single-concert.php:139
-#: ../single-festival.php:139
+#: single-concert.php:138
+#: single-festival.php:138
+#: single-goldeimerfestival.php:138
+#: single-miscactions.php:138
+#: single-nwgathering.php:138
 #@ vca-theme
 msgid "additional Notes"
 msgstr "zusätzliche Bemerkungen"
 
-#: ../single-nwgathering.php:145 ../single-miscactions.php:145
-#: ../single-goldeimerfestival.php:145 ../single-concert.php:145
-#: ../single-festival.php:145
+#: single-concert.php:144
+#: single-festival.php:144
+#: single-goldeimerfestival.php:144
+#: single-miscactions.php:144
+#: single-nwgathering.php:144
 #@ vca-theme
 msgid "Further Info"
 msgstr "Weitere Infos"
 
-#: ../single-nwgathering.php:162 ../single-miscactions.php:162
-#: ../single-goldeimerfestival.php:162 ../single-concert.php:162
-#: ../single-festival.php:162
+#: single-concert.php:161
+#: single-festival.php:161
+#: single-goldeimerfestival.php:161
+#: single-miscactions.php:161
+#: single-nwgathering.php:161
 #@ vca-theme
 msgid "Application revoked"
 msgstr "Bewerbung zurückgezogen"
 
-#: ../single-nwgathering.php:165 ../single-miscactions.php:165
-#: ../single-goldeimerfestival.php:165 ../single-concert.php:165
-#: ../single-festival.php:165
+#: single-concert.php:164
+#: single-festival.php:164
+#: single-goldeimerfestival.php:164
+#: single-miscactions.php:164
+#: single-nwgathering.php:164
 #@ vca-theme
 msgid "You have successfully revoked your application to this activity."
 msgstr "Du hast deine Bewerbung für diese Aktivität erfolgreich zurückgezogen."
 
-#: ../single-nwgathering.php:171 ../single-nwgathering.php:186
-#: ../single-nwgathering.php:196 ../single-nwgathering.php:206
-#: ../single-nwgathering.php:244 ../single-miscactions.php:171
-#: ../single-miscactions.php:186 ../single-miscactions.php:196
-#: ../single-miscactions.php:206 ../single-miscactions.php:244
-#: ../single-goldeimerfestival.php:171 ../single-goldeimerfestival.php:186
-#: ../single-goldeimerfestival.php:196 ../single-goldeimerfestival.php:206
-#: ../single-goldeimerfestival.php:244 ../single-concert.php:171
-#: ../single-concert.php:186 ../single-concert.php:196
-#: ../single-concert.php:206 ../single-concert.php:244
-#: ../single-festival.php:171 ../single-festival.php:186
-#: ../single-festival.php:196 ../single-festival.php:206
-#: ../single-festival.php:244
+#: single-concert.php:170
+#: single-concert.php:185
+#: single-concert.php:195
+#: single-concert.php:205
+#: single-concert.php:243
+#: single-festival.php:170
+#: single-festival.php:185
+#: single-festival.php:195
+#: single-festival.php:205
+#: single-festival.php:243
+#: single-goldeimerfestival.php:170
+#: single-goldeimerfestival.php:185
+#: single-goldeimerfestival.php:195
+#: single-goldeimerfestival.php:205
+#: single-goldeimerfestival.php:243
+#: single-miscactions.php:170
+#: single-miscactions.php:185
+#: single-miscactions.php:195
+#: single-miscactions.php:205
+#: single-miscactions.php:243
+#: single-nwgathering.php:170
+#: single-nwgathering.php:185
+#: single-nwgathering.php:195
+#: single-nwgathering.php:205
+#: single-nwgathering.php:243
 #@ vca-theme
 msgid "Participate"
 msgstr "Teilnehmen"
 
-#: ../single-nwgathering.php:174 ../single-miscactions.php:174
-#: ../single-goldeimerfestival.php:174 ../single-concert.php:174
-#: ../single-festival.php:174
+#: single-concert.php:173
+#: single-festival.php:173
+#: single-goldeimerfestival.php:173
+#: single-miscactions.php:173
+#: single-nwgathering.php:173
 #@ vca-theme
 msgid "You have currently applied to this activity and will be notified soon."
 msgstr "Du hast dich auf Teilnahme an dieser Aktivität beworben und wirst demnächst benachrichtigt werden."
 
-#: ../single-nwgathering.php:181 ../single-miscactions.php:181
-#: ../single-goldeimerfestival.php:181 ../single-concert.php:181
-#: ../single-festival.php:181
+#: single-concert.php:180
+#: single-festival.php:180
+#: single-goldeimerfestival.php:180
+#: single-miscactions.php:180
+#: single-nwgathering.php:180
 #@ vca-theme
 msgid "Revoke Application"
 msgstr "Bewerbung zurückziehen"
 
-#: ../single-nwgathering.php:189 ../single-miscactions.php:189
-#: ../single-goldeimerfestival.php:189 ../single-concert.php:189
-#: ../single-festival.php:189
+#: single-concert.php:188
+#: single-festival.php:188
+#: single-goldeimerfestival.php:188
+#: single-miscactions.php:188
+#: single-nwgathering.php:188
 #@ vca-theme
 msgid "You are currently registered as participant of this activity."
 msgstr "Du bist als Teilnehmer dieser Aktivität registriert."
 
-#: ../single-nwgathering.php:190 ../single-miscactions.php:190
-#: ../single-goldeimerfestival.php:190 ../single-concert.php:190
-#: ../single-festival.php:190
+#: single-concert.php:189
+#: single-festival.php:189
+#: single-goldeimerfestival.php:189
+#: single-miscactions.php:189
+#: single-nwgathering.php:189
 #@ vca-theme
 msgid "Feel free to contact the SPOCs, should you have questions. Please do so in due time, should you not be able to participate."
 msgstr "Solltest du Fragen und/oder Anregungen haben, kontaktiere gerne die unten aufgeführten Ansprechpartner_innen. Sei so gut und tu das zeitnah, solltest du wider Erwarten doch nicht teilnehmen können."
 
-#: ../single-nwgathering.php:199 ../single-miscactions.php:199
-#: ../single-goldeimerfestival.php:199 ../single-concert.php:199
-#: ../single-festival.php:199
+#: single-concert.php:198
+#: single-festival.php:198
+#: single-goldeimerfestival.php:198
+#: single-miscactions.php:198
+#: single-nwgathering.php:198
 #, php-format
 #@ vca-theme
 msgid "The application phase for this activity has not yet begun. It starts on %s."
 msgstr "Die Bewerbungsphase für diese Aktivität hat noch nicht begonnen. Sie fängt am %s an."
 
-#: ../single-nwgathering.php:214 ../single-miscactions.php:214
-#: ../single-goldeimerfestival.php:214 ../single-concert.php:214
-#: ../single-festival.php:214
+#: single-concert.php:213
+#: single-festival.php:213
+#: single-goldeimerfestival.php:213
+#: single-miscactions.php:213
+#: single-nwgathering.php:213
 #, php-format
 #@ vca-theme
 msgid "You must be <a title=\"Log In\" href=\"%s\">logged in</a> to be able to apply for an activity..."
 msgstr "Du musst <a title=\"Log In\" href=\"%s\">logged in</a> to be able to apply for an activity..."
 
-#: ../single-nwgathering.php:228 ../single-miscactions.php:228
-#: ../single-goldeimerfestival.php:228 ../functions.php:52
-#: ../single-concert.php:228 ../single-festival.php:228
+#: functions.php:53
+#: single-concert.php:227
+#: single-festival.php:227
+#: single-goldeimerfestival.php:227
+#: single-miscactions.php:227
+#: single-nwgathering.php:227
 #@ vca-theme
 msgctxt "Frontend: Application Process"
 msgid "If you wish to send a message with your application, do so here."
 msgstr "Wenn du eine Nachricht mit deiner Bewerbung hinterlassen möchtest, kannst du dies hier tun."
 
-#: ../single-nwgathering.php:231 ../single-miscactions.php:231
-#: ../single-goldeimerfestival.php:231 ../single-concert.php:231
-#: ../single-festival.php:231
+#: single-concert.php:230
+#: single-festival.php:230
+#: single-goldeimerfestival.php:230
+#: single-miscactions.php:230
+#: single-nwgathering.php:230
 #@ vca-theme
 msgid "Apply"
 msgstr "Bewerben"
 
-#: ../single-nwgathering.php:237 ../single-miscactions.php:237
-#: ../single-goldeimerfestival.php:237 ../single-concert.php:237
-#: ../single-festival.php:237
+#: single-concert.php:236
+#: single-festival.php:236
+#: single-goldeimerfestival.php:236
+#: single-miscactions.php:236
+#: single-nwgathering.php:236
 #@ vca-theme
 msgid "You are not eligible for this activity. Either because a quota for your country and/or city does not exist or because this is limited by another factor. Sorry."
 msgstr "Du bist für diese Aktivität nicht teilnahmeberechtigt. Entweder, weil für deine Stadt und/oder dein Land kein Kontingent festgelegt wurde, oder weil die Aktivität anderweitig limitiert ist. Sorry."
 
-#: ../single-nwgathering.php:246 ../single-miscactions.php:246
-#: ../single-goldeimerfestival.php:246 ../single-concert.php:246
-#: ../single-festival.php:246
+#: single-concert.php:245
+#: single-festival.php:245
+#: single-goldeimerfestival.php:245
+#: single-miscactions.php:245
+#: single-nwgathering.php:245
 #@ vca-theme
 msgid "The application phase for this activity has already ended. Sorry."
 msgstr "Die Bewerbungsphase für diese Aktivität ist bereits beendet. Sorry."
 
-#: ../single-nwgathering.php:251 ../single-miscactions.php:251
-#: ../single-goldeimerfestival.php:251 ../single-concert.php:251
-#: ../single-festival.php:251
+#: single-concert.php:250
+#: single-festival.php:250
+#: single-goldeimerfestival.php:250
+#: single-miscactions.php:250
+#: single-nwgathering.php:250
 #@ vca-theme
 msgid "Participants"
 msgstr "Teilnehmer"
 
-#: ../single-nwgathering.php:254 ../single-miscactions.php:254
-#: ../single-goldeimerfestival.php:254 ../single-concert.php:254
-#: ../single-festival.php:254
+#: single-concert.php:253
+#: single-festival.php:253
+#: single-goldeimerfestival.php:253
+#: single-miscactions.php:253
+#: single-nwgathering.php:253
 #, php-format
 #@ vca-theme
 msgid "%d people have participated in this activity."
 msgstr "%d Leute haben an dieser Aktivität teilgenommen."
 
-#: ../single-nwgathering.php:259 ../single-miscactions.php:259
-#: ../single-goldeimerfestival.php:259 ../single-concert.php:259
-#: ../single-festival.php:259
+#: single-concert.php:258
+#: single-festival.php:258
+#: single-goldeimerfestival.php:258
+#: single-miscactions.php:258
+#: single-nwgathering.php:258
 #@ vca-theme
 msgid "You were one of them."
 msgstr "Du warst eine_r davon."
 
-#: ../single-nwgathering.php:278 ../single-miscactions.php:278
-#: ../single-goldeimerfestival.php:278 ../single-concert.php:278
-#: ../single-festival.php:278
+#: single-concert.php:277
+#: single-festival.php:277
+#: single-goldeimerfestival.php:277
+#: single-miscactions.php:277
+#: single-nwgathering.php:277
 #@ vca-theme
 msgid "SPOC(s)"
 msgstr "Ansprechpartner_innen"
 
-#: ../single-nwgathering.php:292 ../single-nwgathering.php:325
-#: ../single-miscactions.php:292 ../single-miscactions.php:325
-#: ../single-goldeimerfestival.php:292 ../single-goldeimerfestival.php:325
-#: ../single-concert.php:292 ../single-concert.php:325
-#: ../single-festival.php:292 ../single-festival.php:325
+#: single-concert.php:291
+#: single-concert.php:324
+#: single-festival.php:291
+#: single-festival.php:324
+#: single-goldeimerfestival.php:291
+#: single-goldeimerfestival.php:324
+#: single-miscactions.php:291
+#: single-miscactions.php:324
+#: single-nwgathering.php:291
+#: single-nwgathering.php:324
 #@ vca-theme
 msgid "Contact Person(s)"
 msgstr "Ansprechpartner_innen"
 
-#: ../single-nwgathering.php:294 ../single-nwgathering.php:327
-#: ../single-miscactions.php:294 ../single-miscactions.php:327
-#: ../single-goldeimerfestival.php:294 ../single-goldeimerfestival.php:327
-#: ../single-concert.php:294 ../single-concert.php:327
-#: ../single-festival.php:294 ../single-festival.php:327
+#: single-concert.php:293
+#: single-concert.php:326
+#: single-festival.php:293
+#: single-festival.php:326
+#: single-goldeimerfestival.php:293
+#: single-goldeimerfestival.php:326
+#: single-miscactions.php:293
+#: single-miscactions.php:326
+#: single-nwgathering.php:293
+#: single-nwgathering.php:326
 #@ vca-theme
 msgid "Not set yet..."
 msgstr "Steht noch nicht fest..."
 
-#: ../single-nwgathering.php:306 ../single-miscactions.php:306
-#: ../single-goldeimerfestival.php:306 ../single-concert.php:306
-#: ../single-festival.php:306
+#: single-concert.php:305
+#: single-festival.php:305
+#: single-goldeimerfestival.php:305
+#: single-miscactions.php:305
+#: single-nwgathering.php:305
 #, php-format
 #@ vca-theme
 msgid "Contact Person #%d"
 msgstr "Ansprechpartner #%d"
 
-#: ../single-nwgathering.php:310 ../single-miscactions.php:310
-#: ../single-goldeimerfestival.php:310 ../single-concert.php:310
-#: ../single-festival.php:310
+#: single-concert.php:309
+#: single-festival.php:309
+#: single-goldeimerfestival.php:309
+#: single-miscactions.php:309
+#: single-nwgathering.php:309
 #@ vca-theme
 msgid "Write to the contact"
 msgstr "Schreibe dem/der Ansprechpartner_in"
 
-#: ../header.php:66
+#: header.php:66
 #@ vca-theme
 msgid "All Posts"
 msgstr "Alle Posts"
 
-#: ../header.php:70
+#: header.php:70
 #@ vca-theme
 msgctxt "Leave in English, if understandable"
 msgid "Community for clean water"
 msgstr "Community for clean water"
 
-#: ../header.php:96
+#: header.php:96
 #@ vca-theme
 msgid "Back to the Start"
 msgstr "Zurück zum Anfang"
 
-#: ../header.php:97
+#: header.php:97
 #@ vca-theme
 msgid "Navigation Menu"
 msgstr "Navigationsmenü"
 
-#: ../login-form.php:5
+#: login-form.php:5
 #@ vca-theme
 msgctxt "Login Widget Title"
 msgid "Login"
 msgstr "Einloggen"
 
-#: ../login-form.php:13 ../register-form.php:13 ../profile-form.php:42
+#: login-form.php:13
+#: profile-form.php:59
+#: register-form.php:13
 #@ vca-theme
 msgid "Username"
 msgstr "Benutzername"
 
-#: ../login-form.php:18
+#: login-form.php:18
 #@ vca-theme
 msgid "Password"
 msgstr "Passwort"
 
-#: ../login-form.php:27
+#: login-form.php:27
+#@ vca-theme
 msgid "Remember Me"
 msgstr "Erinnere mich"
 
-#: ../login-form.php:32
+#: login-form.php:32
+#@ vca-theme
 msgid "Log In"
 msgstr "Anmelden"
 
-#: ../login-form.php:45 ../register-form.php:53 ../lostpassword-form.php:31
+#: login-form.php:45
+#: lostpassword-form.php:31
+#: register-form.php:53
+#@ vca-theme
 msgid "Welcome"
 msgstr "Willkommen"
 
-#: ../login-form.php:46 ../register-form.php:54 ../lostpassword-form.php:32
+#: login-form.php:46
+#: lostpassword-form.php:32
+#: register-form.php:54
 #@ vca-theme
 msgid "...to our Supporter Pool!"
 msgstr "...in unserem Supporter-Pool!"
 
-#: ../login-form.php:47 ../register-form.php:55 ../lostpassword-form.php:33
+#: login-form.php:47
+#: lostpassword-form.php:33
+#: register-form.php:55
+#@ vca-theme
 msgid "Via the Pool - our supporter database - you can stay up-to-date about all Viva con Agua news & activities in your region. Also you&apos;ll get know everything about our festivals and can sign up to be a cup hunter/huntress. Viva con Agua is delighted about your support for clean water access worldwide!"
 msgstr "Mit dem Pool, unserer Supporterdatenbank, bleibst du über Viva con Agua Neuigkeiten und Aktivitäten in deiner Region auf dem laufenden. Ausserdem erfährst du alles über unsere (Festival-) Aktivitäten und kannst dich z.B. als Becherjäger_in bewerben – Viva con Agua freut sich auf dich und dein Engagement für sauberes Trinkwasser und sanitäre Versorgung weltweit!"
 
-#: ../page.php:19 ../page-no-title.php:11 ../attachment.php:85 ../loop.php:91
-#: ../page-narrow.php:19 ../single.php:18 ../page-narrow-no-title.php:11
+#: attachment.php:85
+#: loop.php:91
+#: page-narrow-no-title.php:11
+#: page-narrow.php:19
+#: page-no-title.php:11
+#: page.php:19
+#: single.php:18
 #@ twentyten
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: ../search.php:9
+#: search.php:9
 #, php-format
 #@ twentyten
 msgid "Search Results for: %s"
 msgstr "Suchergebnisse für: %s"
 
-#: ../search.php:15
+#: search.php:15
 #@ twentyten
 msgid "Nothing Found"
 msgstr "Nix gefunden"
 
-#: ../search.php:16
+#: search.php:16
 #@ twentyten
 msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
 msgstr "Sorry, aber da ist nix. Versuch's mit anderen Kriterien nochmal."
 
-#: ../register-form.php:5
+#: register-form.php:5
 #@ vca-theme
 msgid "Register to the Pool"
 msgstr "Registriere dich im Pool"
 
-#: ../register-form.php:18 ../profile-form.php:57
+#: profile-form.php:72
+#: register-form.php:18
 #@ vca-theme
 msgid "E-mail"
 msgstr "E-Mail"
 
-#: ../register-form.php:25
+#: register-form.php:25
+#@ theme-my-login
 msgid "A password will be e-mailed to you."
 msgstr "Ein Passwort wird dir per E-Mail geschickt."
 
-#: ../register-form.php:30
+#: register-form.php:30
 #@ vca-theme
 msgid "I agree to and have read the terms &amp; conditions."
 msgstr "Ich akzeptiere die <a title=\"Zum Text\" href=\"https://pool.vivaconagua.org/nutzungsbedingungen/\">Nutzungsbedingungen</a> und <a title=\"Zum Text\" href=\"https://pool.vivaconagua.org/datenschutzerklaerung/\">Datenschutzerklärung</a>."
 
-#: ../register-form.php:36
+#: register-form.php:36
 #@ vca-theme
 msgid "Please confirm that you agree to the terms &amp; conditions."
 msgstr "Bitte bestätige, dass du die Nutzungsbedingungen und Datenschutzerklärung akzeptierst."
 
-#: ../register-form.php:39
+#: register-form.php:39
 #@ vca-theme
 msgid "Register"
 msgstr "Registrieren"
 
-#: ../single-miscactions.php:31
+#: single-miscactions.php:30
 #@ vca-theme
 msgid "miscellaneous activity"
 msgstr "sonstige Aktivität"
 
-#: ../single-miscactions.php:35
+#: single-miscactions.php:34
 #@ vca-theme
 msgid "The miscellaneous activity"
 msgstr "Die sonstige Aktivität"
 
-#: ../single-goldeimerfestival.php:31
+#: single-goldeimerfestival.php:30
 #@ vca-theme
 msgid "Goldeimer Festival"
 msgstr "Goldeimer Festival"
 
-#: ../single-goldeimerfestival.php:35 ../single-festival.php:35
+#: single-festival.php:34
+#: single-goldeimerfestival.php:34
 #@ vca-theme
 msgid "The Festival"
 msgstr "Das Festival"
 
-#: ../category.php:9
+#: category.php:9
 #, php-format
 #@ twentyten
 msgid "Category Archives: %s"
 msgstr "Kategorien: %s"
 
-#: ../attachment.php:10
+#: attachment.php:10
 #, php-format
 #@ twentyten
 msgid "Return to %s"
 msgstr "Zurück zu %s"
 
-#: ../attachment.php:12
+#. translators: %s - title of parent post
+#: attachment.php:12
 #, php-format
 #@ twentyten
 msgid "<span>&larr;</span> %s"
 msgstr "<span>&larr;</span> %s"
 
-#: ../attachment.php:18
+#: attachment.php:18
 #, php-format
 #@ twentyten
 msgid "By %2$s"
 msgstr "Von %2$s"
 
-#: ../attachment.php:22 ../functions.php:814
+#: attachment.php:22
+#: functions.php:810
 #, php-format
 #@ twentyten
 msgid "View all posts by %s"
 msgstr "Alle Posts von %s ansehen"
 
-#: ../attachment.php:29
+#: attachment.php:29
 #, php-format
 #@ twentyten
 msgid "Published %2$s"
 msgstr "Veröffentlicht %2$s"
 
-#: ../attachment.php:39
+#: attachment.php:39
 #, php-format
 #@ twentyten
 msgid "Full size is %s pixels"
 msgstr "Volle Größe sind %s Pixel"
 
-#: ../attachment.php:42
+#: attachment.php:42
 #@ twentyten
 msgid "Link to full-size image"
 msgstr "Link zum Vollbild"
 
-#: ../attachment.php:49 ../attachment.php:88 ../loop.php:64 ../loop.php:79
-#: ../loop.php:106 ../single.php:30
+#: attachment.php:49
+#: attachment.php:88
+#: loop.php:64
+#: loop.php:79
+#: loop.php:106
+#: single.php:30
 #@ twentyten
 msgid "Edit"
 msgstr "Editieren"
 
-#: ../attachment.php:84 ../loop.php:73 ../loop.php:90
+#: attachment.php:84
+#: loop.php:73
+#: loop.php:90
 #@ twentyten
 msgid "Continue reading &rarr;"
 msgstr "Lies weiter &rarr;"
 
-#: ../404.php:10
+#: 404.php:10
 #@ vca-theme
 msgid "Not Found..."
 msgstr "Nicht gefunden..."
 
-#: ../404.php:11
+#: 404.php:11
 #@ vca-theme
 msgid "Apologies, but the page you requested could not be found."
 msgstr "Sorry Digger, diese Adresse scheint es nicht (mehr) zu geben."
 
-#: ../loop.php:9 ../loop.php:116
+#: loop.php:9
+#: loop.php:116
 #@ twentyten
 msgid "&larr; Older posts"
 msgstr "&larr; Ältere Posts"
 
-#: ../loop.php:10 ../loop.php:117
+#: loop.php:10
+#: loop.php:117
 #@ twentyten
 msgid "Newer posts &rarr;"
 msgstr "Neuere Posts &larr;"
 
-#: ../loop.php:15
+#: loop.php:15
 #@ twentyten
 msgid "Not Found"
 msgstr "Nicht gefunden"
 
-#: ../loop.php:16
+#: loop.php:16
 #@ twentyten
 msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
 msgstr "Sorry, aber es wurden keine Ergebnisse zum angefragten Archiv gefunden. Vielleicht hilft dir die Suche weiter."
 
-#: ../loop.php:38 ../loop.php:61
+#: loop.php:38
+#: loop.php:61
 #@ twentyten
 msgctxt "gallery category slug"
 msgid "gallery"
 msgstr "gallerie"
 
-#: ../loop.php:39 ../loop.php:54 ../loop.php:84
+#: loop.php:39
+#: loop.php:54
+#: loop.php:84
 #, php-format
 #@ twentyten
 msgid "Permalink to %s"
 msgstr "Link zu %s"
 
-#: ../loop.php:53
+#: loop.php:53
 #, php-format
 #@ twentyten
 msgid "This gallery contains <a %1$s>%2$s photos</a>."
 msgstr "Diese Galerie beinhaltet <a %1$s>%2$s Fotos</a>."
 
-#: ../loop.php:61
+#: loop.php:61
+#@ twentyten
 msgid "View posts in the Gallery category"
 msgstr "Posts in der Galerie-Kategorie ansehen"
 
-#: ../loop.php:61
+#: loop.php:61
 #@ twentyten
 msgid "More Galleries"
 msgstr "Mehr Galerien"
 
-#: ../loop.php:63 ../loop.php:78 ../loop.php:105
+#: loop.php:63
+#: loop.php:78
+#: loop.php:105
 #@ twentyten
 msgid "Leave a comment"
 msgstr "Hinterlasse einen Kommentar"
 
-#: ../loop.php:63 ../loop.php:78 ../loop.php:105
+#: loop.php:63
+#: loop.php:78
+#: loop.php:105
 #@ twentyten
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../loop.php:63 ../loop.php:78 ../loop.php:105
+#: loop.php:63
+#: loop.php:78
+#: loop.php:105
 #@ twentyten
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: ../loop.php:68
+#: loop.php:68
 #@ twentyten
 msgctxt "asides category slug"
 msgid "asides"
 msgstr "nebenbei"
 
-#: ../loop.php:95
+#: loop.php:95
 #, php-format
 #@ twentyten
 msgid "Posted in %2$s"
 msgstr "Gepostet in %2$s"
 
-#: ../loop.php:102
+#: loop.php:102
 #, php-format
 #@ twentyten
 msgid "Tagged %2$s"
 msgstr "Getagged %2$s"
 
-#: ../functions.php:54
+#: functions.php:55
 #@ vca-theme
 msgctxt "Frontend: Application Process"
 msgid "For instance if you're applying with a friend, cannot reach on time, or the like."
 msgstr "Zum Beispiel, solltest du dich gemeinsam mit einem/r Freund_in bewerben, nur teils teilnehmen können, o.ä."
 
-#: ../functions.php:65
-#@ default
+#: functions.php:66
+#@ pool-theme
 msgid "Main Navigation for Supporters"
 msgstr "Hauptnavigation für Supporter"
 
-#: ../functions.php:66
-#@ default
+#: functions.php:67
+#@ pool-theme
 msgid "Main Navigation for administrative Users"
 msgstr "Hauptnavigation für's Büro"
 
-#: ../functions.php:107
+#: functions.php:107
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Manage the Pool"
 msgstr "Den Pool verwalten"
 
-#: ../functions.php:109
+#: functions.php:109
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Manage your department"
 msgstr "Deine Abteilung verwalten"
 
-#: ../functions.php:111
+#: functions.php:111
 #@ vca-theme
 msgctxt "Navigation"
 msgid "View what&apos;going on"
 msgstr "Check aus was abgeht"
 
-#: ../functions.php:113
+#: functions.php:113
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Manage your city"
 msgstr "Deine Stadt verwalten"
 
-#: ../functions.php:124
+#: functions.php:124
 #@ vca-theme
 msgctxt "Leave in English, if understandable"
 msgid "Office"
 msgstr "Office"
 
-#: ../functions.php:144
+#: functions.php:143
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Overview"
 msgstr "Übersicht"
 
-#: ../functions.php:146 ../functions.php:213
+#: functions.php:145
+#: functions.php:211
 #@ vca-theme
 msgctxt "Leave in English, if understandable"
 msgid "Home"
 msgstr "Home"
 
-#: ../functions.php:151 ../functions.php:240
+#: functions.php:150
+#: functions.php:238
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Login / Register"
 msgstr "Login / Register"
 
-#: ../functions.php:168 ../functions.php:257
+#: functions.php:167
+#: functions.php:255
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Login"
 msgstr "Login"
 
-#: ../functions.php:171 ../functions.php:260
+#: functions.php:170
+#: functions.php:258
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Read up on how this works"
 msgstr "Wie funktioniert das alles?"
 
-#: ../functions.php:177 ../functions.php:266
+#: functions.php:176
+#: functions.php:264
 #@ vca-theme
 msgctxt "Navigation"
 msgid "FAQ"
 msgstr "FAQ"
 
-#: ../functions.php:189
+#: functions.php:187
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Your Data &amp; Settings"
 msgstr "Deine Daten &amp; Einstellungen"
 
-#: ../functions.php:195 ../functions.php:221
+#: functions.php:193
+#: functions.php:219
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Profile &amp; Settings"
 msgstr "Profil &amp; Einstellungen"
 
-#: ../functions.php:198
+#: functions.php:196
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Log yourself out"
 msgstr "Schmeiss dich selbst raus"
 
-#: ../functions.php:200
+#: functions.php:198
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Logout"
 msgstr "Rausloggen"
 
-#: ../functions.php:207
+#: functions.php:205
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Current Actions"
 msgstr "Aktuelle Actions"
 
-#: ../functions.php:233
+#: functions.php:231
 #@ vca-theme
 msgctxt "Navigation"
 msgid "Logout!"
 msgstr "Rausloggen!"
 
-#: ../functions.php:302
+#: functions.php:300
 #@ vca-theme
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:344
+#: functions.php:342
 #@ vca-theme
 msgid "All Settings"
 msgstr "Alle Einstellungen"
 
-#: ../functions.php:613
+#: functions.php:609
 #@ vca-theme
 msgctxt "System Notification"
 msgid "This content is visible to administrative users only. You are either not logged into the Pool, or you do not have sufficient rights to see this. Sorry, mate."
 msgstr "Diese Inhalte sind nur für Benutzer mit Verwaltungszugriff gedacht. Du bist entweder nicht eingeloggt oder hast nicht die notwendigen Rechte. Sorry, mate."
 
-#: ../functions.php:723
+#: functions.php:719
 #, php-format
 #@ twentyten
 msgid "Search results for %s"
 msgstr "Suchergebnisse für %s"
 
-#: ../functions.php:726 ../functions.php:743
+#: functions.php:722
+#: functions.php:739
 #, php-format
 #@ twentyten
 msgid "Page %s"
 msgstr "Seite %s"
 
-#: ../functions.php:761
+#: functions.php:757
 #, php-format
 #@ twentyten
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">sagt:</span>"
 
-#: ../functions.php:764
+#: functions.php:760
 #@ twentyten
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: ../functions.php:771
+#. translators: 1: date, 2: time
+#: functions.php:767
 #, php-format
 #@ twentyten
 msgid "%1$s at %2$s"
 msgstr "%1$s um %2$s"
 
-#: ../functions.php:771 ../functions.php:788
+#: functions.php:767
+#: functions.php:784
 #@ twentyten
 msgid "(Edit)"
 msgstr "(Editieren)"
 
-#: ../functions.php:788
+#: functions.php:784
 #@ twentyten
 msgid "Pingback:"
 msgstr "Pingbacl:"
 
-#: ../functions.php:805
+#: functions.php:801
 #, php-format
 #@ twentyten
 msgid "<span class=\"%1$s\">Posted on</span> %2$s <span class=\"meta-sep\">by</span> %3$s"
 msgstr "<span class=\"%1$s\">Gepostet am</span> %2$s <span class=\"meta-sep\">von</span> %3$s"
 
-#: ../functions.php:827
+#: functions.php:823
 #, php-format
 #@ twentyten
 msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr "Dieser Eintrag wurde in %1$s gepostet und mit den Schlagwort(en) %2$s getagged. Lesezeichen zum <a href=\"%3$s\" title=\"Link zu %4$s\" rel=\"bookmark\">Artikel</a> setzen."
 
-#: ../functions.php:829
+#: functions.php:825
 #, php-format
 #@ twentyten
 msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr "This entry was posted in %1$s. Lesezeichen zum <a href=\"%3$s\" title=\"Link zu %4$s\" rel=\"bookmark\">Artikel</a> setzen."
 
-#: ../functions.php:831
+#: functions.php:827
 #, php-format
 #@ twentyten
 msgid "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr "Lesezeichen zum <a href=\"%3$s\" title=\"Link zu %4$s\" rel=\"bookmark\">Artikel</a> setzen."
 
-#: ../single-concert.php:31
+#: single-concert.php:30
 #@ vca-theme
 msgid "Concert"
 msgstr "Konzert"
 
-#: ../single-concert.php:35
+#: single-concert.php:34
 #@ vca-theme
 msgid "The Concert"
 msgstr "Das Konzert"
 
-#: ../archive.php:21
+#: archive.php:21
 #, php-format
 #@ twentyten
 msgid "Daily Archives: %s"
 msgstr "Tägliches Archiv: %s"
 
-#: ../archive.php:23
+#: archive.php:23
 #, php-format
 #@ twentyten
 msgid "Monthly Archives: %s"
 msgstr "Monatliches Archiv: %s"
 
-#: ../archive.php:25
+#: archive.php:25
 #, php-format
 #@ twentyten
 msgid "Yearly Archives: %s"
 msgstr "Jährliches Archiv: %s"
 
-#: ../archive.php:27
+#: archive.php:27
 #@ twentyten
 msgid "Blog Archives"
 msgstr "Blog Archiv"
 
-#: ../single.php:10 ../single.php:32
+#: single.php:10
+#: single.php:32
 #@ twentyten
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr "&larr;"
 
-#: ../single.php:11 ../single.php:33
+#: single.php:11
+#: single.php:33
 #@ twentyten
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr "&rarr;"
 
-#: ../single.php:25
+#: single.php:25
 #, php-format
 #@ twentyten
 msgid "View all posts by %s &rarr;"
 msgstr "Alle Posts von %s ansehen &rarr;"
 
-#: ../resetpass-form.php:11
+#: resetpass-form.php:11
 #@ vca-theme
 msgid "New password"
 msgstr "Neues Passwort"
 
-#: ../resetpass-form.php:16
+#: resetpass-form.php:16
 #@ vca-theme
 msgid "Confirm new password"
 msgstr "Neues Passwort bestätigen"
 
-#: ../resetpass-form.php:20
+#: resetpass-form.php:20
 #@ vca-theme
 msgid "Strength indicator"
 msgstr "Stärke-Indikator"
 
-#: ../resetpass-form.php:23
+#: resetpass-form.php:23
 #@ vca-theme
 msgid "Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! \" ? $ % ^ &amp; )."
 msgstr "Tipp: Das Passwort sollte mindestens 7 Zeichen lang sein. Um es stärker zu machen, verwende Groß- und Kleinschreibung, sowie Zahlen und/oder Sonderzeichen."
 
-#: ../resetpass-form.php:29
-#@ vca-theme
+#: resetpass-form.php:29
+#@ theme-my-login
 msgid "Reset Password"
 msgstr "Passwort Zur&uuml;cksetzen"
 
-#: ../lostpassword-form.php:11
+#: lostpassword-form.php:11
 #@ vca-theme
 msgid "Username or E-mail:"
 msgstr "Benutzername oder E-Mail"
 
-#: ../lostpassword-form.php:18
+#: lostpassword-form.php:18
 #@ vca-theme
 msgid "Get New Password"
 msgstr "Neues Passwort Anfordern"
 
-#: ../footer.php:12
+#: footer.php:12
 #@ vca-theme
 msgid "Read the Terms of Use"
 msgstr "Die Nutzungsbedingungen lesen"
 
-#: ../footer.php:12
+#: footer.php:12
 #@ vca-theme
 msgid "Terms of Use"
 msgstr "Nutzungsbedingungen"
 
-#: ../footer.php:12
+#: footer.php:12
 #@ vca-theme
 msgid "Read the Privacy Policy"
 msgstr "Die Datenschutzerklärung lesen"
 
-#: ../footer.php:12
+#: footer.php:12
 #@ vca-theme
 msgid "Privacy Policy"
 msgstr "Datenschutzerklärung"
 
-#: ../footer.php:12
+#: footer.php:12
 #@ vca-theme
 msgid "To the Imprint"
 msgstr "Zum Impressum"
 
-#: ../footer.php:18
+#: footer.php:18
 #@ vca-theme
 msgid "Imprint"
 msgstr "Impressum"
 
-#: ../page-email-view.php:20
+#: page-email-view.php:20
 #@ vca-theme
 msgid "Preview"
 msgstr "Vorschau"
 
-#: ../page-email-view.php:66
+#: page-email-view.php:66
 #@ vca-theme
 msgid "Goldeimer"
 msgstr "Goldeimer"
 
-#: ../page-email-view.php:71 ../page-email-view.php:77
+#: page-email-view.php:71
+#: page-email-view.php:77
+#@ vca-theme
 msgid "Viva con Agua"
 msgstr "Viva con Agua"
 
-#: ../page-email-view.php:94
+#: page-email-view.php:94
 #@ vca-theme
 msgid "Activity"
 msgstr "Aktivität"
 
-#: ../page-email-view.php:98
+#: page-email-view.php:98
 #@ vca-theme
 msgid "Your city"
 msgstr "Deine Stadt"
 
-#: ../page-email-view.php:111 ../page-email-view.php:114
-#: ../page-email-view.php:187 ../page-email-view.php:197
+#: page-email-view.php:111
+#: page-email-view.php:114
+#: page-email-view.php:187
+#: page-email-view.php:197
 #@ vca-theme
 msgid "Supporter"
 msgstr "Supporter"
 
-#: ../single-festival.php:31
+#: single-festival.php:30
 #@ vca-theme
 msgid "Festival"
 msgstr "Festival"
 
-#: ../profile-form.php:24
+#: profile-form.php:41
 #@ vca-theme
 msgid "City Profile"
 msgstr "Stadt Profil"
 
-#: ../profile-form.php:26
+#: profile-form.php:43
 #@ vca-theme
 msgid "Supporter Profile"
 msgstr "Supporter Profil"
 
-#: ../profile-form.php:28
+#: profile-form.php:45
 #@ vca-theme
 msgid "Pool Profile"
 msgstr "Pool Profil"
 
-#: ../profile-form.php:39
+#: profile-form.php:56
 #@ vca-theme
 msgid "Name"
 msgstr "Name"
 
-#: ../profile-form.php:42
+#: profile-form.php:59
 #@ vca-theme
 msgid "Your username cannot be changed."
 msgstr "Dein Benutzername kann nicht geändert werden."
 
-#: ../profile-form.php:45
+#: profile-form.php:62
 #@ vca-theme
 msgid "First name"
 msgstr "Vorname"
 
-#: ../profile-form.php:48
+#: profile-form.php:65
 #@ vca-theme
 msgid "Last name"
 msgstr "Nachname"
 
-#: ../profile-form.php:54
+#: profile-form.php:69
 #@ vca-theme
 msgid "Contact Info"
 msgstr "Kontakt-Info"
 
-#: ../profile-form.php:68 ../profile-form.php:133
+#: profile-form.php:83
+#: profile-form.php:159
 #@ vca-theme
 msgid "Do you really want to delete your account? This will be permanent and cannot be undone!"
 msgstr "Willst du dein Benutzerkonto wirklich löschen? Dies ist permanent und kann nicht rückgängig gemacht werden!"
 
-#: ../profile-form.php:74 ../profile-form.php:139
+#: profile-form.php:89
+#: profile-form.php:165
 #@ vca-theme
 msgid "Please select a region. Thank you."
 msgstr "Bitte wähle eine Region. Danke."
 
-#: ../profile-form.php:77 ../profile-form.php:142
+#: profile-form.php:92
+#: profile-form.php:168
 #@ vca-theme
 msgid "Are you really a hundred years old???."
 msgstr "Bist du wirklich 100 Jahre alt???"
 
-#: ../profile-form.php:83 ../profile-form.php:148
+#: profile-form.php:98
+#: profile-form.php:174
 #@ vca-theme
 msgid "Have you really been born on January 1st, 1970?."
 msgstr "Wurdest Du wirklich am ersten Januar 1970 geboren?"
 
-#: ../profile-form.php:89 ../profile-form.php:154
+#: profile-form.php:104
+#: profile-form.php:180
 #@ vca-theme
 msgid "Update Profile"
 msgstr "Profil aktualisieren"
 
-#: ../profile-form.php:94
+#: profile-form.php:109
 #@ vca-theme
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: ../profile-form.php:104 ../profile-form.php:107
+#: profile-form.php:119
+#: profile-form.php:122
 #@ vca-theme
 msgid "New Password"
 msgstr "Neues Passwort"
 
-#: ../profile-form.php:106
+#: profile-form.php:121
 #@ vca-theme
 msgid "If you would like to change the password type a new one. Otherwise leave this blank."
 msgstr "Wenn du dein Passwort ändern möchtest, tippe ein neues ein. Sonst lass' das Feld einfach frei."
 
-#: ../profile-form.php:110
+#: profile-form.php:125
 #@ vca-theme
 msgid "Repeat Password"
 msgstr "Passwort Wiederholung"
 
-#: ../profile-form.php:113
+#: profile-form.php:128
 #@ vca-theme
 msgid "Password Strength"
 msgstr "Passwort Stärke"
 
-#: ../profile-form.php:114
+#: profile-form.php:129
 #@ vca-theme
 msgid "Strength Indicator"
 msgstr "Stärke-Indikator"
 
-#: ../profile-form.php:118
+#: profile-form.php:143
 #@ vca-theme
 msgid "Leave for good"
 msgstr "Den Pool verlassen"
 
-#: ../profile-form.php:121
+#: profile-form.php:146
 #@ vca-theme
 msgid "Delete my account permanently"
 msgstr "Mein Benutzerkonto löschen"
 
-#: ../tag.php:9
+#: tag.php:9
 #, php-format
 #@ twentyten
 msgid "Tag Archives: %s"
 msgstr "Schlagwörter: %s"
 
-#: ../includes/class-p1-utilities.php:83
+#: includes/class-p1-utilities.php:83
 #@ vca-theme
 msgid "Visit Site"
 msgstr "Seite besuchen"
 
-#: ../includes/class-p1-utilities.php:96
+#: includes/class-p1-utilities.php:96
 #@ vca-theme
 msgid "male"
 msgstr "männlich"
 
-#: ../includes/class-p1-utilities.php:98
+#: includes/class-p1-utilities.php:98
 #@ vca-theme
 msgid "female"
 msgstr "weiblich"
 
-#: ../includes/class-p1-utilities.php:100
+#: includes/class-p1-utilities.php:100
 #@ vca-theme
 msgid "No"
 msgstr "Nein"
 
-#: ../includes/class-p1-utilities.php:102
+#: includes/class-p1-utilities.php:102
 #@ vca-theme
 msgid "has applied..."
 msgstr "hat sich beworben..."
 
-#: ../includes/class-p1-utilities.php:104
+#: includes/class-p1-utilities.php:104
 #@ vca-theme
 msgid "Active Member"
 msgstr "Aktives Mitglied"
 
-#: ../includes/class-p1-utilities.php:106
-#: ../includes/class-p1-utilities.php:134
+#: includes/class-p1-utilities.php:106
+#: includes/class-p1-utilities.php:134
 #@ vca-theme
 msgid "not set"
 msgstr "nicht angegeben"
+
+#: profile-form.php:136
+#@ vca-theme
+msgid "Volunteer certificate"
+msgstr "Ehrenamtsbescheinigung"
+
+#: profile-form.php:138
+#@ vca-theme
+msgid "Download Certificate"
+msgstr "Bescheinigung runterladen"
 

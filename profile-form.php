@@ -18,8 +18,8 @@
     if (!empty($userMetaMembership) && $userMetaMembership == '2' &&
         (empty($userMetaAgreement) && $userMetaAgreement != '0')) {
 
-        require_once ('membership-agreement.php');
-        die();
+        //require_once ('membership-agreement.php');
+        //die();
     }
 ?>
 <style>
