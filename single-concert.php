@@ -217,8 +217,13 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 
 			} elseif ( isset( $the_activity ) && is_numeric( $the_activity->is_eligible( $current_user->ID ) ) ) {
 
-				$output .= '<form method="post" action="">' .
-						'<input type="hidden" name="unique_id" value="[' . md5( uniqid() ) . ']">' .
+                $output .= '<form method="post" action="">';
+
+                $output .= '<br/><span style="font-size: 14px; font-weight: bold;"><input type="checkbox" name="read_confirmation" required> ';
+                $output .= __( 'I have read and understood the ', 'vca-asm' );
+                $output .= '<a href="" target="_blank" title="">information sheet</a></span><br/><br/>';
+
+                $output .= '<input type="hidden" name="unique_id" value="[' . md5( uniqid() ) . ']">' .
 						'<input type="hidden" name="todo" id="todo" value="apply" />' .
 						'<input type="hidden" name="activity" id="activity" value="' . get_the_ID() . '" />' .
 						'<div class="form-row">' .
