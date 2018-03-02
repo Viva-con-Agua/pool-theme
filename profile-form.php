@@ -14,6 +14,12 @@
     $userMetaMembership = get_user_meta($current_user->ID, 'membership', true);
     $userMetaAgreement = get_user_meta($current_user->ID, 'agreement', true);
 
+    if ($userMetaAgreement == 0) {
+        $agreement_is_unchecked = true;
+    } else {
+        $agreement_is_unchecked = false;
+    }
+
     // If its a member and theres no agreement, we have to redirect to the profile
     if (!empty($userMetaMembership) && $userMetaMembership == '2' &&
         (empty($userMetaAgreement) && $userMetaAgreement != '0')) {
@@ -95,12 +101,19 @@
 								return false;
 							}
 						} else if( jQuery('#birthday-year').val() == 1970 && jQuery('#birthday-month').val() == 1 && jQuery('#birthday-day').val() == 1 ) {
-							if( confirm('<?php _e( 'Have you really been born on January 1st, 1970?.', 'vca-theme' ); ?>') ) {
-								return true;
-							} else {
-								return false;
-							}
-						}
+                            if( confirm('<?php _e( 'Have you really been born on January 1st, 1970?.', 'vca-theme' ); ?>') ) {
+                            return true;
+                            } else {
+                            return false;
+                            }
+                        }
+
+                    <?php if ($agreement_is_unchecked) { ?>
+                            else if( jQuery('#agreement').is(':checked') && ((!jQuery('#association-agreement').is(':checked')) || (!jQuery('#compliance-agreement').is(':checked')))) {
+                            alert('<?php _e( 'To apply as a member you have to accept the privacy policy and the articles of association!', 'vca-theme' ); ?>');
+                            return false;
+                            }
+                    <?php } ?>
 					" class="button-primary" value="<?php _e( 'Update Profile', 'vca-theme' ); ?>" name="submit" />
 				</div>
 
@@ -171,12 +184,19 @@
 								return false;
 							}
 						} else if( jQuery('#birthday-year').val() == 1970 && jQuery('#birthday-month').val() == 1 && jQuery('#birthday-day').val() == 1 ) {
-							if( confirm('<?php _e( 'Have you really been born on January 1st, 1970?.', 'vca-theme' ); ?>') ) {
-								return true;
-							} else {
-								return false;
-							}
-						}
+                            if( confirm('<?php _e( 'Have you really been born on January 1st, 1970?.', 'vca-theme' ); ?>') ) {
+                            return true;
+                            } else {
+                            return false;
+                            }
+                        }
+
+                    <?php if ($agreement_is_unchecked) { ?>
+                            else if( jQuery('#agreement').is(':checked') && ((!jQuery('#association-agreement').is(':checked')) || (!jQuery('#compliance-agreement').is(':checked')))) {
+                            alert('<?php _e( 'To apply as a member you have to accept the privacy policy and the articles of association!', 'vca-theme' ); ?>');
+                            return false;
+                            }
+                    <?php } ?>
 					" class="button-primary" value="<?php _e( 'Update Profile', 'vca-theme' ); ?>" name="submit" />
 				</div>
 

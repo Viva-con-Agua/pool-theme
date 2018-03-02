@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VcA Pool v1.5\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/twentyten\n"
 "POT-Creation-Date: 2015-06-23 14:21+0100\n"
-"PO-Revision-Date: 2018-02-23 17:53:35+0100\n"
+"PO-Revision-Date: 2018-03-02 17:11:54+0100\n"
 "Last-Translator: Johannes Pilkahn <johannes@pilkahn.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -472,7 +472,7 @@ msgid "Login"
 msgstr "Einloggen"
 
 #: login-form.php:13
-#: profile-form.php:59
+#: profile-form.php:65
 #: register-form.php:13
 #@ vca-theme
 msgid "Username"
@@ -546,7 +546,7 @@ msgstr "Sorry, aber da ist nix. Versuch's mit anderen Kriterien nochmal."
 msgid "Register to the Pool"
 msgstr "Registriere dich im Pool"
 
-#: profile-form.php:72
+#: profile-form.php:78
 #: register-form.php:18
 #@ vca-theme
 msgid "E-mail"
@@ -1124,113 +1124,113 @@ msgstr "Supporter"
 msgid "Festival"
 msgstr "Festival"
 
-#: profile-form.php:41
+#: profile-form.php:47
 #@ vca-theme
 msgid "City Profile"
 msgstr "Stadt Profil"
 
-#: profile-form.php:43
+#: profile-form.php:49
 #@ vca-theme
 msgid "Supporter Profile"
 msgstr "Supporter Profil"
 
-#: profile-form.php:45
+#: profile-form.php:51
 #@ vca-theme
 msgid "Pool Profile"
 msgstr "Pool Profil"
 
-#: profile-form.php:56
+#: profile-form.php:62
 #@ vca-theme
 msgid "Name"
 msgstr "Name"
 
-#: profile-form.php:59
+#: profile-form.php:65
 #@ vca-theme
 msgid "Your username cannot be changed."
 msgstr "Dein Benutzername kann nicht geändert werden."
 
-#: profile-form.php:62
+#: profile-form.php:68
 #@ vca-theme
 msgid "First name"
 msgstr "Vorname"
 
-#: profile-form.php:65
+#: profile-form.php:71
 #@ vca-theme
 msgid "Last name"
 msgstr "Nachname"
 
-#: profile-form.php:69
+#: profile-form.php:75
 #@ vca-theme
 msgid "Contact Info"
 msgstr "Kontakt-Info"
 
-#: profile-form.php:83
-#: profile-form.php:159
+#: profile-form.php:89
+#: profile-form.php:172
 #@ vca-theme
 msgid "Do you really want to delete your account? This will be permanent and cannot be undone!"
 msgstr "Willst du dein Benutzerkonto wirklich löschen? Dies ist permanent und kann nicht rückgängig gemacht werden!"
 
-#: profile-form.php:89
-#: profile-form.php:165
+#: profile-form.php:95
+#: profile-form.php:178
 #@ vca-theme
 msgid "Please select a region. Thank you."
 msgstr "Bitte wähle eine Region. Danke."
 
-#: profile-form.php:92
-#: profile-form.php:168
+#: profile-form.php:98
+#: profile-form.php:181
 #@ vca-theme
 msgid "Are you really a hundred years old???."
 msgstr "Bist du wirklich 100 Jahre alt???"
 
-#: profile-form.php:98
-#: profile-form.php:174
+#: profile-form.php:104
+#: profile-form.php:187
 #@ vca-theme
 msgid "Have you really been born on January 1st, 1970?."
 msgstr "Wurdest Du wirklich am ersten Januar 1970 geboren?"
 
-#: profile-form.php:104
-#: profile-form.php:180
+#: profile-form.php:117
+#: profile-form.php:200
 #@ vca-theme
 msgid "Update Profile"
 msgstr "Profil aktualisieren"
 
-#: profile-form.php:109
+#: profile-form.php:122
 #@ vca-theme
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: profile-form.php:119
-#: profile-form.php:122
+#: profile-form.php:132
+#: profile-form.php:135
 #@ vca-theme
 msgid "New Password"
 msgstr "Neues Passwort"
 
-#: profile-form.php:121
+#: profile-form.php:134
 #@ vca-theme
 msgid "If you would like to change the password type a new one. Otherwise leave this blank."
 msgstr "Wenn du dein Passwort ändern möchtest, tippe ein neues ein. Sonst lass' das Feld einfach frei."
 
-#: profile-form.php:125
+#: profile-form.php:138
 #@ vca-theme
 msgid "Repeat Password"
 msgstr "Passwort Wiederholung"
 
-#: profile-form.php:128
+#: profile-form.php:141
 #@ vca-theme
 msgid "Password Strength"
 msgstr "Passwort Stärke"
 
-#: profile-form.php:129
+#: profile-form.php:142
 #@ vca-theme
 msgid "Strength Indicator"
 msgstr "Stärke-Indikator"
 
-#: profile-form.php:143
+#: profile-form.php:156
 #@ vca-theme
 msgid "Leave for good"
 msgstr "Den Pool verlassen"
 
-#: profile-form.php:146
+#: profile-form.php:159
 #@ vca-theme
 msgid "Delete my account permanently"
 msgstr "Mein Benutzerkonto löschen"
@@ -1277,13 +1277,19 @@ msgstr "Aktives Mitglied"
 msgid "not set"
 msgstr "nicht angegeben"
 
-#: profile-form.php:136
+#: profile-form.php:149
 #@ vca-theme
 msgid "Volunteer certificate"
 msgstr "Ehrenamtsbescheinigung"
 
-#: profile-form.php:138
+#: profile-form.php:151
 #@ vca-theme
 msgid "Download Certificate"
 msgstr "Bescheinigung runterladen"
+
+#: profile-form.php:113
+#: profile-form.php:196
+#@ vca-theme
+msgid "To apply as a member you have to accept the privacy policy and the articles of association!"
+msgstr "Um die stimmrechtslose Vereinsmitgliedschaft abzuschließen musst du akzeptieren, dass du die Datenschutzerklärung sowie die Vereinssatzung gelesen und verstanden hast!"
 
