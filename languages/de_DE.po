@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: VcA Pool v1.5\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/twentyten\n"
 "POT-Creation-Date: 2015-06-23 14:21+0100\n"
-"PO-Revision-Date: 2017-11-02 18:54:16+0100\n"
+"PO-Revision-Date: 2018-03-06 15:31:42+0100\n"
 "Last-Translator: Johannes Pilkahn <johannes@pilkahn.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -241,7 +241,7 @@ msgstr "Du hast deine Bewerbung für diese Aktivität erfolgreich zurückgezogen
 #: single-concert.php:185
 #: single-concert.php:195
 #: single-concert.php:205
-#: single-concert.php:243
+#: single-concert.php:248
 #: single-festival.php:170
 #: single-festival.php:185
 #: single-festival.php:195
@@ -323,7 +323,7 @@ msgid "You must be <a title=\"Log In\" href=\"%s\">logged in</a> to be able to a
 msgstr "Du musst <a title=\"Log In\" href=\"%s\">logged in</a> to be able to apply for an activity..."
 
 #: functions.php:52
-#: single-concert.php:227
+#: single-concert.php:232
 #: single-festival.php:227
 #: single-goldeimerfestival.php:227
 #: single-miscactions.php:227
@@ -333,7 +333,7 @@ msgctxt "Frontend: Application Process"
 msgid "If you wish to send a message with your application, do so here."
 msgstr "Wenn du eine Nachricht mit deiner Bewerbung hinterlassen möchtest, kannst du dies hier tun."
 
-#: single-concert.php:230
+#: single-concert.php:235
 #: single-festival.php:230
 #: single-goldeimerfestival.php:230
 #: single-miscactions.php:230
@@ -342,7 +342,7 @@ msgstr "Wenn du eine Nachricht mit deiner Bewerbung hinterlassen möchtest, kann
 msgid "Apply"
 msgstr "Bewerben"
 
-#: single-concert.php:236
+#: single-concert.php:241
 #: single-festival.php:236
 #: single-goldeimerfestival.php:236
 #: single-miscactions.php:236
@@ -351,7 +351,7 @@ msgstr "Bewerben"
 msgid "You are not eligible for this activity. Either because a quota for your country and/or city does not exist or because this is limited by another factor. Sorry."
 msgstr "Du bist für diese Aktivität nicht teilnahmeberechtigt. Entweder, weil für deine Stadt und/oder dein Land kein Kontingent festgelegt wurde, oder weil die Aktivität anderweitig limitiert ist. Sorry."
 
-#: single-concert.php:245
+#: single-concert.php:250
 #: single-festival.php:245
 #: single-goldeimerfestival.php:245
 #: single-miscactions.php:245
@@ -360,7 +360,7 @@ msgstr "Du bist für diese Aktivität nicht teilnahmeberechtigt. Entweder, weil 
 msgid "The application phase for this activity has already ended. Sorry."
 msgstr "Die Bewerbungsphase für diese Aktivität ist bereits beendet. Sorry."
 
-#: single-concert.php:250
+#: single-concert.php:255
 #: single-festival.php:250
 #: single-goldeimerfestival.php:250
 #: single-miscactions.php:250
@@ -369,7 +369,7 @@ msgstr "Die Bewerbungsphase für diese Aktivität ist bereits beendet. Sorry."
 msgid "Participants"
 msgstr "Teilnehmer"
 
-#: single-concert.php:253
+#: single-concert.php:258
 #: single-festival.php:253
 #: single-goldeimerfestival.php:253
 #: single-miscactions.php:253
@@ -379,7 +379,7 @@ msgstr "Teilnehmer"
 msgid "%d people have participated in this activity."
 msgstr "%d Leute haben an dieser Aktivität teilgenommen."
 
-#: single-concert.php:258
+#: single-concert.php:263
 #: single-festival.php:258
 #: single-goldeimerfestival.php:258
 #: single-miscactions.php:258
@@ -388,7 +388,7 @@ msgstr "%d Leute haben an dieser Aktivität teilgenommen."
 msgid "You were one of them."
 msgstr "Du warst eine_r davon."
 
-#: single-concert.php:277
+#: single-concert.php:282
 #: single-festival.php:277
 #: single-goldeimerfestival.php:277
 #: single-miscactions.php:277
@@ -397,8 +397,8 @@ msgstr "Du warst eine_r davon."
 msgid "SPOC(s)"
 msgstr "Ansprechpartner_innen"
 
-#: single-concert.php:291
-#: single-concert.php:324
+#: single-concert.php:296
+#: single-concert.php:329
 #: single-festival.php:291
 #: single-festival.php:324
 #: single-goldeimerfestival.php:291
@@ -411,8 +411,8 @@ msgstr "Ansprechpartner_innen"
 msgid "Contact Person(s)"
 msgstr "Ansprechpartner_innen"
 
-#: single-concert.php:293
-#: single-concert.php:326
+#: single-concert.php:298
+#: single-concert.php:331
 #: single-festival.php:293
 #: single-festival.php:326
 #: single-goldeimerfestival.php:293
@@ -425,7 +425,7 @@ msgstr "Ansprechpartner_innen"
 msgid "Not set yet..."
 msgstr "Steht noch nicht fest..."
 
-#: single-concert.php:305
+#: single-concert.php:310
 #: single-festival.php:305
 #: single-goldeimerfestival.php:305
 #: single-miscactions.php:305
@@ -435,7 +435,7 @@ msgstr "Steht noch nicht fest..."
 msgid "Contact Person #%d"
 msgstr "Ansprechpartner #%d"
 
-#: single-concert.php:309
+#: single-concert.php:314
 #: single-festival.php:309
 #: single-goldeimerfestival.php:309
 #: single-miscactions.php:309
@@ -1286,4 +1286,9 @@ msgstr "Ehrenamtsbescheinigung"
 #@ vca-theme
 msgid "Download Certificate"
 msgstr "Bescheinigung herunterladen"
+
+#: single-concert.php:223
+#@ vca-asm
+msgid "I have read and understood the "
+msgstr ""
 

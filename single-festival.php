@@ -202,10 +202,9 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 
 		} elseif ( ( time() - 60*60*22 ) < $end_app ) {
 
-			$output .= '<h5>' . __( 'Participate', 'vca-theme' ) . '</h5>';
-
 			if ( ! is_user_logged_in() ) {
 
+                $output .= '<h5>' . __( 'Participate', 'vca-theme' ) . '</h5>';
 				$url = p1_current_country() === 'ch' ? 'https://pool.vivaconagua.ch' : 'https://pool.vivaconagua.org';
 
 				$output .= '<p class="metadata metadata-message">' .
@@ -217,8 +216,23 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 
 			} elseif ( isset( $the_activity ) && is_numeric( $the_activity->is_eligible( $current_user->ID ) ) ) {
 
-				$output .= '<form method="post" action="">' .
-						'<input type="hidden" name="unique_id" value="[' . md5( uniqid() ) . ']">' .
+				$output .= '<form method="post" action="">';
+
+                if( ! empty( $tools_enc ) && in_array( '1', $tools_enc )) {
+
+                    $cup_hunt = __("Check the <a href='' target='_blank'>information sheet</a> before applying! Here you will find all the information you need for a successful cup hunt. FAQ's, project information, overview of the use of funds, brief information on VcA and and and... Always up-to-date and interactive processed.<br/><br/>Don´t miss out!", 'vca-asm');
+
+                    $output .= '<h5>' . __( 'All about the cup-hunt', 'vca-asm' ) . '</h5>';
+                    $output .= '<p class="metadata">' . $cup_hunt . '</p>';
+
+                    $output .= '<br/><span style="font-size: 14px; font-weight: bold;"><input type="checkbox" name="read_confirmation" required> ';
+                    $output .= __( 'I have read it!', 'vca-asm' );
+                    $output .= '</span><br/><br/>';
+                }
+
+                $output .= '<h5>' . __( 'Participate', 'vca-theme' ) . '</h5>';
+
+				$output .= '<input type="hidden" name="unique_id" value="[' . md5( uniqid() ) . ']">' .
 						'<input type="hidden" name="todo" id="todo" value="apply" />' .
 						'<input type="hidden" name="activity" id="activity" value="' . get_the_ID() . '" />' .
 						'<div class="form-row">' .
