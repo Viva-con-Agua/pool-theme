@@ -11,9 +11,9 @@
 				<p class="screen-talign-left">
 					<a title="<?php _e( 'Read the Terms of Use', 'vca-theme' ); ?>" href="<?php bloginfo('url') ?>/nutzungsbedingungen/"><?php _e( 'Terms of Use', 'vca-theme' ); ?></a><br /><span class="nav-break"></span><a title="<?php _e( 'Read the Privacy Policy', 'vca-theme' ); ?>" href="<?php bloginfo('url') ?>/datenschutzerklaerung/"><?php _e( 'Privacy Policy', 'vca-theme' ); ?></a><br /><span class="nav-break"></span><a title="<?php _e( 'To the Imprint', 'vca-theme' ); ?>" href="<?php
 						if ( 'ch' === p1_current_country() ) {
-							echo 'http://vivaconagua.ch/index.htm?impressum';
+							echo 'http://www.vivaconagua.ch/impressum';
 						} else {
-							echo 'http://vivaconagua.org/index.htm?impressum';
+							echo 'https://www.vivaconagua.org/impressum';
 						}
 					?>"><?php _e( 'Imprint', 'vca-theme' ); ?></a>
 				</p>
