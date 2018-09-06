@@ -188,6 +188,7 @@ div.wrapper {
 	position: relative;
 }
 div.content-wrap-wrap {
+	min-height: 196px;
 	padding: 0 2em;
 }
 div.content-wrap {
