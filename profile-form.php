@@ -74,6 +74,9 @@
 							} else {
 								return false;
 							}
+						} else if (jQuery('#email').val() == '') {
+							alert('<?php _e( 'Please enter a valid email address. Thank you.', 'vca-theme' ); ?>');
+							return false;
 						} else if( jQuery('#city').val() == 'please_select' ) {
 							alert('<?php _e( 'Please select a region. Thank you.', 'vca-theme' ); ?>');
 							return false;
@@ -85,6 +88,23 @@
 							}
 						} else if( jQuery('#birthday-year').val() == 1970 && jQuery('#birthday-month').val() == 1 && jQuery('#birthday-day').val() == 1 ) {
 							if( confirm('<?php _e( 'Have you really been born on January 1st, 1970?.', 'vca-theme' ); ?>') ) {
+								return true;
+							} else {
+								return false;
+							}
+						}
+						
+						if( jQuery('#agreement').is(':checked') && !( jQuery('#membership').is(':checked'))) {
+							if( confirm('<?php _e( 'If you want to stay a non-voting member you have to stay as an active member of your crew. If you press OK, your non-voting membership will end automatically. Thank you.', 'vca-theme' ); ?>') ) {
+								return true;
+							} else {
+								return false;
+							}
+						} else if( jQuery('#agreement').is(':checked') && ((jQuery('#association-agreement').length && !jQuery('#association-agreement').is(':checked')) || (jQuery('#compliance-agreement').length && !jQuery('#compliance-agreement').is(':checked')))) {
+							alert('<?php _e( 'To apply as a member you have to accept the privacy policy and the articles of association! Thank you.', 'vca-theme' ); ?>');
+							return false;
+						} else if( jQuery('#agreement').is(':checked') && (jQuery('#first_name').val() == '' || jQuery('#last_name').val() == '' || jQuery('#residence').val() == '' || jQuery('#postcode').val() == '' || jQuery('#street').val() == '' )) {
+							if( confirm('<?php _e( 'If you want to become or stay a non-voting member you have to enter your complete name, address and email address. If you continue, your non-voting membership will end automatically. Thank you.', 'vca-theme' ); ?>') ) {
 								return true;
 							} else {
 								return false;
@@ -150,6 +170,9 @@
 							} else {
 								return false;
 							}
+						} else if (jQuery('#email').val() == '') {
+							alert('<?php _e( 'Please enter a valid email address. Thank you.', 'vca-theme' ); ?>');
+							return false;
 						} else if( jQuery('#region').val() == 'please_select' ) {
 							alert('<?php _e( 'Please select a region. Thank you.', 'vca-theme' ); ?>');
 							return false;
@@ -161,6 +184,22 @@
 							}
 						} else if( jQuery('#birthday-year').val() == 1970 && jQuery('#birthday-month').val() == 1 && jQuery('#birthday-day').val() == 1 ) {
 							if( confirm('<?php _e( 'Have you really been born on January 1st, 1970?.', 'vca-theme' ); ?>') ) {
+								return true;
+							} else {
+								return false;
+							}
+						}
+						if( jQuery('#agreement').is(':checked') && !( jQuery('#membership').is(':checked'))) {
+							if( confirm('<?php _e( 'If you want to stay a non-voting member you have to stay as an active member of your crew. If you press OK, your non-voting membership will end automatically. Thank you.', 'vca-theme' ); ?>') ) {
+								return true;
+							} else {
+								return false;
+							}
+						} else if( jQuery('#agreement').is(':checked') && ((jQuery('#association-agreement').length && !jQuery('#association-agreement').is(':checked')) || (jQuery('#compliance-agreement').length && !jQuery('#compliance-agreement').is(':checked')))) {
+							alert('<?php _e( 'To apply as a member you have to accept the privacy policy and the articles of association! Thank you.', 'vca-theme' ); ?>');
+							return false;
+						} else if( jQuery('#agreement').is(':checked') && (jQuery('#first_name').val() == '' || jQuery('#last_name').val() == '' || jQuery('#residence').val() == '' || jQuery('#postcode').val() == '' || jQuery('#street').val() == '' )) {
+							if( confirm('<?php _e( 'If you want to become or stay a non-voting member you have to enter your complete name, address and email address. If you press OK, your non-voting membership will end automatically. Thank you.', 'vca-theme' ); ?>') ) {
 								return true;
 							} else {
 								return false;
