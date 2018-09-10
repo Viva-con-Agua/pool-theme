@@ -104,7 +104,7 @@
 							alert('<?php _e( 'To apply as a member you have to accept the privacy policy and the articles of association! Thank you.', 'vca-theme' ); ?>');
 							return false;
 						} else if( jQuery('#agreement').is(':checked') && (jQuery('#first_name').val() == '' || jQuery('#last_name').val() == '' || jQuery('#residence').val() == '' || jQuery('#postcode').val() == '' || jQuery('#street').val() == '' )) {
-							if( confirm('<?php _e( 'If you want to become or stay a non-voting member you have to enter your complete name, address and email address. If you continue, your non-voting membership will end automatically. Thank you.', 'vca-theme' ); ?>') ) {
+							if( confirm('<?php _e( 'If you want to become or stay a non-voting member you have to enter your complete name, address and email address. If you press OK, your non-voting membership will end automatically. Thank you.', 'vca-theme' ); ?>') ) {
 								return true;
 							} else {
 								return false;
