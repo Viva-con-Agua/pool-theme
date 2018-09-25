@@ -61,10 +61,10 @@
 <body id="flickerfix" <?php body_class(); ?>>
 
 	<div class="wrapper">
-	<header>
-		<div id="navigation-widget"></div>
-		<script type="text/javascript" src="/dispenser/javascript/navigation_widget.js"></script>
-	</header>
+		<div class="wp-navbar-vca-container ">
+			<div id="navigation-widget"></div>
+			<script type="text/javascript" src="/dispenser/javascript/navigation_widget.js"></script>
+		</div>
 		<div class="content-wrap-wrap">
 			<div class="content-wrap">
 				<?php if ( is_user_logged_in() ) : ?>
