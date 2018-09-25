@@ -74,7 +74,7 @@
 						<?php endif; ?>
 					</div>
 					<div class="col5 last">
-						<?php p1_pool_menu( 'screen' ); ?>
+					<script type="text/javascript" src="/dispenser/javascript/navigation_widget.js"></script>
 					</div>
 				</div>
 			</div>
