@@ -35,10 +35,10 @@
 	<script type="text/javascript">
 		document.write('<style type="text/css">body#flickerfix{opacity:0;}</style>');
 	</script>
+	  		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<script src="/dispenser/javascript/dropzone.js"></script>
 		<script src="/dispenser/javascript/config.js"></script>
       <link href="/arise/static/css/arise.css" rel="stylesheet">
-	  
     <link rel="stylesheet" media="screen" href="/dispenser/css/vca.css">
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/reset.css?ver=2013.11.11.1" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/grid.css?ver=2013.11.11.1" />
