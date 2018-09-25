@@ -415,11 +415,21 @@ footer p a:active,
 	border: none;
 }
 
+/* DROPS FIXES
+-------------------------------------------*/
+.navbar-vca {
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
+	
+}
+.navbar-vca ul li {
+	font-size: 14px !important;
+	padding: 0.5em 0 !important;
+}
 
 /* TYPOGRAPHY
 ----------------------------------------- */
 body {
-	font-family: Verdana, Geneva, Helvetica, Arial, sans-serif;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 	color:#020b0e;
 }
 p {
