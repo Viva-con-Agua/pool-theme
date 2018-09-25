@@ -35,7 +35,11 @@
 	<script type="text/javascript">
 		document.write('<style type="text/css">body#flickerfix{opacity:0;}</style>');
 	</script>
-
+		<script src="/dispenser/javascript/dropzone.js"></script>
+		<script src="/dispenser/javascript/config.js"></script>
+      <link href="/arise/static/css/arise.css" rel="stylesheet">
+	  
+    <link rel="stylesheet" media="screen" href="/dispenser/css/vca.css">
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/reset.css?ver=2013.11.11.1" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/grid.css?ver=2013.11.11.1" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>?ver=2013.11.18.3" />
@@ -57,50 +61,9 @@
 <body id="flickerfix" <?php body_class(); ?>>
 
 	<div class="wrapper">
-
-		<header>
-			<div class="grid-container screen">
-				<div class="grid-row">
-					<div class="col7">
-						<?php if ( ( is_home() || is_single() || is_post_type_archive( 'post' ) ) && 'post' == get_post_type() ) : ?>
-							<a title="<?php _e( 'All Posts', 'vca-theme' ); ?>" href="<?php bloginfo('url'); ?>">
-								<img id="blog-logo" alt="BLOG" src="<?php bloginfo('template_url'); ?>/images/blog-logo.png" />
-							</a>
-						<?php else : ?>
-							<a title="<?php _ex( 'Community for clean water', 'Leave in English, if understandable', 'vca-theme' ); ?>" href="<?php bloginfo('url'); ?>">
-								<img id="pool-logo" alt="POOL" src="<?php bloginfo('template_url'); ?>/images/pool-logo.png" />
-								<span style="color:white;font-size:12px">Community für sauberes Wasser</span>
-							</a>
-						<?php endif; ?>
-					</div>
-					<div class="col5 last">
-					<script type="text/javascript" src="/dispenser/javascript/navigation_widget.js"></script>
-					</div>
-				</div>
-			</div>
-			<div id="swim-in-the-pool" class="grid-container mobile">
-				<div class="grid-row mobile-header">
-					<div class="col12">
-						<p class="site-title"><strong><a title="<?php
-							if ( 'ch' === p1_current_country() ) {
-								echo 'vivaconagua.ch';
-							} else {
-								echo 'vivaconagua.org';
-							}
-						?>" href="<?php
-							if ( 'ch' === p1_current_country() ) {
-								echo 'http://vivaconagua.ch';
-							} else {
-								echo 'http://vivaconagua.org';
-							}
-						?>">Viva con Agua</a></strong><a title="<?php __( 'Back to the Start', 'vca-theme' ); ?>" href="<?php bloginfo('url'); ?>">Pool</a></p>
-						<div id="menu-button"><a href="#nav"><img alt="<?php __( 'Navigation Menu', 'vca-theme' ); ?>" src="<?php bloginfo('template_url'); ?>/images/menu@2x.png" /></a></div>
-						<?php p1_pool_menu( 'mobile' ); ?>
-					</div>
-				</div>
-			</div>
-			<div class="bottom"></div>
-		</header>
+	
+	<div id="navigation-widget"></div>
+    <script type="text/javascript" src="/dispenser/javascript/navigation_widget.js"></script>
 
 		<div class="content-wrap-wrap">
 			<div class="content-wrap">
