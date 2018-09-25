@@ -4,25 +4,10 @@
 <div class="push"></div>
 </div><!-- .wrapper -->
 
-<footer>
-	<div class="grid-container">
-		<div class="grid-row">
-			<div class="col6">
-				<p class="screen-talign-left">
-					<a title="<?php _e( 'Read the Terms of Use', 'vca-theme' ); ?>" href="<?php bloginfo('url') ?>/nutzungsbedingungen/"><?php _e( 'Terms of Use', 'vca-theme' ); ?></a><br /><span class="nav-break"></span><a title="<?php _e( 'Read the Privacy Policy', 'vca-theme' ); ?>" href="<?php bloginfo('url') ?>/datenschutzerklaerung/"><?php _e( 'Privacy Policy', 'vca-theme' ); ?></a><br /><span class="nav-break"></span><a title="<?php _e( 'To the Imprint', 'vca-theme' ); ?>" href="<?php
-						if ( 'ch' === p1_current_country() ) {
-							echo 'http://www.vivaconagua.ch/impressum';
-						} else {
-							echo 'https://www.vivaconagua.org/impressum';
-						}
-					?>"><?php _e( 'Imprint', 'vca-theme' ); ?></a>
-				</p>
-			</div><div class="col6 last">
-				<p class="screen-talign-right">Pool v1.6, Viva con Agua de Sankt Pauli e.V., 2011-2015</p>
-			</div>
-		</div>
-	</div>
-</footer>
+  <footer>
+     <div id="footer-widget"></div>
+     <script type="text/javascript" src="/dispenser/javascript/footer_widget.js"></script>
+  </footer>
 
 <!--<script>window.jQuery || document.write('<script src="<?php bloginfo( 'template_url' ); ?>/js/jquery-1.7.min.js"><\/script>')</script>-->
 <script>var jQuery = jQuery.noConflict();</script>
