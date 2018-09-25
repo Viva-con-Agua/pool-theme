@@ -170,7 +170,7 @@ smallest	legacy-mobile		<= 480 px
 ----------------------------------------- */
 
 html {
-	background: #f1f2f2;
+	background: #fafafa;
 	-webkit-overflow-scrolling: touch;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
@@ -178,7 +178,7 @@ html {
 	-ms-text-size-adjust: none;
 }
 body {
-	background: #f1f2f2;
+	background: #fafafa;
 }
 div.wrapper {
 	min-height: 100%;
@@ -224,14 +224,11 @@ header {
 	position: relative;
 }
 header .grid-container {
-	background: #00a8cf;
-	background: -moz-linear-gradient(top, #00a8cf 0%, #008fc1 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00a8cf), color-stop(100%,#008fc1));
-	background: -webkit-linear-gradient(top, #00a8cf 0%,#008fc1 100%);
-	background: -o-linear-gradient(top, #00a8cf 0%,#008fc1 100%);
-	background: -ms-linear-gradient(top, #00a8cf 0%,#008fc1 100%);
-	background: linear-gradient(to bottom, #00a8cf 0%,#008fc1 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a8cf', endColorstr='#008fc1', GradientType=0 );
+	padding: 0.5em 0;
+	background-color: blue;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+	-moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+	-webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 	border-bottom: 1px solid #c5c6c8;
 }
 header .grid-container.mobile {

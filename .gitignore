@@ -3,5 +3,3 @@
 # all files in the logs directory (logs on the server should not be overwritten!)
 logs/
 # FavIcons --> DevEnvironment uses different color --> Should not be pushed to production
-images/icons/favicon.ico
-images/icons/favicon.png
