@@ -417,9 +417,10 @@ footer p a:active,
 
 /* DROPS FIXES
 -------------------------------------------*/
-.navbar-vca-container {
+div.wp-navbar-vca-container {
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
 }
+
 .navbar-vca ul li {
 	font-size: 14px !important;
 }

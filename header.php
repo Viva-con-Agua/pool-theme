@@ -61,7 +61,7 @@
 <body id="flickerfix" <?php body_class(); ?>>
 
 	<div class="wrapper">
-		<div class="wp-navbar-vca-container ">
+		<div class="wp-navbar-vca-container">
 			<div id="navigation-widget"></div>
 			<script type="text/javascript" src="/dispenser/javascript/navigation_widget.js"></script>
 		</div>
