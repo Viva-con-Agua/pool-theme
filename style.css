@@ -423,12 +423,10 @@ div.wp-footer-vca-container {
 
 div.wp-navbar-vca-container {
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
-	height: 10em !important;
-}
-
-.navbar-vca ul li {
+	height: 7em !important;
 	font-size: 14px !important;
 }
+
 
 /* TYPOGRAPHY
 ----------------------------------------- */
