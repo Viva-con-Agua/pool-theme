@@ -387,34 +387,6 @@ div.navigation li.current-menu-item>a:focus {
 	}
 }
 
-
-/* FOOTER
------------------------------------------ */
-
-footer .grid-row {
-	border-top: 1px solid #c5c6c8;
-	padding: 0 .3em;
-}
-footer p {
-	font-family: GSC, Helvetica, Arial, Verdana, Geneva, sans-serif;
-	font-size: 1.6em;
-	font-weight: 400;
-	line-height: 1.25;
-	padding: .4375em 0 .5625em;
-	margin: 0;
-	color: #646567;
-}
-footer p a {
-	border: none;
-}
-footer p a:focus,
-footer p a:active,
-.no-touch footer p a:hover {
-	color: #002a3d;
-	text-shadow: 0 0 5px #c5c6c8;
-	border: none;
-}
-
 /* DROPS FIXES
 -------------------------------------------*/
 div.wp-footer-vca-container {
