@@ -387,19 +387,6 @@ div.navigation li.current-menu-item>a:focus {
 	}
 }
 
-/* DROPS FIXES
--------------------------------------------*/
-div.wp-footer-vca-container {
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
-}
-
-div.wp-navbar-vca-container {
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
-	height: 7em !important;
-	font-size: 14px !important;
-}
-
-
 /* TYPOGRAPHY
 ----------------------------------------- */
 body {
@@ -1571,4 +1558,27 @@ only screen and (min-resolution: 1.5dppx) {
     h2, h3 {
 		page-break-after:avoid;
 	}
+}
+
+/* FIXES FOR DISPENSER / DROPS
+-------------------------------------------*/
+div.wp-footer-vca-container {
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
+}
+
+div.wp-navbar-vca-container {
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
+	height: 7em !important;
+	font-size: 14px !important;
+}
+
+.footer-container {
+	background-color: @primary-color;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	z-index: 1300;
+	color: @primary-font-color;
+	display: flex;
+	left: 0;
 }
