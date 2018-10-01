@@ -1581,3 +1581,22 @@ div.wp-navbar-vca-container {
 	display: flex;
 	left: 0;
 }
+.footer-container {
+	background-color: @primary-color;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	z-index: 1300;
+	color: @primary-font-color;
+	display: flex;
+	left: 0;
+}
+
+.footer-container .footer-row .footer-left .screen-talign-left {
+	margin: 5px 10px 5px !important;
+}
+
+.footer-container .footer-row .footer-left .screen-talign-left a {
+	color: white !important;
+	margin: 0 10px !important;
+}
