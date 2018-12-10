@@ -1561,7 +1561,7 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 /* FIXES FOR DISPENSER / DROPS
--------------------------------------------
+-------------------------------------------*/
 div.wp-footer-vca-container {
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
 }
@@ -1599,4 +1599,4 @@ div.wp-navbar-vca-container {
 .footer-container .footer-row .footer-left .screen-talign-left a {
 	color: white !important;
 	margin: 0 10px !important;
-}*/
+}
