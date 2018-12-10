@@ -59,7 +59,6 @@
 <?php flush(); ?>
 
 <body id="flickerfix" <?php body_class(); ?>>
-	<script type="text/javascript" src="/arise/static/js/arise.js"></script>
 
 	<div class="wrapper">
 		<div class="wp-navbar-vca-container">
