@@ -1565,7 +1565,7 @@ only screen and (min-resolution: 1.5dppx) {
 
 /* FIXES FOR DISPENSER / DROPS
 -------------------------------------------*/
-div.wp-footer-vca-container {
+div.footer-container {
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
 	font-size: 14px !important;
 }
