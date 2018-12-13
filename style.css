@@ -1567,20 +1567,6 @@ only screen and (min-resolution: 1.5dppx) {
 /* FIXES FOR DISPENSER / DROPS
 -------------------------------------------*/
 
-div.wp-navbar-vca-container {
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
-	font-size: 14px !important;
-}
-
-
-.footer-container .footer-row .footer-left .screen-talign-left {
-	margin: 5px 10px 5px !important;
-}
-
-.footer-container .footer-row .footer-left .screen-talign-left a {
-	color: white !important;
-	margin: 0 10px !important;
-}
 
 #wppool {
 	flex: 1;
@@ -1588,6 +1574,6 @@ div.wp-navbar-vca-container {
 	flex-direction: column;
 }
 
-.filter-bottom {
+.filter-bottom, .push {
 	display: none;
 }
