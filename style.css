@@ -189,7 +189,9 @@ div.wrapper {
 }
 div.content-wrap-wrap {
 	min-height: 196px;
-	padding: 2em;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-bottom: 2em;
 	flex-grow: 1;
 	display: flex;
 	overflow: auto;
@@ -1579,6 +1581,7 @@ div.wp-navbar-vca-container {
 	/*background-color: @primary-color;*/
 	position: fixed;
 	width: 100%;
+	margin-top: 2em;
 	bottom: 0;
 	z-index: 1300;
 	/*color: @primary-font-color;*/
