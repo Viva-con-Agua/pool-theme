@@ -188,10 +188,7 @@ div.wrapper {
 	position: relative;
 }
 div.content-wrap-wrap {
-	min-height: 196px;
-	padding-left: 2em;
-	padding-right: 2em;
-	padding-bottom: 2em;
+	margin-bottom: 2em;
 	flex-grow: 1;
 	display: flex;
 	overflow: auto;
@@ -1570,6 +1567,7 @@ only screen and (min-resolution: 1.5dppx) {
 -------------------------------------------*/
 div.wp-footer-vca-container {
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
+	font-size: 14px !important;
 }
 
 div.wp-navbar-vca-container {
