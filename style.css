@@ -179,6 +179,7 @@ html {
 }
 body {
 	background: #fafafa;
+	font-size: 12px;
 }
 div.wrapper {
 	min-height: 100%;
@@ -1565,10 +1566,6 @@ only screen and (min-resolution: 1.5dppx) {
 
 /* FIXES FOR DISPENSER / DROPS
 -------------------------------------------*/
-div.footer-container {
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
-	font-size: 14px !important;
-}
 
 div.wp-navbar-vca-container {
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
@@ -1577,6 +1574,9 @@ div.wp-navbar-vca-container {
 
 .footer-container {
 	/*background-color: @primary-color;*/
+	
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
+	font-size: 10px !important;
 	position: fixed;
 	width: 100%;
 	margin-top: 2em;
