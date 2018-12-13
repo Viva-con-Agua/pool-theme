@@ -1573,6 +1573,11 @@ div.wp-navbar-vca-container {
 	font-size: 14px !important;
 }
 
+.footer-container {
+	padding: 14px 0 !important;
+	min-height: 58px !important;
+}
+
 #wppool {
 	flex: 1;
 	display: flex;
