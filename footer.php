@@ -1,8 +1,8 @@
 </div><!-- .content-wrap-wrap -->
 </div><!-- .content-wrap -->
-<div id="footer-widget"></div>
- <script type="text/javascript" src="/dispenser/javascript/footer_widget.js"></script>
 </div><!-- .content-container -->
+<div id="footer-widget"></div>
+<script type="text/javascript" src="/dispenser/javascript/footer_widget.js"></script>
 <div class="push"></div>
 </div><!-- .wrapper -->
 
