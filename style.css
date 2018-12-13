@@ -189,8 +189,12 @@ div.wrapper {
 }
 div.content-wrap-wrap {
 	min-height: 196px;
-	padding: 9em 2em;
+	padding: 2em;
+	flex-grow: 1;
+	display: flex;
+	overflow: auto;
 }
+
 div.content-wrap {
 	width: 100%;
 	max-width: 1280px;
@@ -1573,7 +1577,7 @@ div.wp-navbar-vca-container {
 
 .footer-container {
 	/*background-color: @primary-color;*/
-	/*position: fixed;*/
+	position: fixed;
 	width: 100%;*/
 	bottom: 0;
 	z-index: 1300;
@@ -1589,4 +1593,10 @@ div.wp-navbar-vca-container {
 .footer-container .footer-row .footer-left .screen-talign-left a {
 	color: white !important;
 	margin: 0 10px !important;
+}
+
+#wppool {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 }

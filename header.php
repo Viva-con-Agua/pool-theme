@@ -60,7 +60,7 @@
 
 <body id="flickerfix" <?php body_class(); ?>>
 
-	<div id="arise">
+	<div id="wppool">
 		<div class="wp-navbar-vca-container">
 			<div id="navigation-widget"></div>
 			<script type="text/javascript" src="/dispenser/javascript/navigation_widget.js"></script>

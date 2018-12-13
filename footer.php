@@ -4,7 +4,7 @@
 <div id="footer-widget"></div>
 <script type="text/javascript" src="/dispenser/javascript/footer_widget.js"></script>
 <div class="push"></div>
-</div><!-- id = arise -->
+</div><!-- id = wppool -->
 
 <!--<script>window.jQuery || document.write('<script src="<?php bloginfo( 'template_url' ); ?>/js/jquery-1.7.min.js"><\/script>')</script>-->
 <script>var jQuery = jQuery.noConflict();</script>
