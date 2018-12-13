@@ -38,7 +38,7 @@
 	  		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<script src="/dispenser/javascript/dropzone.js"></script>
 		<script src="/dispenser/javascript/config.js"></script>
-      <!--link href="/arise/arise.css" rel="stylesheet"-->
+      <link href="/arise/arise.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="/dispenser/css/vca.css">
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/reset.css?ver=2013.11.11.1" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/css/grid.css?ver=2013.11.11.1" />
@@ -65,7 +65,7 @@
 			<div id="navigation-widget"></div>
 			<script type="text/javascript" src="/dispenser/javascript/navigation_widget.js"></script>
 		</div>
-		<div class="content-wrap-wrap">
+		<div id="content" class="content-wrap-wrap">
 			<div class="content-wrap">
 				<?php if ( is_user_logged_in() ) : ?>
 					<div class="navigation">
