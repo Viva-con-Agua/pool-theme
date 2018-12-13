@@ -1,5 +1,4 @@
 </div><!-- .content-wrap-wrap -->
-</div><!-- .content-wrap -->
 </div><!-- .content-container -->
 <div id="footer-widget"></div>
 <script type="text/javascript" src="/dispenser/javascript/footer_widget.js"></script>
