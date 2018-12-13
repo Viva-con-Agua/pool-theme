@@ -1578,7 +1578,7 @@ div.wp-navbar-vca-container {
 .footer-container {
 	/*background-color: @primary-color;*/
 	position: fixed;
-	width: 100%;*/
+	width: 100%;
 	bottom: 0;
 	z-index: 1300;
 	/*color: @primary-font-color;*/
