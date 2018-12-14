@@ -196,6 +196,14 @@ div.content-wrap-wrap {
 	overflow: auto;
 }
 
+div.content-wrap .grid-container  {
+	margin: 0 !important;
+}
+
+div.content-wrap .navigation {
+	display: none !important;
+}
+
 div.content-wrap {
 	width: 100%;
 	max-width: 1280px;
