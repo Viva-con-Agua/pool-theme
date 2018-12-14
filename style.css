@@ -196,10 +196,6 @@ div.content-wrap-wrap {
 	overflow: auto;
 }
 
-div.content-wrap .grid-container  {
-	margin: 0 !important;
-}
-
 div.content-wrap .navigation {
 	display: none !important;
 }
