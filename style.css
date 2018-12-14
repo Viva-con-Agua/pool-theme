@@ -190,7 +190,7 @@ div.wrapper {
 	position: relative;
 }
 div.content-wrap-wrap {
-	margin-bottom: 2em;
+	margin: 0 2em 1em 2em;
 	flex-grow: 1;
 	display: flex;
 	overflow: auto;
@@ -1575,7 +1575,6 @@ div.wp-navbar-vca-container {
 
 .footer-container {
 	padding: 14px 0 !important;
-	min-height: 58px !important;
 }
 
 #wppool {
