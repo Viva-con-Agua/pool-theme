@@ -1579,6 +1579,7 @@ div.wp-navbar-vca-container {
 
 .footer-container {
 	padding: 14px 0 !important;
+	min-height: 59px;
 }
 
 #wppool {
