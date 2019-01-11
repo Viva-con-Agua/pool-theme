@@ -145,8 +145,6 @@ if( isset( $_POST['mail_submit'] ) && __( 'Preview', 'vca-theme' ) === $_POST['m
 	$email['membership'] = isset( $email['membership'] ) ? $email['membership'] : 0;
 	$email['receipient_id'] = isset( $email['receipient_id'] ) ? $email['receipient_id'] : 0;
 	$email['receipient_group'] = isset( $email['receipient_group'] ) ? $email['receipient_group'] : 0;
-
-	$current_user->ID == $email['sent_by']
 	
 	$city_id = get_user_meta($current_user->ID, 'city', true);
 	$city_user_id = $wpdb->get_var(
