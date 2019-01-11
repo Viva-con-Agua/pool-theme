@@ -178,7 +178,7 @@ if( isset( $_POST['mail_submit'] ) && __( 'Preview', 'vca-theme' ) === $_POST['m
 		(
 			$current_user->has_cap( 'vca_asm_view_emails' ) && $is_readable
 		) ||
-			isset($_GET['hash'] && md5( $email['time'] ) == $_GET['hash']
+			isset($_GET['hash']) && md5( $email['time'] ) == $_GET['hash']
 		||
 		(
 			isset( $_GET['auto_action'] ) && in_array( $_GET['auto_action'], array( 'applied', 'accepted', 'denied', 'reg_revoked', 'mem_accepted', 'mem_denied', 'mem_cancelled' ) )
