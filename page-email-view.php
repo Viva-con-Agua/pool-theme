@@ -163,7 +163,7 @@ if( isset( $_POST['mail_submit'] ) && __( 'Preview', 'vca-theme' ) === $_POST['m
 		);
 		
 	$is_readable = false;
-	if ( $city_user_id == $user_id || $city_user_id == $author_city_user_id || $user_id == $email['sent_by'] || $city_user_id == $email['sent_by'] ) {
+	if ( $city_user_id == $current_user->ID || $city_user_id == $author_city_user_id || $current_user->ID == $email['sent_by'] || $city_user_id == $email['sent_by'] ) {
 		$is_readable = true;
 	}
 	
