@@ -146,6 +146,29 @@ if( isset( $_POST['mail_submit'] ) && __( 'Preview', 'vca-theme' ) === $_POST['m
 	$email['receipient_id'] = isset( $email['receipient_id'] ) ? $email['receipient_id'] : 0;
 	$email['receipient_group'] = isset( $email['receipient_group'] ) ? $email['receipient_group'] : 0;
 
+	$current_user->ID == $email['sent_by']
+	
+	$city_id = get_user_meta($current_user->ID, 'city', true);
+	$city_user_id = $wpdb->get_var(
+			"SELECT user_id FROM " .
+			$wpdb->prefix . "vca_asm_geography " .
+			"WHERE id = " . $city_id
+		);
+	
+	$author_city_id = get_user_meta($email['sent_by'], 'city', true);
+	$author_city_id = empty($author_city_id) ? $email['sent_by'] : $author_city_id;
+	
+	$author_city_user_id = $wpdb->get_var(
+			"SELECT user_id FROM " .
+			$wpdb->prefix . "vca_asm_geography " .
+			"WHERE id = " . $author_city_id
+		);
+		
+	$is_readable = false;
+	if ( $city_user_id == $user_id || $city_user_id == $author_city_user_id || $user_id == $email['sent_by'] || $city_user_id == $email['sent_by'] ) {
+		$is_readable = true;
+	}
+	
 	if(
 			$current_user->has_cap( 'vca_asm_view_emails_global' ) ||
 	   (
@@ -155,9 +178,9 @@ if( isset( $_POST['mail_submit'] ) && __( 'Preview', 'vca-theme' ) === $_POST['m
 			$sender_nation === $vca_asm_geography->has_nation( get_user_meta( $current_user->ID, 'region', true ) )
 		) ||
 		(
-			$current_user->has_cap( 'vca_asm_view_emails' ) && $current_user->ID == $email['sent_by']
+			$current_user->has_cap( 'vca_asm_view_emails' ) && $is_readable
 		) ||
-			md5( $email['time'] ) == $_GET['hash']
+			isset($_GET['hash'] && md5( $email['time'] ) == $_GET['hash']
 		||
 		(
 			isset( $_GET['auto_action'] ) && in_array( $_GET['auto_action'], array( 'applied', 'accepted', 'denied', 'reg_revoked', 'mem_accepted', 'mem_denied', 'mem_cancelled' ) )
