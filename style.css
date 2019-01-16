@@ -1575,7 +1575,7 @@ only screen and (min-resolution: 1.5dppx) {
 div.wp-navbar-vca-container {
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
 	font-size: 14px !important;
-	z-index: 10000;
+	z-index: 100000 !important;
 }
 
 .footer-container {
