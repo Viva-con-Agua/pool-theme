@@ -55,6 +55,10 @@
 			jQuery('body#flickerfix').css('opacity','1');
 		});
 	</script>
+	
+	<style>
+	#adminbar{ display: none; }
+	</style>
 
 </head>
 
